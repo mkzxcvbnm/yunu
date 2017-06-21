@@ -1,0 +1,78 @@
+@mixin opacity($opacity: .5) {
+    filter: alpha(opacity=$opacity*100);
+    opacity: $opacity;
+}
+
+@mixin placeholder ($color: #666, $font: 14px) {
+    &::-webkit-input-placeholder {
+        color: $color;
+        font-size: $font;
+    }
+    &:-moz-placeholder {
+        color: $color;
+        font-size: $font;
+    }
+    &::-moz-placeholder {
+        color: $color;
+        font-size: $font;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+        font-size: $font;
+    }
+}
+
+@mixin scrollbar ($width: 10px, $color: #009af3, $bg: #f1f1f1) {
+    &::-webkit-scrollbar {
+        width: $width;
+        height: $width;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $color;
+        border-radius: $width/2;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: $bg;
+        border-radius: $width/2;
+    }
+    &::-webkit-scrollbar-track-piece {
+        background-color: $bg;
+        border-radius: $width/2;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: darken($color, 10%);
+    }
+}
+
+@mixin ellipsis ($clamp: 3) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $clamp;
+    -webkit-box-orient: vertical;
+}
+
+@mixin inline-block () {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+}
+
+@mixin hover ($color: $color, $attr: color, $type: lighten, $amount: 10%) {
+    #{$attr}: $color;
+    transition: $attr .2s;
+    &:hover {
+        @if $type == color {
+            #{$attr}: $amount;
+        }
+        @else if($type == lighten){
+            #{$attr}: lighten($color, $amount);
+        }
+        @else {
+            #{$attr}: darken($color, $amount);
+        }
+    }
+}

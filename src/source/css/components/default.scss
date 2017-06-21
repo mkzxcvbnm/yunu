@@ -1,0 +1,70 @@
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container:after,
+.row:after,
+.center,
+ul {
+    @extend .clearfix;
+}
+
+.content img {
+    max-width: 100%;
+}
+
+.content_box {
+    &,
+    *,
+    *:before,
+    *:after {
+        box-sizing: content-box;
+    }
+}
+
+@for $i from 1 through 10 {
+    $location: (ml: margin-left, mt: margin-top, mr: margin-right, mb: margin-bottom, mg: margin, pl: padding-left, pt: padding-top, pr: padding-right, pb: padding-bottom, pd: padding);
+    @each $a, $b in $location {
+        .#{$a}#{5 * $i} {
+            #{$b}: 5px * $i;
+        }
+    }
+}
+
+@for $i from 6 through 18 {
+    .f#{2 * $i} {
+        font-size: 2px * $i;
+    }
+}
+

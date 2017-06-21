@@ -1,0 +1,376 @@
+/****************************** components ******************************/
+@import "./components/mixin";
+@import "./components/normalize";
+@import "./components/reset";
+@import "./components/default";
+@import "./components/grid";
+//@import "./components/case";//例子
+/****************************** style ******************************/
+$color: #c21a29;
+body,
+button,
+input,
+select,
+textarea {
+    font: 14px/1.4 "\5FAE\8F6F\96C5\9ED1", "arial";
+    color: #5a5a5a;
+    font-size: 14px;
+}
+html {
+    min-width: 1200px;
+}
+.center {
+    width: 1200px;
+    margin: 0 auto;
+}
+.icon {
+    @include inline-block;
+}
+.header {
+    height: 160px;
+    background: url(../img/head_bg.jpg) center repeat-y;
+    position: relative;
+    z-index: 99;
+    .head_main {
+        height: 100%;
+        .center {
+            height: 100%;
+        }
+        .fl {
+            height: 100%;
+            padding-top: 40px;
+            padding-right: 20px;
+            background: $color;
+            color: #fff;
+            img,.head_tit,.head_text {
+                float: left;
+            }
+            img {
+                margin-top: 15px;
+                margin-right: 15px;
+            }
+        }
+    }
+    .head_top {
+        @extend .clearfix;
+        .fr {
+            line-height: 28px;
+        }
+        .icon {
+            margin: 3px;
+            vertical-align: top;
+        }
+    }
+    .head_tit {
+        line-height: 1.2;
+        margin-top: 5px;
+        span {
+            font-size: 37px;
+        }
+        strong {
+            display: block;
+            font-size: 32px;
+        }
+    }
+    .head_text {
+        text-align: center;
+        margin-left: 15px;
+        margin-top: 25px;
+        line-height: 1.2;
+        span {
+            font-size: 20px;
+            font-family: NSimSun;
+        }
+    }
+    .nav {
+        margin-top: 15px;
+        &:hover {
+            >li .active {
+                color: #434343;
+                background: none;
+            }
+        }
+        >li {
+            float: left;
+            width: 108px;
+            height: 70px;
+            padding: 0 5px;
+            line-height: 70px;
+            text-align: center;
+            color: #434343;
+            &:hover ul {
+                display: block;
+            }
+            >a {
+                display: block;
+                &:hover, &.active, &.active:hover {
+                    color: $color;
+                    background: url(../img/nav_hover.jpg) no-repeat center bottom;
+                }
+            }
+            >ul {
+                padding: 10px 5px 8px;
+                background: $color;
+                margin: 0 -5px;
+                display: none;
+                >li {
+                    height: 40px;
+                    line-height: 40px;
+                    color: #fff;
+                    >a {
+                        display: block;
+                        &:hover {
+                            background: #d91e2f;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.banner {
+    width: 100%;
+    height: 543px;
+    margin: 13px auto 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    .content-slide {
+        position: absolute;
+        left: 50%;
+        top: 35%;
+        z-index: 99;
+        color: #fff;
+        text-align: left;
+        margin-left: 70px;
+        @extend .clearfix;
+        .fl + .fl {
+            margin-left: 10px;
+            margin-top: 50px;
+        }
+        strong {
+            font-size: 77px;
+            color: #de0f21;
+            float: right;
+            line-height: 1.14;
+            & + strong {
+                font-size: 45px;
+                clear: both;
+            }
+        }
+        span {
+            font-size: 42px;
+            color: #434343;
+        }
+        p {
+            margin: 20px 0;
+            padding: 0 20px;
+            font-size: 18px;
+            border-top: 1px dotted #a1a1a1;
+            border-bottom: 1px dotted #a1a1a1;
+            line-height: 28px;
+        }
+        a {
+            display: block;
+            margin-left: 30px;
+            width: 123px;
+            height: 41px;
+            line-height: 41px;
+            text-align: center;
+            @include hover($color, background, 5%);
+        }
+    }
+}
+.pagination {
+    position: absolute;
+    z-index: 20;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+.i_box1 {
+    height: 365px;
+    position: relative;
+    overflow: hidden;
+    .i_box1_bg {
+        width: 100%;
+        height: 303px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        background: #2d2e32;
+    }
+    .fl {
+        padding-top: 40px;
+        position: relative;
+        z-index: 2;
+        a {
+            width: 109px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            text-decoration: underline;
+            font-size: 12px;
+            color: #c21a29;
+            float: right;
+            transition: all .4s;
+            &:hover {
+                background-color: $color;
+                color: #fff;
+            }
+        }
+    }
+    .text {
+        width: 700px;
+        max-height: 150px;
+        color: #fff;
+        line-height: 1.8;
+        overflow: hidden;
+    }
+    .fr {
+        position: absolute;
+        left: 50%;
+        top: 120px;
+        width: 100%;
+        height: 245px;
+        margin-left: 130px;
+        background-color: $color;
+        z-index: 3;
+        img {
+            margin-left: 20px;
+            margin-top: -90px;
+        }
+    }
+}
+.i_tit {
+    margin-bottom: 15px;
+    width: 273px;
+    height: 43px;
+    background: url(../img/i_tit.jpg) no-repeat left bottom;
+    span {
+        &:first-child {
+            color: #fff;
+            font-size: 18px;
+            margin-right: 10px;
+        }
+        +span {
+            color: #ccc;
+        }
+    }
+}
+.i_box2 {
+    margin-top: 85px;
+    ul {
+        li {
+            float: left;
+            width: 200px;
+            padding: 1px;
+            text-align: center;
+            .i_box2_img {
+                height: 173px;
+                line-height: 173px;
+                border: 1px solid #b9b9b9;
+                margin-bottom: 15px;
+                &:hover {
+                    border-color: #c01b29;
+                    background-color: #fff7f8;
+                }
+            }
+            img {
+                vertical-align: middle;
+            }
+            a {
+                display: block;
+                font-size: 16px;
+                @include hover(#434343, color, color, #f25618);
+            }
+        }
+    }
+}
+.money1 {
+    text-decoration: line-through;
+}
+.pro_list {
+    ul {
+        li {
+            float: left;
+            padding: 15px;
+            border: 1px solid #eee;
+            &:hover {
+                border-color: #f25618;
+            }
+            dl {
+                padding: 0 3px 0 6px;
+                dt {
+                    color: #000;
+                    &:hover {
+                        color: #c21a29;
+                    }
+                }
+                dd {
+                    font-size: 12px;
+                    color: #acacac;
+                    .money1 {
+                        color: #666;
+                    }
+                    .money2 {
+                        color: #ff3c00;
+                    }
+                }
+            }
+        }
+    }
+}
+.i_box3 {
+    margin-top: 80px;
+    padding-bottom: 150px;
+    background-color: #2d2e32;
+    .menu {
+        text-align: center;
+        position: relative;
+        top: -30px;
+        ul {
+            @include inline-block;
+            &:hover .active {
+                margin-top: 30px;
+                height: 60px;
+                line-height: 60px;
+                background-color: #4c4d4f;
+                color: #ccc;
+            }
+        }
+        li {
+            float: left;
+            a {
+                display: block;
+                margin-top: 30px;
+                padding: 0 35px;
+                height: 60px;
+                line-height: 60px;
+                background-color: #4c4d4f;
+                color: #ccc;
+                transition: all .2s;
+                &:hover, &.active, &.active:hover {
+                    margin-top: 0;
+                    height: 90px;
+                    line-height: 90px;
+                    background-color: $color;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .list1 {
+        ul {
+            li {
+                border-color: #434343;
+                &:hover {
+                    border-color: #c21a29;
+                }
+            }
+        }
+    }
+}
+/****************************** media ******************************/
+@import "./components/media";
