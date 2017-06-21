@@ -24,28 +24,28 @@
     * 使用scss作为css的预处理工具 具体支持详见[http://www.sass-zh.com/docs.html](http://www.sass-zh.com/docs.html)
 
 ## 目录结构
-┌── node_modules                # node模块(开发环境)
-│
-├── package.json                # 项目配置
-│
-├── gulpfile.js                 # gulp插件配置文件
-│
-└── src                         # 项目目录
+    ┌── node_modules                # node模块(开发环境)
     │
-    ├── css                     # 样式文件
+    ├── package.json                # 项目配置
     │
-    ├── img                     # 图片资源
+    ├── gulpfile.js                 # gulp插件配置文件
     │
-    ├── js                      # 脚本代码
-    │
-    ├── source                  # css与js源代码
-    │   │
-    │   ├── css                 # css源代码
-    │   │   │
-    │   │   └── components      # css模块
-    │   │
-    │   └── js                  # js源代码
-    │
-    ├── grid.html               # 栅格布局例子
-    │
-    └── index.html              # 首页例子
+    └── src                         # 项目目录
+        │
+        ├── css                     # 样式文件
+        │
+        ├── img                     # 图片资源
+        │
+        ├── js                      # 脚本代码
+        │
+        ├── source                  # css与js源代码
+        │   │
+        │   ├── css                 # css源代码
+        │   │   │
+        │   │   └── components      # css模块
+        │   │
+        │   └── js                  # js源代码
+        │
+        ├── grid.html               # 栅格布局例子
+        │
+        └── index.html              # 首页例子
