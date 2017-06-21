@@ -4,12 +4,12 @@
 1. 安装node.js  [地址](https://nodejs.org/en/)
 2. 使用npm安装工作环境
     * 方法一：运行cmd => 进入当前文件夹 => 使用命令 npn i
-    * 方法二：双击文件夹内 安装.bat
+    * 方法二：双击文件夹内 安装.bat  
     **!注意：npm服务器在国外 国内安装插件有可能很慢 建议使用cnpm(淘宝npm镜像)进行安装** [使用方法](https://cnpmjs.org/)
     **!注意：安装完毕之后gulp只是局部安装 无法使用gulp命令 还需要手动安装全局gulp**
     安装方法：在cmd中输入 npm i -g gulp
 3. 运行程序  
-    npm安装完毕后点击 开发环境.bat 或者 生产环境.bat 启动程序
+    npm安装完毕后点击 开发环境.bat 或者 生产环境.bat 启动程序  
     **!注意：如果提示找不到'gulp-sass'模块 请使用cnpm 单独安装 npm i -D gulp-sass**
 4. 本工具现有主要功能  
     **!注意以下功能只对src/sourcen/css和src/sourcen/js目录下的文件生效**
