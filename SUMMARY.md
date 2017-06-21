@@ -4,6 +4,6 @@
 * [规范](gui-fan.md)
   * [css](gui-fan/css.md)
   * [html](gui-fan/html.md)
-  * js
+  * [js](gui-fan/js.md)
 * [意见](yi-jian.md)
 
