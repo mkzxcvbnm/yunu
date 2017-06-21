@@ -11,7 +11,7 @@
 3. 运行程序  
     npm安装完毕后点击 开发环境.bat 或者 生产环境.bat 启动程序  
     **!注意：如果提示找不到'gulp-sass'模块 请使用cnpm 单独安装 npm i -D gulp-sass**
-4. 本工具现有主要功能  
+4. ~~本工具现有主要功能~~  
     **!注意以下功能只对src/sourcen/css和src/sourcen/js目录下的文件生效**
     * 可以使用未来的css功能(css4) 具体支持详见[http://cssnext.io/](http://cssnext.io/)
     * <del>允许使用类似sass插件的部分功能(如变量，嵌套和混合) 具体支持详见[https://github.com/](https://github.com/jonathantneal/precss)</del>//由于功能不足被其他工具取代
