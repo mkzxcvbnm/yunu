@@ -56,3 +56,46 @@
 12. 列表也尽可能使用margin-top做间距 结合first-child选择器消除第一个子元素的margin-top
 13. IE css兼容性手册 [https://msdn.microsoft.com/en-us/library/hh781508%28v=vs.85%29.aspx#element_selectors](https://msdn.microsoft.com/en-us/library/hh781508%28v=vs.85%29.aspx#element_selectors)  
     >因为要兼容IE8 勿使用手册中IE8列中为No的写法 布局使用float 不要用table（层次太多性能不佳）或者flex（无法兼容）进行布局 横向间距尽可能使用margin-left 结合first-child选择器消除第一个子元素的margin-left
+
+# css命名规范
+```
+header  头部  main  页面主题  footer  尾部  flink  友情链接  copyright  版权
+
+left(l) 左 right(r) 右 top(t) 上 bottom(b) 下 center(c) 中
+
+icon_ 图标类    btn_ 按钮类
+
+index(i)首页类 new_ 新闻模型类前缀 pro_ 产品模型类前缀 pic_ 图片模型类前缀
+
+list 列表  new_list 新闻列表  pro_list  产品列表  pic_list 图片列表
+
+main_l 页面主体左 main_r 页面主体左
+
+i_box1 i_box2 (首页内容容器)
+
+active 当前选中/激活元素   
+
+banner 幻灯片 page_banner 内页幻灯片
+
+hover 悬停    selected 挑选   disabled 禁用   focus 得到焦点   blur 失去焦点   checked 勾选   success 成功   error 出错
+
+content 内容   title(tit) 标题   item 项目（条）  cell 单元   img 图片   text 文字  block 块  container 容器(最外层) row 行   col 列    box 容器盒子(内层)
+
+nav 导航   crumbs 面包屑导航  menu 菜单 
+
+search 搜索 search_bar 搜索条  search_text 搜索框   search_btn 搜索按钮    search_word 搜索词
+
+login 登录    regsiter 注册   name 用户名    password 密码   nickname 昵称   tel 电话  avatar 头像
+
+hot 热点    download 下载
+
+content 内容    title 标题    description(des) 摘要    time 时间
+
+tags 标签   scroll 滚动 
+
+sidebar 侧边栏   column 栏目  msg 提示信息  status 状态  tips 小技巧    
+
+popup 弹出层
+
+count 总数/计数   plus 加号/正   minus 减号/负
+```
