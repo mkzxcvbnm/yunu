@@ -49,6 +49,8 @@
 │
 ├── .gitignore                  # 忽略无需git控制的文件  比如 node_modules
 │
+├── book                        # 文档目录
+│
 └── src                         # 项目目录
     │
     ├── css                     # 样式文件
