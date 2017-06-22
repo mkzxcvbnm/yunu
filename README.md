@@ -2,6 +2,7 @@
 
 yunu内部使用的前段自动化工具
 [内部规范及说明文档](https://mkzxcvbnm.gitbooks.io/yunu/content/)
+[项目地址](https://github.com/mkzxcvbnm/yunu)
 
 ## 安装
 
