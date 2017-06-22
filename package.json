@@ -1,14 +1,18 @@
 {
-  "name": "gulp",
-  "version": "1.0.0",
-  "description": "",
+  "name": "yunu",
+  "version": "1.1.0",
+  "description": "Front End Preprocessing Tool",
   "main": "index.js",
   "scripts": {
     "start": "gulp --env development",
     "build": "gulp --env production"
   },
-  "keywords": [],
-  "author": "mk",
+  "keywords": ["html","css","js"],
+  "author": {
+    "name" : "mk",
+    "email" : "470668674@qq.com",
+    "url" : "https://github.com/mkzxcvbnm/yunu"
+  },
   "license": "ISC",
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
