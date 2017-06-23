@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,starFun/endFun详细介绍">
+<meta name="Description" content="SuperSlide,starFun/endFun详细介绍">
+<title>SuperSlide - starFun/endFun详细介绍</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+
+<!-- 以下为代码着色插件引用 -->
+<script type="text/javascript" src="../../syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="../../syntaxhighlighter/scripts/shBrushXml.js"></script>
+<script type="text/javascript" src="../../syntaxhighlighter/scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="../../syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<link type="text/css" rel="stylesheet" href="../../syntaxhighlighter/styles/shCoreRDark.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<style type="text/css">
+
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ color:#333;font:12px/20px Arial,"Microsoft YaHei","宋体",sans-serif; text-align:center;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+
+	/* 顶部导航条 */
+	#header{ height:32px; line-height:30px; color:#fff; text-align:left; padding:0 10px; overflow:hidden; background: #333;}
+	#header a{ color:#fff;  }
+	#header #logo{ display:inline-block; *display:inline; zoom:1; font-size:14px; margin-right:5px;  }
+	#header .nav{ float:right; }
+	#header .nav a{ padding:0 10px;  }
+	#header .nav a.imp{ color:#ff0;  }
+
+	#content{ margin:0 auto; padding:30px;  position:relative; text-align:left;  }
+	#demoContent{ width:100%; margin-top:10px;  }
+
+	.usePageDl{ width:1000px;  }
+	.usePageDl dt h2{ font:normal 22px/150% "Microsoft YaHei"; _font-weight:bold; color:#176D97;  }
+	.usePageDl dt p{ padding:5px 0 10px 33px;  }
+	.usePageDl dd{ margin-bottom:50px; padding-left:33px;  }
+	.syntaxhighlighter table td.code{ padding:10px 0 !important;  }
+	.syntaxhighlighter{ margin:0;  }
+	p.imp{ color:#c00;  }
+	.slideBoxWrap{ overflow:hidden;  }
+	.slideBoxWrap .slideBox{ float:left;  }
+	.slideBoxWrap textarea{ width:490px; height:220px; padding:5px;   float:right;    }
+
+	/* 本例子css */
+	.slideBox{ width:450px; height:230px; overflow:hidden; position:relative; border:1px solid #ddd;  }
+	.slideBox .hd{ height:15px; overflow:hidden; position:absolute; right:5px; bottom:8px; z-index:10; }
+	.slideBox .hd ul{ overflow:hidden; zoom:1; float:left;  }
+	.slideBox .hd ul li{ float:left;  margin-right:2px;  width:15px; height:15px; line-height:14px; text-align:center; background:#fff; cursor:pointer; }
+	.slideBox .hd ul li.on{ background:#f00; color:#fff; }
+	.slideBox .bd li{ position:relative;  }
+	.slideBox .bd{ height:100%; z-index:0;   }
+	.slideBox .bd .pic{ position:relative; z-index:0; }
+	.slideBox .bd .pic img{ width:450px; height:230px; display:block; }
+	.slideBox .bd .bg{ width:100%; height:30px; line-height:30px; position:absolute; bottom:-30px; left:0; z-index:1;  background:#000;  filter:alpha(opacity=60);opacity:0.6;  }
+	.slideBox .bd .tit{ width:100%; height:30px; line-height:30px; position:absolute; bottom:-30px; left:0; z-index:2; color:#fff;  }
+	.slideBox .bd .tit a{ color:#fff; margin-left:10px;   }
+
+</style>
+
+</head>
+<body>
+<!-- header S -->
+<div id="header">
+	<span class="nav">
+		<a href="../../index.html">返回首页</a>
+	</span>
+
+	<div class="title">
+			<h1 tite="SuperSlide" id="logo">SuperSlide</h1><em></em><span class="author"> -- 大话主席</span>
+	</div>
+</div>
+<!-- header E -->
+
+<!-- content S -->
+<div id="content">
+		<dl class="usePageDl">
+		 <dt>
+			<h2>1、startFun/endFun介绍</h2>
+			<p class="imp">SuperSlide能处理大部分效果，但也不是万能。当遇到一些特殊效果时或者想实现更炫的效果时，这两个函数可以帮到我们，前提是你有一定的javascript基础。</p>
+			<p>startFun：每次切换效果开始时执行函数，用于处理特殊情况或创建更多效果。用法 satrtFun:function(i,c){ }； 其中i为当前分页，c为总页数<br/>
+				endFun：每次切换效果结束时执行函数，用于处理特殊情况或创建更多效果。用法 endFun:function(i,c){ }； 其中i为当前分页，c为总页数
+			</p>
+		 </dt>
+		 <dd>
+				<p class="imp">例如：调用下面的SuperSlide，并使用startFun和endFun会看到下面效果</p>
+				<p>
+					<pre class="brush: js;">
+					jQuery("#slideBox").slide({ mainCell:".bd ul",autoPlay:true,effect:"left",delayTime:2000,interTime:8000,
+						startFun:function(i,c){
+							$("#textarea").val( $("#textarea").val()+ "第"+(i+1)+"个效果开始，同时执行startFun函数。当前分页状态："+(i+1)+"/"+c+"\r\n")
+						},
+						endFun:function(i,c){
+							$("#textarea").val( $("#textarea").val()+ "第"+(i+1)+"个效果结束，开始执行endFun函数。当前分页状态："+(i+1)+"/"+c+"\r\n")
+						}
+					});
+					</pre>
+				</p>
+
+				<div class="slideBoxWrap">
+						<div id="slideBox" class="slideBox">
+							<div class="hd">
+								<ul><li>1</li><li>2</li><li>3</li></ul>
+							</div>
+							<div class="bd">
+								<ul>
+									<li>
+										<div class="pic">
+											<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic1.jpg" /></a>
+										</div>
+										<div class="tit"><a href="http://www.SuperSlide2.com" target="_blank">SuperSlide 功能演示--标题1111</a></div>
+										<div class="bg"></div>
+									</li>
+									<li>
+										<div class="pic">
+											<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic2.jpg" /></a>
+										</div>
+										<div class="tit"><a href="http://www.SuperSlide2.com" target="_blank">SuperSlide 功能演示--标题2222</a></div>
+										<div class="bg"></div>
+									</li>
+									<li>
+										<div class="pic">
+											<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic3.jpg" /></a>
+										</div>
+										<div class="tit"><a href="http://www.SuperSlide2.com" target="_blank">SuperSlide 功能演示--标题3333</a></div>
+										<div class="bg"></div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<textarea id="textarea"></textarea>
+
+						<script type="text/javascript">
+						jQuery("#slideBox").slide({ mainCell:".bd ul",autoPlay:true,effect:"left",delayTime:2000,interTime:8000,
+							startFun:function(i,c){
+								$("#textarea").val( $("#textarea").val()+ "第"+(i+1)+"个效果开始，同时执行startFun函数。当前分页状态："+(i+1)+"/"+c+"\r\n")
+							},
+							endFun:function(i,c){
+								$("#textarea").val( $("#textarea").val()+ "第"+(i+1)+"个效果结束，开始执行endFun函数。当前分页状态："+(i+1)+"/"+c+"\r\n")
+							}
+						});
+						</script>
+
+				</div>
+
+
+
+		 </dd>
+
+
+		 <dt>
+			<h2>2、实例演示</h2>
+			<p>现在我们用endFun做一个效果：当图片切换效果结束时，文字才从下滚上来显示。
+			</p>
+		 </dt>
+		 <dd>
+				<p class="imp">代码如下：</p>
+				<p>
+					<pre class="brush: js;">
+						jQuery("#slideBox1").slide({ mainCell:".bd ul",autoPlay:true,effect:"left",
+							endFun:function(i,c){
+								jQuery("#slideBox1 .tit").css({"bottom":-30}).eq(i).animate({"bottom":0});
+								jQuery("#slideBox1 .bg").css({"bottom":-30}).eq(i).animate({"bottom":0});
+							}
+						});
+					</pre>
+				</p>
+
+				<div id="slideBox1" class="slideBox">
+					<div class="hd">
+						<ul><li>1</li><li>2</li><li>3</li></ul>
+					</div>
+					<div class="bd">
+						<ul>
+							<li>
+								<div class="pic">
+									<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic1.jpg" /></a>
+								</div>
+								<div class="tit"><a href="http://www.SuperSlide2.com" target="_blank">SuperSlide 功能演示--标题1111</a></div>
+								<div class="bg"></div>
+							</li>
+							<li>
+								<div class="pic">
+									<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic2.jpg" /></a>
+								</div>
+								<div class="tit"><a href="http://www.SuperSlide2.com" target="_blank">SuperSlide 功能演示--标题2222</a></div>
+								<div class="bg"></div>
+							</li>
+							<li>
+								<div class="pic">
+									<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic3.jpg" /></a>
+								</div>
+								<div class="tit"><a href="http://www.SuperSlide2.com" target="_blank">SuperSlide 功能演示--标题3333</a></div>
+								<div class="bg"></div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<script type="text/javascript">
+				jQuery("#slideBox1").slide({ mainCell:".bd ul",autoPlay:true,effect:"left",
+					endFun:function(i,c){
+						jQuery("#slideBox1 .tit").css({"bottom":-30}).eq(i).animate({"bottom":0});
+						jQuery("#slideBox1 .bg").css({"bottom":-30}).eq(i).animate({"bottom":0});
+					}
+				});
+				</script>
+
+		 </dd>
+
+		<dt><h2>怎么？心动吧，如果你有一定的js基础，你就能创造更多意想不到的效果！</h2></dt>
+
+</div>
+
+<script type="text/javascript">
+	setInterval(function(){ $("#textarea").val("") },8000*3*1);
+</script>
+
+<!-- content E -->
+<div id="footer">Copyright ©2011-2013 大话主席  <a href="http://www.SuperSlide2.com">www.SuperSlide2.com</a></div>
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>

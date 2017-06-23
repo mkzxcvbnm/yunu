@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery-美食天下网站导航">
+<meta name="Description" content="SuperSlide,jQuery-美食天下网站导航">
+<title>SuperSlide - 美食天下网站导航</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:50px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	body{ background:url(images/bg0.gif); }
+	#nav{ width:100%; background:url(images/navbg.gif) repeat-x;}
+	#navarea{ width:990px; height:78px; margin:0 auto;}
+	#navarea ul {clear:both;float:left;width:960px;padding:4px 18px 0 18px;}
+	#navarea li {float:left;height:37px;font-size:14px;line-height:32px;}
+	#navarea a {float:left;display:inline-block;height:37px;padding:0 30px;color:#fff;text-decoration: none;}
+	#navarea .on a:link, #navarea .on a:visited, #navarea .on a:hover, #navarea .on a:active {float:left;display:inline-block;height:41px;padding:0 0 0 32px;color:#f30; background:url(images/navOnbg.gif) no-repeat;}
+	#navarea .on a:link span, #navarea .on a:visited span, #navarea .on a:hover span, #navarea .on a:active span {display:inline-block;height:41px;padding:0 30px 0 0px;background:url(images/navOnbg.gif) no-repeat right;}
+	#navarea dl {clear: both; overflow:hidden;   padding:0; padding-top:4px; width: 990px;}
+	#navarea dt {float: left; font-size: 14px; font-weight: bold; height: 41px; line-height: 32px; }
+	#menu {clear:both; overflow:hidden;  color:#ffe9d6;width:990px;height:37px; }
+	#menu li {float:left;padding:0 1px 0 1px; font-size:12px; color:#999;line-height:30px;}
+	#menu ul { width:890px; height:37px;padding:0px; margin:0px; margin-left:100px !important; _margin-left:50px; display:inline; _display:inline;}
+	#menu li a:link,#menu li a:visited {color:#666;text-decoration: none;}
+	#menu li a:hover,#menu li a:active {color:#f30;text-decoration: none;}
+	#menu li strong {font-size:14px;font-weight:normal;}
+	#menu a {padding:0 8px;}
+	#menu a:link, #menu a:visited {color: #09f;}
+	#menu a:hover, #menu a:active {color: #f50;}
+	#menu span a:link, #menu span a:visited {color: #999;}
+	#menu span a:hover, #menu span a:active {color: #f96;}
+
+
+</style>
+
+	<div id="nav">
+			<div id="navarea">
+
+					<dl id="navs">
+							<dt><a href="http://www.superslide2.com/" target="_blank"><span>首页</span></a></dt>
+							<dt><a href="http://www.superslide2.com/" target="_blank"><span>资讯</span></a></dt>
+							<dt><a href="http://www.superslide2.com/" target="_blank"><span>健康</span></a></dt>
+							<dt><a href="http://www.superslide2.com/" target="_blank"><span>菜谱</span></a></dt>
+							<dt><a href="http://www.superslide2.com/" target="_blank"><span>食材</span></a></dt>
+							<dt><a href="http://www.superslide2.com/" target="_blank"><span>美食家</span></a></dt>
+
+					</dl>
+
+					<div id="menu">
+							<ul>
+								<li><a href="#"><span>最受欢迎的菜</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>美食厨房</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>家常菜谱</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>热菜菜谱</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>地方小吃</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>美食广场</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>原创精华</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>头条推荐</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>图解菜谱</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>原料菜谱</span></a></li>
+							</ul>
+							<ul>
+								<li><a href="#"><span>食品行业</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>厨房行业</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>餐饮资讯</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>展会</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>人物</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>专栏</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>专题</span></a></li>
+							</ul>
+							<ul>
+								<li><a href="#"><span>饮食健康</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>饮食常识</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>瘦身美容</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>母婴饮食</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>食疗食补</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>食物档案</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>营养手册</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>家庭健康</span></a></li>
+							</ul>
+							<ul>
+								<li><a href="#"><span>菜谱</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>菜谱导航</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>领鲜榜(排行)</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>所有菜谱</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>菜单</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>精选</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>美食厨房</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>热菜</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>凉菜</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>糕点</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>汤煲</span></a></li>
+							</ul>
+							<ul>
+								<li><a href="#"><span>原料菜谱(食材)</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>图解菜谱</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>肉禽类</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>水产品</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>蔬菜类</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>果品类</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>米面豆乳类</span></a></li>
+							</ul>
+							<ul>
+								<li><a href="#"><span>广场</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>说说</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>日志</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>小组</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>活动</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>随拍</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>积分</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>相册</span></a></li>
+								<li>┊</li>
+								<li><a href="#"><span>收藏</span></a></li>
+							</ul>
+					</div>
+
+			</div><!-- navarea End -->
+	</div><!-- nav End -->
+
+	<script type="text/javascript">
+	jQuery("#nav").slide({ titCell:"#navs dt", mainCell:"#menu"});
+	</script>
+
+
+	<div class="js">
+		<p><span>效果参考网址：<a target="_blank" href="http://www.meishichina.com/">http://www.meishichina.com/</a></span>js调用：</p>
+		<textarea>
+jQuery("#nav").slide({ titCell:"#navs dt", mainCell:"#menu"});
+		</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+

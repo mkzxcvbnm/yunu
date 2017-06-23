@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery-淘宝首页焦点图">
+<meta name="Description" content="SuperSlide,jQuery-淘宝首页焦点图">
+<title>SuperSlide - 淘宝首页焦点图</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:50px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.TB-focus{ width:488px; height:168px; border:1px solid #D8D8D8; position:relative;  overflow:hidden; }
+	.TB-focus .hd { position:absolute; right:9px; bottom:10px; z-index:1; padding-left:2px; }
+	.TB-focus .hd li { color:#f60; cursor:pointer; margin-left:3px; width:18px; height:18px; background:#fff; float:left; font-size:13px; line-height:18px; overflow:visible; text-align:center; opacity:.7; filter:alpha(opacity=70); border:1px solid #d8d8d8; margin-left:-1px; }
+	.TB-focus .hd li.on { background:#f60; color:#fff; font-weight:bold; opacity:1; filter:alpha(opacity=100); z-index:2; position:relative; }
+
+</style>
+
+
+	<div class="TB-focus" style="margin:0 auto">
+		<div class="hd">
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+		</div>
+		<div class="bd">
+			<ul>
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/1.png" /></a></li>
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/2.jpg" /></a></li>
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/3.jpg" /></a></li>
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/4.jpg" /></a></li>
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/5.jpg" /></a></li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript">jQuery(".TB-focus").slide({ mainCell:".bd ul",effect:"fold",autoPlay:true,delayTime:200 });</script>
+
+
+	<div class="js">
+		<p><span>效果参考网址：<a target="_blank" href="http://www.taobao.com/">http://www.taobao.com/</a></span>js调用：</p>
+		<textarea>jQuery(".TB-focus").slide({ mainCell:".bd ul",effect:"fold",autoPlay:true,delayTime:200 });</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>

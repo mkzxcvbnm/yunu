@@ -1,0 +1,338 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,综合首页,多个slide组合">
+<meta name="Description" content="SuperSlide,综合首页,多个slide组合">
+<title>SuperSlide - 综合首页,多个slide组合</title>
+ <link type="text/css" rel="stylesheet" href="css.css">
+ <script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+<div id="topBar">
+	<div class="siteWidth">
+		<span><a href="http://www.superslide2.com/demo.html">基础效果</a>|<a href="http://www.superslide2.com/otherDemo.html">扩展效果</a>|<a href="http://www.superslide2.com/downLoad.html">下载页面</a></span>
+		<ul>
+			<li><em>整个网站用到的特效只需一个SuperSlide插件，十分方便！</em>特效包括：导航、焦点图、tab切换、图片滚动、文字滚动等</li>
+			<li><em>整个网站用到的特效只需一个SuperSlide插件，十分方便！</em>特效包括：导航、焦点图、tab切换、图片滚动、文字滚动等</li>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">jQuery("#topBar").slide({ mainCell:"ul",autoPlay:true,effect:"topLoop" });</script>
+
+<!-- 头部 S -->
+<div id="header">
+	<div class="logoBar">
+		<h1><a target="_blank" href="http://www.superslide2.com/">SuperSlide</a></h1>
+	</div>
+	<!-- 导航 S -->
+	<div class="navBar">
+			<ul class="nav clearfix">
+				<li id="m1" class="m">
+					<h3><a target="_blank" href="http://www.superslide2.com/">网站首页</a></h3>
+				</li>
+
+				<li id="m2" class="m">
+					<h3><a target="_blank" href="http://www.superslide2.com/">如何使用</a></h3>
+					<ul class="sub">
+						<li><a href="#">如何使用</a></li>
+						<li><a href="#">如何使用</a></li>
+						<li><a href="#">如何使用</a></li>
+						<li><a href="#">如何使用</a></li>
+						<li><a href="#">如何使用</a></li>
+						<li><a href="#">如何使用</a></li>
+					</ul>
+				</li>
+
+				<li id="m3" class="m">
+					<h3><a target="_blank" href="http://www.superslide2.com/">查看参数</a></h3>
+					<ul class="sub">
+						<li><a href="#">查看参数</a></li>
+						<li><a href="#">查看参数</a></li>
+						<li><a href="#">查看参数</a></li>
+						<li><a href="#">查看参数</a></li>
+					</ul>
+				</li>
+
+				<li id="m4" class="m">
+					<h3><a target="_blank" href="http://www.superslide2.com/">基础效果</a></h3>
+					<ul class="sub">
+						<li><a href="#">基础效果</a></li>
+						<li><a href="#">基础效果</a></li>
+						<li><a href="#">基础效果</a></li>
+						<li><a href="#">基础效果</a></li>
+					</ul>
+				</li>
+
+				<li id="m5" class="m">
+					<h3><a target="_blank" href="http://www.superslide2.com/">扩展效果</a></h3>
+					<ul class="sub">
+						<li><a href="#">扩展效果</a></li>
+						<li><a href="#">扩展效果</a></li>
+						<li><a href="#">扩展效果</a></li>
+						<li><a href="#">扩展效果</a></li>
+					</ul>
+				</li>
+
+				<li id="m6" class="m">
+					<h3><a target="_blank" href="http://www.superslide2.com/">SuperSlide</a></h3>
+				</li>
+
+				<li id="m7" class="m">
+					<h3><a target="_blank" href="http://www.superslide2.com/">大话主席</a></h3>
+					<ul class="sub">
+						<li><a href="#">大话主席</a></li>
+						<li><a href="#">大话主席</a></li>
+						<li><a href="#">大话主席</a></li>
+						<li><a href="#">大话主席</a></li>
+						<li><a href="#">大话主席</a></li>
+						<li><a href="#">大话主席</a></li>
+						<li><a href="#">大话主席</a></li>
+					</ul>
+				</li>
+			</ul>
+	</div>
+	<script type="text/javascript"> jQuery(".nav").slide({ type:"menu",  titCell:".m", targetCell:".sub", effect:"slideDown", delayTime:300, triggerTime:100,returnDefault:true  });</script>
+	<!-- 导航 E -->
+
+</div>
+<!-- 头部 E -->
+
+<!-- banner S -->
+<div class="banner">
+	
+	<div class="bd">
+		<ul>
+			<li style="background:url(images/banner1.jpg) #CCE1F3 center 0 no-repeat;"><a target="_blank" href="http://www.superslide2.com"></a></li>
+			<li style="background:url(images/banner2.jpg) #BCE0FF center 0 no-repeat;"><a target="_blank" href="http://www.superslide2.com"></a></li>
+			<li style="background:url(images/banner3.jpg) #C4CFEB center 0 no-repeat;"><a target="_blank" href="http://www.superslide2.com"></a></li>
+			<li style="background:url(images/banner4.jpg) #C5EDFD center 0 no-repeat;"><a target="_blank" href="http://www.superslide2.com"></a></li>
+		</ul>
+	</div>
+
+	<div class="hd"><ul></ul></div>
+</div>
+
+<script type="text/javascript">jQuery(".banner").slide({ titCell:".hd ul", mainCell:".bd ul", effect:"fold",  autoPlay:true, autoPage:true, trigger:"click" });</script>
+<!-- banner E -->
+
+<!-- content S -->
+<div id="content">
+	<div class="siteWidth">
+	 
+		<!-- 主内容 S -->
+		<div class="mainContent">
+				<!-- 焦点图 S -->
+				<div class="focusBox">
+						<ul class="pic">
+								<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/focus1.jpg"/></a></li>
+								<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/focus2.jpg"/></a></li>
+								<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/focus3.jpg"/></a></li>
+								<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/focus4.jpg"/></a></li>
+						</ul>
+						<div class="txt-bg"></div>
+						<div class="txt">
+							<ul>
+								<li><a href="#">SuperSlide美女福利图Quiet</a></li>
+								<li><a href="#">SuperSlide美女福利图DoubleLi</a></li>
+								<li><a href="#">SuperSlide美女福利图爱的练习曲</a></li>
+								<li><a href="#">SuperSlide美女福利图夜莺</a></li>
+							</ul>
+						</div>
+
+						<ul class="num">
+							<li><a>1</a><span></span></li>
+							<li><a>2</a><span></span></li>
+							<li><a>3</a><span></span></li>
+							<li><a>4</a><span></span></li>
+						</ul>
+				</div>
+				<script type="text/javascript">
+					jQuery(".focusBox").slide({ titCell:".num li", mainCell:".pic",effect:"fold", autoPlay:true,trigger:"click",
+						//下面startFun代码用于控制文字上下切换
+						startFun:function(i){
+							 jQuery(".focusBox .txt li").eq(i).animate({"bottom":0}).siblings().animate({"bottom":-36});
+						}
+					});
+				</script>
+				<!-- 焦点图 E -->
+
+				<!-- Tab切换 S -->
+				<div class="slideTxtBox">
+					<div class="hd">
+						<ul>
+							<li><a href="#">基础效果</a></li>
+							<li><a href="#">扩展效果</a></li>
+							<li><a href="#">下载页面</a></li>
+						</ul>
+					</div>
+					<div class="bd">
+						<ul>
+							<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">中国打破了世界软件巨头规则</a></li>
+							<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">口语：会说中文就能说英语！</a></li>
+							<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">农场摘菜不如在线学外语好玩</a></li>
+							<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">数理化老师竟也看学习资料？</a></li>
+							<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">学英语送ipad2,45天突破听说</a></li>
+							<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">学外语，上北外！</a></li>
+							<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">那些无法理解的荒唐事</a></li>
+						</ul>
+						<ul>
+							<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">名师教作文：３妙招巧写高分</a></li>
+							<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">耶鲁小子：教你备考SAT</a></li>
+							<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">施强：高端专业语言教学</a></li>
+							<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">数理化老师竟也看学习资料？</a></li>
+							<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">【推荐】名校英语方法曝光！</a></li>
+							<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">2012高考“考点”大曝光!!</a></li>
+							<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">涨价仍爆棚假日旅游冰火两重天</a></li>
+						</ul>
+						<ul>
+							<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">澳大利亚八大名校招生说明会</a></li>
+							<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">2012世界大学排名新鲜出炉</a></li>
+							<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">新加坡留学，国际双语课程</a></li>
+							<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">高考后留学日本名校随你选</a></li>
+							<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">教育培训行业优势资源推介</a></li>
+							<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">即刻预约今年最后一场教育展</a></li>
+							<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">女友坚持警局完婚不抛弃</a></li>
+						</ul>
+					</div>
+				</div>
+				<script type="text/javascript">jQuery(".slideTxtBox").slide();</script>
+				<!-- Tab切换 E -->
+
+
+				<!-- 广告位 S -->
+				<div class="adSlide">
+					<div class="hd"><ul></ul></div>
+					<div class="bd">
+						<ul>
+							<li><a href="#"><img src="images/adPic1.jpg" /></a></li>
+							<li><a href="#"><img src="images/adPic2.jpg" /></a></li>
+						</ul>
+					</div>
+				</div>
+				<script type="text/javascript">jQuery(".adSlide").slide({ titCell:".hd ul", mainCell:".bd ul",autoPlay:true,effect:"top",autoPage:true });</script>
+				<!-- 广告位 E -->
+
+				<!-- 图片滚动 S -->
+				<div class="picScroll">
+						<ul>
+							<li><a href="#"><img src="images/pic1.jpg" /></a></li>
+							<li><a href="#"><img src="images/pic2.jpg" /></a></li>
+							<li><a href="#"><img src="images/pic3.jpg" /></a></li>
+							<li><a href="#"><img src="images/pic4.jpg" /></a></li>
+							<li><a href="#"><img src="images/pic5.jpg" /></a></li>
+							<li><a href="#"><img src="images/pic6.jpg" /></a></li>
+							<li><a href="#"><img src="images/pic7.jpg" /></a></li>
+							<li><a href="#"><img src="images/pic8.jpg" /></a></li>
+							<li><a href="#"><img src="images/pic9.jpg" /></a></li>
+						</ul>
+						<a class="prev"></a>
+						<a class="next"></a>
+				</div>
+				<script type="text/javascript">jQuery(".picScroll").slide({ mainCell:"ul",autoPlay:true,effect:"left", vis:5, scroll:2, autoPage:true, pnLoop:false });</script>
+				<!-- 图片滚动 E -->
+		</div>
+		<!-- 主内容 E -->
+
+		<!-- 侧栏 S -->
+		<div class="side">
+				<!-- 文字无缝上滚动 S -->
+				<div id="txtMarqueeTop" class="sideBox">
+					<div class="hd">
+						<h3><a href="#">通知公告</a></h3>
+					</div>
+					<div class="bd">
+						<ul> 
+							<li><span>2013-04</span><a href="#">淘宝“本地生活”合作上线</a></li>
+							<li><span>2013-01</span><a href="#">挂号网首页2.0全新改版</a></li>
+							<li><span>2012-12</span><a href="#">患友互助产品上线</a></li>
+							<li><span>2012-12</span><a href="#">360搜索合作上线</a></li> 
+							<li><span>2012-11</span><a href="#">百度搜索合作上线</a></li>
+							<li><span>2012-09</span><a href="#">支付宝合作上线</a></li> 
+							<li><span>2012-06</span><a href="#">江苏统一预约平台全面接入</a></li>
+							<li><span>2012-05</span><a href="#">95169正式升级为挂号网</a></li>	 
+						</ul>
+					</div>
+				</div>
+				<script type="text/javascript">jQuery("#txtMarqueeTop").slide({ mainCell:"ul",autoPlay:true,effect:"topMarquee",interTime:50,vis:7  });</script>
+				<!-- 文字无缝上滚动 E -->
+
+				<!-- 手风琴 S -->
+				<div id="sideMenu" class="sideBox">
+					<div class="hd">
+						<h3>保险业务</h3>
+					</div>
+					<div class="bd">
+						<ul>
+							<li><a href="#">平安人寿保单快速查询</a></li>
+							<li><a href="#">万能结算利率和投连价格公告</a></li>
+							<li><a href="#">平安理财宝投资净值公告</a></li>
+							<li><a href="#">产险承保理赔信息客户自主查询</a></li>
+						</ul>
+					</div>
+					<div class="hd">
+						<h3>银行业务</h3>
+					</div>
+					<div class="bd">
+						<ul>
+							<li><a href="#">个人网上银行登录</a></li>
+							<li><a href="#">银行账户快速查询</a></li>
+							<li><a href="#">平安理财宝投资净值公告</a></li>
+							<li><a href="#">网上申请借记卡</a></li>
+						</ul>
+					</div>
+					<div class="hd">
+						<h3>投资业务</h3>
+					</div>
+					<div class="bd">
+						<ul>
+							<li><a href="#">证券网上营业厅</a></li>
+							<li><a href="#">证券高速行情</a></li>
+							<li><a href="#">基金账户查询&交易</a></li>
+							<li><a href="#">预约购买信托产品</a></li>
+						</ul>
+					</div>
+				</div>
+				<script type="text/javascript">jQuery("#sideMenu").slide({ titCell:".hd", targetCell:".bd",effect:"slideDown",trigger:"click" });</script>
+				<!-- 手风琴 E -->
+
+		</div>
+		<!-- 侧栏 E -->
+
+		<!-- 友情链接 S -->
+		<div class="friendLink">
+			<ul>
+				<li><a href="#"><img src="images/link.png" /></a></li>
+				<li><a href="#"><img src="images/link.png" /></a></li>
+				<li><a href="#"><img src="images/link.png" /></a></li>
+				<li><a href="#"><img src="images/link.png" /></a></li>
+				<li><a href="#"><img src="images/link.png" /></a></li>
+				<li><a href="#"><img src="images/link.png" /></a></li>
+			</ul>
+		</div>
+		<script type="text/javascript">jQuery(".friendLink").slide({ mainCell:"ul",autoPlay:true,effect:"leftMarquee",interTime:50,vis:6  });</script>
+		<!-- 友情链接 E -->
+
+
+	</div><!-- siteWidth E -->
+</div>
+<!-- content E -->
+
+<!-- 尾部 S -->
+<div id="footer">
+	<div class="footerNav">首页 | 如何使用 | 查看参数 | 基础效果 | 扩展效果 | 下载页面</div>
+	<div class="copyRight">
+		Copyright ©2011-2013 大话主席 www.superslide2.com
+	</div>
+</div>
+<!-- 尾部 E -->
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>

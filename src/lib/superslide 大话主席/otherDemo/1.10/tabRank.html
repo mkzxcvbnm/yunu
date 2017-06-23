@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,Tab+排行详简切换">
+<meta name="Description" content="SuperSlide,Tab+排行详简切换">
+<title>SuperSlide - Tab+排行详简切换</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:100px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.tabRank{ width:250px; margin:10px auto;   border:1px solid #d8d8d8;  }
+	.tabRank .hd{ background-color:#e2e2e2; height:29px; line-height:28px; border-bottom:none;}
+	.tabRank .hd h3 { float:left; width:124px; overflow:hidden; text-align:center;}
+	.tabRank .hd h3 a { color:#333; font-size:14px; font-weight:bold;}
+	.tabRank .hd h3.on { background-color:#f9f9f9; height:29px;}
+	.tabRank .hd h3.on a { display:block; color:#e72410;}
+
+	.tabRank .bd {  height:424px; background-color:#f9f9f9; clear:both;}
+	.tabRank .bd ul { padding:10px 8px;}
+	.tabRank .bd .ulList  li { border-bottom:1px solid #e5e5e5; height:42px; line-height:42px; width:232px !important;}
+	.tabRank .bd .ulList li a { color:#333;}
+	.tabRank .bd .ulList li .num { font-size:14px; font-weight:bold; color:#333; background:url(images/icons.png) no-repeat -50px 0; width:24px; height:20px; display:block; float:left; line-height:17px; text-align:center; margin-top:13px; padding-right:6px;}
+	.tabRank .bd .ulList li.t .num { background-position:0 0; color:#fff;}
+	.tabRank .bd .ulList li.t {line-height:42px !important;}
+	.tabRank .bd .ulList li.on img {width:150px; height:94px; padding:4px; border:1px solid #d0d0d0; background-color:#fff;}
+	.tabRank .bd .ulList li .pubtext {color:#777;display:none; }
+	.tabRank .bd .ulList li .pubtext strong {color:#E72410;}
+	.tabRank .bd .ulList li .pubtext a {color:#E72410;}
+	.tabRank .bd .ulList li .pubpic{display:none;}
+	.tabRank .bd .ulList li .pubtitle p{display:none;}
+	.tabRank .bd .ulList li.on{height:180px;text-align:center;line-height:22px !important;}
+	.tabRank .bd .ulList li.on .pubpic{display:block;padding-top:5px;}
+	.tabRank .bd .ulList li.on .pubtext {color:#777;display:block; }
+	.tabRank .bd .ulList li.on .pubtitle p{display:block;}
+
+	.tabRank .bd .ulList2 .pic { float:left;}
+	.tabRank .bd .ulList2 .con {float:right; width:160px;} 
+	.tabRank .bd .ulList2 li { clear:both; padding-top:8px;height:58px;border-bottom:1px solid #E5E5E5;}
+	.tabRank .bd .ulList2 img {width:57px; height:47px; padding:1px; border:1px solid #d0d0d0; background-color:#fff; float:left;}
+
+</style>
+
+
+	<dl class="tabRank" id="tabRank">
+            <dt class="hd">
+               <h3 class="on"><a href="#">会员活动</a></h3><h3><a href="#">经验分享</a></h3>
+			</dt>
+            
+			<dd class="bd">
+				<ul class="ulList">
+					<li class="t on">
+							<span class="num">1</span>
+							<div class="c ">
+								<div class="pubpic"><a href="#"><img src="images/1.jpg"></a></div>
+								<div class="pubtitle"><a href="#">品桃花，赢好礼</a><p>2013/02/15—2013/03/15</p></div>
+							</div>
+					</li>
+					<li class="t">
+							<span class="num">2</span>
+							<div class="c ">
+								<div class="pubpic"><a href="#"><img src="images/2.jpg"></a></div>
+								<div class="pubtitle"><a href="#">中华儿女孝心行动---“熬胶孝敬..</a><p>2012/02/02—2012/02/28</p></div>
+							</div>
+					</li>
+					<li class="t">
+							<span class="num">3</span>
+							<div class="c ">
+								<div class="pubpic"><a href="#"><img src="images/3.jpg"></a></div>
+								<div class="pubtitle"><a href="#">中国贫血关爱行动——复方阿胶浆..</a><p>2012/09/01—2012/09/30</p></div>
+							</div>
+					</li>
+					<li>
+							<span class="num">4</span>
+							<div class="c">
+								<div class="pubpic"><a href="#"><img src="images/4.jpg"></a></div>
+								<div class="pubtitle"><a href="#">阿胶糕进厨房，健康美丽吃出来</a><p>2012/10/15—2012/12/31</p></div>
+							</div>
+					</li>
+					<li>
+							<span class="num">5</span>
+							<div class="c ">
+								<div class="pubpic"><a href="#"><img src="images/5.jpg"></a></div>
+								<div class="pubtitle"><a href="#">桃花姬阿胶糕，阿胶达人免费申领..</a><p>2011/04/01—2011/04/25</p>
+							</div>
+					</li>
+					<li class="">
+							<span class="num">6</span>
+							<div class="c ">
+								<div class="pubpic"><a href="#"><img src="images/6.jpg"></a></div>
+								<div class="pubtitle"><a href="#">秋冬滋补进行时，免费品尝东阿阿..</a><p>2012/09/16—2012/11/30</p></div>
+							</div>
+					</li>
+				</ul>
+
+				<ul class="ulList2">
+
+						<li class="t"><div class="pic"><img src="images/1.jpg"></div><div class="con"><div class="title"><a href="#" >解密杨贵妃的倾城容颜，探寻阿胶文化的源远流长！</a></div></div></li>
+						
+						<li class="n"><div class="pic"><img src="images/1.jpg"></div><div class="con"><div class="title"><a href="#" >阿胶文化之旅，探寻阿胶滋补的秘密！！</a></div></div></li>
+						
+						<li class="n"><div class="pic"><img src="images/1.jpg"></div><div class="con"><div class="title"><a href="#" >天天吃鸡蛋不利女性健康</a></div></div></li>
+						
+						<li class="n"><div class="pic"><img src="images/1.jpg"></div><div class="con"><div class="title"><a href="#" >樱桃可治疗贫血带来的妇科病</a></div></div></li>
+						
+						<li class="n"><div class="pic"><img src="images/1.jpg"></div><div class="con"><div class="title"><a href="#" >桃花姬——吃出好身体，吃出好容颜</a></div></div></li>
+						
+						<li class="n last"><div class="pic"><img src="images/1.jpg"></div><div class="con"><div class="title"><a href="#" >桃花伊面春常驻，阿胶养容润枯颜</a></div></div></li>
+					                
+                </ul>
+            </dd>
+			
+	</dl>
+
+
+	<script type="text/javascript">
+	/* 详简切换通过添加on类名和css控制 */
+	$("#tabRank li").hover(function(){ $(this).addClass("on").siblings().removeClass("on")},function(){ });
+	/* Tab切换 */
+	$("#tabRank").slide({ titCell:"dt h3", mainCell:"dd",autoPlay:false,effect:"left",delayTime:300 });
+	</script>
+
+
+	<div class="js">
+		<p><span>效果参考网址：<a target="_blank" href="http://www.edongeejiao.cn/">http://www.edongeejiao.cn/</a></span>js调用：单个SuperSlide+少量js</p>
+		<textarea>
+/* 详简切换通过添加on类名和css控制 */
+$("#tabRank li").hover(function(){ $(this).addClass("on").siblings().removeClass("on")},function(){ });
+/* Tab切换 */
+$("#tabRank").slide({ titCell:"dt h3", mainCell:"dd",autoPlay:false,effect:"left",delayTime:300 });
+		</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>

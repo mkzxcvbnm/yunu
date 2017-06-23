@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery-推搪首页焦点图">
+<meta name="Description" content="SuperSlide,jQuery-推搪首页焦点图">
+<title>SuperSlide - 推搪首页焦点图</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:100px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.foucebox {position:relative;width:715px;height:300px;overflow:hidden;}
+	.foucebox .bd { position:relative; float:left; width:600px;height:300px;overflow:hidden;}
+	.foucebox .bd img {width:600px;height:300px;}
+
+	.foucebox .hd {position:relative; width:110px; float:right; padding-right:4px; z-index:1; }
+	.foucebox .hd ul { position:relative; width:110px; overflow:hidden;   }
+	.foucebox .hd li { height:50px; padding:5px; overflow:hidden;  }
+	.foucebox .hd img {width:110px;height:50px; display:block;  }
+	.foucebox .hoverBg { position:absolute; top:0; left:-10px; width:124px; height:64px; z-index:100; background:url(images/hover.png) no-repeat;
+		_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/hover.png);
+		_background:none;
+	}
+	</style>
+
+	<div class="foucebox" style="margin:0 auto">
+
+			<div class="bd">
+				<ul>
+					<li><a href="#"><img  src="images/1.jpg"></a></li>
+					<li><a href="#"><img  src="images/2.jpg"></a></li>
+					<li><a href="#"><img  src="images/3.jpg"></a></li>
+					<li><a href="#"><img  src="images/4.jpg"></a></li>
+					<li><a href="#"><img  src="images/5.jpg"></a></li>
+				</ul>
+			</div>
+
+			<div class="hd">
+				<div  class="hoverBg" ></div>
+				<ul>
+					<li><a href="http://www.SuperSlide2.com"><img  src="images/0.1.jpg"></a></li>
+					<li><a href="http://www.SuperSlide2.com"><img  src="images/0.2.jpg"></a></li>
+					<li><a href="http://www.SuperSlide2.com"><img  src="images/0.3.jpg"></a></li>
+					<li><a href="http://www.SuperSlide2.com"><img  src="images/0.4.jpg"></a></li>
+					<li><a href="http://www.SuperSlide2.com"><img  src="images/0.5.jpg"></a></li>
+				</ul>
+			</div>
+
+	</div>
+
+	<script type="text/javascript">
+
+		jQuery(".foucebox").slide({ mainCell:".bd ul", effect:"fold", autoPlay:true, delayTime:300, triggerTime:50, startFun:function(i){
+				//下面代码控制鼠标状态滑动
+				jQuery(".foucebox .hoverBg").animate({"margin-top":60*i},150);
+			}
+		});
+
+	</script>
+
+
+	<div class="js">
+		<p><span>效果参考网址：<a target="_blank" href="http://www.duitang.com/">http://www.duitang.com/</a></span>js调用：少量js+单个SuperSlide</p>
+		<textarea>
+jQuery(".foucebox").slide({ mainCell:".bd ul", effect:"fold", autoPlay:true, delayTime:300, triggerTime:50, startFun:function(i){
+		//下面代码控制鼠标状态滑动
+		jQuery(".foucebox .hoverBg").animate({"margin-top":60*i},150);
+	}
+});
+		</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>

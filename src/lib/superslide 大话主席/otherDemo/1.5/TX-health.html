@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery腾讯健康频道切换">
+<meta name="Description" content="SuperSlide,jQuery腾讯健康频道切换">
+<title>SuperSlide - 腾讯健康频道切换</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:50px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.tabsList{overflow:hidden; zoom:1; width:570px; }
+	.tabsList li{float:left; display:inline;height:268px; background:url(images/TXtitle.png) -253px 0 no-repeat; padding: 0 10px; overflow:hidden; zoom:1; }
+	.tabsList li h4{width:42px;height:175px;margin-top:10px;cursor:pointer;float:left;text-indent:-9999em;overflow:hidden; background:url(images/TXtitle.png) no-repeat;  }
+	.tabsList li h4.lia{background-position:-8px -11px;}
+	.tabsList li h4.lib{background-position:-69px -11px;}
+	.tabsList li h4.lic{background-position:-130px -11px;}
+	.tabsList li h4.lid{background-position:-191px -11px;}
+	.tabsList li.on h4.lia{background-position:-8px -181px; }
+	.tabsList li.on h4.lib{background-position:-69px -181px; }
+	.tabsList li.on h4.lic{background-position:-130px -181px; }
+	.tabsList li.on h4.lid{background-position:-191px -181px; }
+	.tabsList li.on .tabBody{display:block;width:260px;padding:20px 10px 0 20px;display:inline; float:left;margin-left:10px;}
+	.tabsList li .tabBody{display:none; background:url(images/TXtitle.png) -249px -272px no-repeat; }
+	.tabsList li .tabBody h5{font-size:18px;font-weight:100;font-family:"微软雅黑","黑体";padding-bottom:10px;}
+	.tabsList li .tabBody .pic{float:left; display:inline; margin-right:10px;}
+	.tabsList li .tabBody .pic img{border:1px solid #cbcbcb;}
+	.tabsList li .tabBody .newsList li{height:25px;line-height:25px;background:none;font-size:14px;overflow:hidden; zoom:1;clear:both;width:230px; }
+</style>
+
+
+	<ul class="tabsList" style="margin:0 auto">
+			<li class="tit">
+				<h4 class="lia">身体事儿 </h4>
+				<div class="tabBody">
+						<h5><a href="#">英国研究新发现“酗酒基因”</a></h5>
+						<div class="topicHead">
+							<a href="#" class="pic"><img src="images/1.jpg"></a>
+							<p>研究小组发现，一些人有酗酒基因，能在饮酒时刺激大脑分泌更多快乐荷尔蒙多巴胺。<a href="#">[详细]</a></p>
+						</div>
+						<ul class="newsList">
+							<li><i></i><a href="#">麻辣火锅：引发胃出血 </a></li>
+							<li><i></i><a href="#">1天不排便 等于抽3包烟</a></li>
+							<li><i></i><a href="#">冬季中医养生：安度寒冬宜“八暖”</a></li>
+						</ul>
+				</div>
+			</li>
+			<li class="tit">
+				<h4 class="lib">心理事儿 </h4>
+				<div class="tabBody">
+					<h5><a href="#">心理揭秘：开车听快歌易闯红灯</a></h5>
+					<div class="topicHead">
+						<a href="#" class="pic"><img src="images/2.jpg"></a>
+						<p>与听慢歌或什么也不听的人相比，听快歌的人闯红灯或发生车祸的几率高出两倍。<a href="#">[详细]</a></p>
+					</div>
+					<ul class="newsList">
+						<li><i></i><a href="#">肥胖基因抗抑郁 胖子天生更快乐</a></li>
+						<li><i></i><a href="#">揭秘男人得到女人后的心理变化</a></li>
+						<li><i></i><a href="#">明星频频吸毒到底为哪般？</a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="tit">
+				<h4 class="lic">私密事儿 </h4>
+				<div class="tabBody">
+					<h5><a href="#">调查发现35岁是女人性爱顶峰</a></h5>
+					<div class="topicHead">
+						<a href="#" class="pic"><img src="images/3.jpg"></a>
+						<p>《印度时报》报道，一项新研究称，女人35岁最“性福”，即达到性爱巅峰。<a href="#">[详细]</a></p>
+					</div>
+					<ul class="newsList">
+							<li><i></i><a href="#">三阴交是女性调经保宫要穴</a></li>
+							<li><i></i><a href="#">卵巢早衰 精油按摩真能养护卵巢吗</a></li>
+							<li><i></i><a href="#">阳痿最易“扎堆”于这三类男性</a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="tit">
+				<h4 class="lid">悦养生活 </h4>
+				<div class="tabBody">
+					<h5><a href="#">上床萝卜下床姜 晚上能否吃姜</a></h5>
+					<div class="topicHead">
+						<a href="#" class="pic"><img src="images/4.jpg"></a>
+						<p>“上床萝卜下床姜，不劳医生开药方”。为什么姜和萝卜要在一天之内不同时间进食呢？<a href="#">[详细]</a></p>
+					</div>
+					<ul class="newsList">
+						<li><i></i><a href="#">生姜虽好 吃多或增肝癌风险</a></li>
+						<li><i></i><a href="#">冬季吃羊肉 禁忌搭配要避免</a></li>
+						<li><i></i><a href="#">冬季当心“寒包火”吃错药加重病情</a></li>
+					</ul>
+				</div>
+			</li>
+	</ul>
+
+	<script type="text/javascript">jQuery(".tabsList").slide({ titCell:".tit",triggerTime:0 });</script>
+
+
+	<div class="js">
+		<p><span>效果参考网址：<a target="_blank" href="http://health.qq.com/">http://health.qq.com/</a></span>js调用：</p>
+		<textarea>
+jQuery(".tabsList").slide({ titCell:".tit",triggerTime:0 });
+		</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>

@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide带更多切换">
+<meta name="Description" content="SuperSlide带更多切换">
+<title>SuperSlide - 带"更多"切换</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:100px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.hasMoreTab{ width:350px; font-family:"Microsoft YaHei"; border:1px solid #C8D1D5; }
+	.hasMoreTab .hd{ line-height:24px; height:24px; border-bottom:1px solid #C8D1D5;  background:url(images/btn_bg.gif) repeat-x; position:relative; padding-right:10px;  }
+	.hasMoreTab .hd .more{ float:right; }
+	.hasMoreTab .hd ul{ z-index:5; position:absolute; height:26px;  overflow:hidden; zoom:1; }
+	.hasMoreTab .hd li{ float:left;  padding:0 10px; cursor:pointer; margin-left:-1px;  }
+	.hasMoreTab .hd li.on{ font-weight:bold; height:25px; line-height:25px; background:#fff; border:1px solid #C8D1D5; border-top:0;  border-bottom:1px solid #fff;  font-weight:bold; color:#c00;  }
+	.hasMoreTab .bd{  padding:10px; clear:both; position:relative;  }
+	.hasMoreTab .bd h2{ font-size:14px; }
+	.hasMoreTab .bd p{ color:#999;  }
+	.hasMoreTab .bd p a{ color:#c00;  }
+	.hasMoreTab .bd ul a{ color:#3E78B3;  }
+
+</style>
+
+
+	<div class="hasMoreTab" style="margin:0 auto">
+		<div class="hd">
+			<span class="more">
+				<a href="http://www.SuperSlide2.com" target="_blank">更多1&gt;</a>
+				<a href="http://www.SuperSlide2.com" target="_blank">更多2&gt;</a>
+				<a href="http://www.SuperSlide2.com" target="_blank">更多3&gt;</a>
+			</span>
+			<ul>
+				<li>公司公告</li>
+				<li>媒体关注</li>
+				<li>产品动态</li>
+			</ul>
+		</div>
+		<div class="bd">
+
+			<div class="conWrap">
+
+						<div class="con">
+							<h2>2012中秋、国庆节放假通知</h2>
+							<p>中秋、国庆双节临近，新网互联全体员工在此预祝各位亲爱的客户与<a href="#">[详细]</a></p>
+							<ul>
+								<li><a href="http://www.SuperSlide2.com" target="_blank">国内中英文域名注册系统升级维护通知</a></li>
+								<li><a href="http://www.SuperSlide2.com" target="_blank">有关2012年发票结余的通知</a></li>
+								<li><a href="http://www.SuperSlide2.com" target="_blank">中国域名拆分暨“英文/数字.中国”域名</a></li>
+							</ul>
+						</div>
+						<div class="con">
+							<h2>“英文/数字.中国”域名优先升级上线</h2>
+							<p>接中国互联网络信息中心（CNNIC）通知，自2012年10月29日起，CNN<a href="#">[详细]</a></p>
+							<ul>
+								<li><a href="http://www.SuperSlide2.com" target="_blank">中国旅游客户端引领未来旅游行业信息化</a></li>
+								<li><a href="http://www.SuperSlide2.com" target="_blank">云邮四种终端访问方式 突破传统收发邮件</a></li>
+								<li><a href="http://www.SuperSlide2.com" target="_blank">云邮防垃圾反病毒网关 极致保护企业邮件</a></li>
+							</ul>
+						</div>
+						<div class="con">
+							<h2>CNNIC关于“英文/数字.中国”域名优先</h2>
+							<p>接中国互联网络信息中心（CNNIC）通知，自2012年10月29日起，CNN<a href="#">[详细]</a></p>
+							<ul>
+								<li><a href="http://www.SuperSlide2.com" target="_blank">“.CN”“.中国”域名今起向自然人开放</a></li>
+								<li><a href="http://www.SuperSlide2.com" target="_blank">邮箱升级：[云邮]第二代企业邮箱 重装上</a></li>
+								<li><a href="http://www.SuperSlide2.com" target="_blank">关于尽快完成域名注册信息核对的通知</a></li>
+							</ul>
+						</div>
+
+			</div>
+
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+	jQuery(".hasMoreTab").slide({ mainCell:".conWrap", targetCell:".more a", effect:"fold"});
+	</script>
+
+
+	<div class="js">
+		<p><span>效果参考网址：</span>js调用：单个SuperSlide</p>
+		<textarea>
+jQuery(".hasMoreTab").slide({ mainCell:".conWrap", targetCell:".more a", effect:"fold"});
+		</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>

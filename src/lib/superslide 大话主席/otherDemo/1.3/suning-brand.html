@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery苏宁易购首页品牌切换">
+<meta name="Description" content="SuperSlide,jQuery苏宁易购首页品牌切换">
+<title>SuperSlide - 苏宁易购首页品牌切换</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:50px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.snBrand { position: relative; width:290px;  height: 268px; border: 1px solid #ddd; background: #f1f1f1; overflow: hidden; }
+	.snBrand h2 { position: relative; height: 34px; line-height: 32px; border-bottom: 1px solid #737878; text-indent: 16px; font-size: 14px; color: #000; font-family: "Microsoft YaHei"; }
+	.snBrand h2 a { position: absolute; right: 10px; top: 0; font-size: 12px; color: #666; font-weight: normal; font-family: "SimSun"; }
+	.snBrand h2 a:hover { color: #f60; }
+	.snBrand ol { float: left; width: 99px; height: 232px; margin-top: -1px; }
+	.snBrand ol li { height: 30px; padding: 4px 0; line-height: 30px; border-top: 1px solid #ddd; border-right: 1px solid #ddd; text-align: center; overflow: hidden; }
+	.snBrand ol li.on { background: #fff; border-right: #fff; }
+	.snBrand ul { float:left;  top: 35px; width: 179px; height: 233px; padding: 0 5px; background: #fff; overflow: hidden; }
+	.snBrand ul li { width: 160px; height: 213px; margin: 0 auto; padding: 10px 0; text-align: center; }
+	.snBrand ul li p { width: 165px; height: 22px; line-height: 20px; white-space: pre; overflow: hidden; }
+	.snBrand ul li a { color: #333; }
+	.snBrand ul li a:hover { color: #f60; }
+</style>
+
+
+	<div class="snBrand" style="margin:0 auto">
+			<h2>品牌旗舰店 <a href="http://www.SuperSlide2.com" target="_blank">更多品牌 &gt;</a></h2>
+			<ol>
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/1.1.png" /></a></li>
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/1.2.png" /></a></li>
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/1.3.png" /></a></li>
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/1.4.png" /></a></li>
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/1.5.png" /></a></li>
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/1.6.png" /></a></li>
+			</ol>
+			<ul>
+					<li>
+						<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/2.1.jpg" /></a>
+						<p><a href="http://www.SuperSlide2.com" target="_blank">VIDENGPOLO威登保罗商务休闲斜挎包39501深棕色简约实用，上班一族的最佳选择！</a></p>
+						<em class="snPrice">¥78.00</em>
+					</li>
+					<li>
+						<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/2.2.jpg" /></a>
+						<p><a href="http://www.SuperSlide2.com" target="_blank">珂兰钻石世纪星耀18K金0.3克拉钻石女戒本商品不支持门店自提。本商品不支持货到付款。</a></p>
+						<em class="snPrice">¥8999.00</em>
+					</li>
+
+					<li>
+						<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/2.3.jpg" /></a>
+						<p><a href="http://www.SuperSlide2.com" target="_blank">飞利浦(Philips)强极光H7汽车灯泡购此系列赠飞利浦99元美甲套装。亮度更高，易安装，耐用，防震防紫外线。</a></p>
+						<em class="snPrice">¥189.00</em>
+					</li>
+
+					<li>
+						<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/2.4.jpg" /></a>
+						<p><a href="http://www.SuperSlide2.com" target="_blank">北极绒羊毛竹炭活力暖绒黄金甲中国红(165)B041004121数量有限，欲购从速！</a></p>
+						<em class="snPrice">¥99.00</em>
+					</li>
+
+					<li>
+						<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/2.5.jpg" /></a>
+						<p><a href="http://www.SuperSlide2.com" target="_blank">蓝橙迷彩睡袋PV7548C迷彩色保暖、耐脏、便于携带。</a></p>
+						<em class="snPrice">¥199.00</em>
+					</li>
+
+					<li>
+						<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/2.6.jpg" /></a>
+						<p><a href="http://www.SuperSlide2.com" target="_blank">D&amp;GDORIANDW0489百货全场满满200减40，满300减80，最高直减125的活动。满100减10，满200减20，以此类推，上不封顶，最高减9900。活动不重复参加，取最大优惠值。经典男士手表。乐购仕！</a></p>
+						<em class="snPrice">¥2412.00</em>
+					</li>
+			</ul>
+	</div>
+
+	<script type="text/javascript">jQuery(".snBrand").slide({ titCell:"ol li",mainCell:"ul",delayTime:0,triggerTime:0 });</script>
+
+
+	<div class="js">
+		<p><span>效果参考网址：<a target="_blank" href="http://www.suning.com">http://www.suning.com</a></span>js调用：</p>
+		<textarea>jQuery(".snBrand").slide({ titCell:"ol li",mainCell:"ul",delayTime:0,triggerTime:0 });</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>

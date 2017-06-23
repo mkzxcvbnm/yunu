@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery-竖向导航（商城导航）">
+<meta name="Description" content="SuperSlide,jQuery-竖向导航（商城导航）">
+<title>SuperSlide - 竖向导航（商城导航）</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1; text-decoration:underline;   }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:50px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.banner{ padding-left:5px; border:5px solid #000; border-left:0; border-right:0; background:#000;  }
+	#nav{ position:relative; z-index:1; width:250px;   background:#F1F1F1;    }
+	#nav .mainCate{ position:relative; padding:10px 20px; zoom:1;   }
+	#nav .evenLeval{ background:#fff;  }
+	#nav h3{ height: 28px; line-height: 28px; font-size: 16px; overflow:hidden;  }
+	#nav h3 span{ width: 18px; height: 15px; line-height:32px; font-weight: 200; font-size: 12px; float:right;  }
+	#nav p{ height:20px; line-height:20px;   }
+	#nav p a{ margin-right:10px; color:#666;   }
+
+	#nav .subCate{ display:none;/*默认隐藏*/  background:url(images/nav_div_bg.jpg) 0 0 repeat-y #fff; position:absolute; left:250px; top:0; width:750px;  padding:0 0 20px 20px; color:#333; }
+	#nav .subCate h4{ height:26px; line-height:26px; margin:0 0 10px 0;   border-bottom:1px solid #ccc; font-size:16px; color:#333;   }
+	#nav .subCate ul{ width:230px; ;float:left;  overflow:hidden; padding-top:20px;  }
+	#nav .subCate li{ width:230px; float:left; display:inline;   }
+	#nav .subCate li a{ display:block; float:left; padding:0 5px; line-height:25px; color:#666; word-break:keep-all; white-space:nowrap;  }
+	#nav .subCate #sub-ul-1{ width:100%;;  }
+
+	#nav .on{ background:#88766E; color:#fff;  }
+	#nav .on h3 a,#nav .on p a{ color:#fff;  }
+	#nav .on .subCate{ display:block !important; /* !important 强制显示，否则会闪烁*/ }
+
+	#mainCate-4 .subCate{ top:-100px }
+	#mainCate-5 .subCate{ top:-164px; }
+	#mainCate-6 .subCate{ top:auto; bottom:0; }
+</style>
+
+ <div class="banner">
+	 
+	
+	<ul id="nav">
+
+		   <li id="mainCate-1" class="mainCate">
+			 <h3><span>&gt;</span><a href="#">白酒</a></h3>
+			 <p><a href="#">茅台</a><a href="#">五粮液</a><a href="#">国窖1573</a></p>
+			 <p><a href="#">酱香型</a><a href="#">浓香型</a><a href="#">贵州</a><a href="#">四川</a></p>
+			 <div class="subCate">
+					<ul id="sub-ul-1">
+						<h4>品牌</h4>
+						<li>
+								<span><a href="#">茅台</a><a href="#">五粮液</a><a href="#">国窖1573</a><a href="#">郎酒</a><a href="#">汾酒</a></span>
+								<span><a href="#" class="sub_width">剑南春</a><a href="#">泸州老窖</a><a href="#">水井坊</a><a href="#">洋河</a><a href="#" class="sub_width">金六福</a></span><span><a href="#">牛栏山</a><a href="#">丰谷</a><a href="#">杜康</a><a href="#">景芝</a><a href="#" class="sub_width1">河套</a><a href="#" class="sub_width">红楼梦</a></span><span><a href="#" class="sub_width1">宝丰</a><a href="#" class="sub_width">酒鬼</a><a href="#">章贡王</a><a href="#">赖世</a><a href="#">两河口</a></span><span><a href="#" class="sub_width">天佑德</a><a href="#" class="sub_width1">羽丰</a><a href="#" class="sub_width1">莲泉</a><a href="#" class="sub_width">丹江口</a><a href="#">完达山</a></span><span><a href="#">黔台</a><a href="#" class="sub_width1">朴卡</a><a href="#" class="sub_width_long">二零二会议室</a></span>
+						</li>
+
+						<li>
+								<span><a href="#">古贝春</a><a href="#">宋河</a><a href="#">泰山</a><a href="#">青花瓷</a><a href="#">董酒</a></span><span><a href="#" class="sub_width">唐王宴</a><a href="#">红星</a><a href="#">皖酒</a><a href="#">古井</a><a href="#">西凤</a><a href="#" class="sub_width">伊力特</a></span><span><a href="#">天下粮仓</a><a href="#">衡水老白干</a><a href="#" class="sub_width1">武陵</a><a href="#" class="sub_width1">京都</a></span><span><a href="#">刘伶醉</a><a href="#">爱奋</a><a href="#" class="sub_width1">御匾</a><a href="#">皇家井</a><a href="#">酉水河</a></span><span><a href="#">泥坑</a><a href="#" class="sub_width1">津酒</a><a href="#">龙行天下</a><a href="#">贵雅</a><a href="#">太白酒</a></span><span><a href="#" class="sub_width">渔樵仙</a><a href="#" class="sub_width_long">谷养康纯粮原浆</a></span>
+						</li>
+
+						<li>
+								<span><a href="#">小糊涂仙</a><a href="#">醉卿</a><a href="#">诗仙太白</a><a href="#">沱牌</a><a href="#" class="sub_width1">四特</a></span><span><a href="#">汾阳王	</a><a href="#">白云边</a><a href="#">珍酒</a><a href="#" class="sub_width">扳倒井</a><a href="#">金门高粱</a></span><span><a href="#">永不分梨</a><a href="#">国台</a><a href="#">孔府家</a><a href="#">舍得</a><a href="#">今世缘</a></span><span><a href="#">双沟</a><a href="#">黄鹤楼</a><a href="#" class="sub_width">老银川</a><a href="#">壹湖</a><a href="#">泰尚</a></span><span><a href="#">老泥窖</a><a href="#" class="sub_width">黄梅戏</a><a href="#">千家福</a><a href="#">大展宏图</a><a href="#">栈桥</a></span><span><a href="#" class="sub_width">藏羚羊</a><a href="#">酱鄉壹號</a><a href="#">台湾马祖</a><a href="#" class="sub_width1">更多&gt;&gt;</a></span>
+						</li>
+					</ul>
+
+					<ul id="sub-ul-2">
+						<h4>香型</h4>
+						<li>
+								<span><a href="#">酱香型</a><a href="#">浓香型</a><a href="#">清香型</a><a href="#">馥郁香型</a></span><span><a href="#" class="sub_width">兼香型</a><a href="#">特香型</a><a href="#">芝麻香型</a><a href="#">豉香型</a></span><span><a href="#">董香型</a><a href="#">凤香型</a><a href="#">老白干香型</a><a href="#">復合香</a></span><span><a href="#" class="sub_width">荞香型</a><a href="#">青稞清香型</a><a href="#">米香型</a><a href="#">其他</a></span>
+						</li>
+					</ul>
+
+					<ul id="sub-ul-3">
+						<h4>产地</h4>
+						<li>
+								<span><a href="#">贵州</a><a href="#">四川</a><a href="#">山西</a><a href="#">北京</a><a href="#">江苏</a><a href="#">安徽</a></span><span><a href="#" class="sub_width1">湖北</a><a href="#">江西</a><a href="#">山东</a><a href="#">河南</a><a href="#">河北</a><a href="#" class="sub_width1">湖南</a></span><span><a href="#">陕西</a><a href="#">新疆</a><a href="#">内蒙古</a><a href="#">台湾</a><a href="#" class="sub_width1">吉林</a></span>
+						</li>
+					</ul>
+					<ul id="sub-ul-4">
+						<h4>价位</h4>
+						<li>
+								<span><a href="#">1 - 99元</a><a href="#">100 - 299元</a><a href="#">300 - 599元</a></span><span><a href="#">600 - 999元</a><a href="#">1000 - 1999元</a></span><span><a href="#" class="sub_width_long">2000 元以上</a></span>
+						</li>
+					</ul>
+			 </div>
+
+		   </li>
+			
+		   <li id="mainCate-2" class="mainCate evenLeval">
+				<h3><span>&gt;</span><a href="#">葡萄酒</a></h3>
+				<p><a href="#">法国</a><a href="#">德国</a><a href="#">意大利</a><a href="#">西班牙</a></p>
+				<p><a href="#">赤霞珠</a><a href="#">梅鹿辄</a><a href="#">西拉</a><a href="#">霞多丽</a></p>
+				<div class="subCate">
+						<div style="height:300px;">
+							葡萄酒
+						</div>
+				</div>
+		   </li>
+			
+		  <li id="mainCate-3" class="mainCate">
+				<h3><span>&gt;</span><a href="#">洋酒</a></h3>
+				 <p><a href="#">白兰地</a><a href="#">威士忌</a><a href="#">伏特加</a><a href="#">金酒</a></p>
+				 <p><a href="#">人头马</a><a href="#">芝华士</a><a href="#">马爹利</a><a href="#">深蓝</a></p>
+				<div class="subCate">
+						<div style="height:300px;">
+							洋酒
+						</div>
+				</div>
+		   </li>
+			
+		   <li id="mainCate-4" class="mainCate evenLeval">
+				<h3><span>&gt;</span><a href="#">啤酒</a></h3>
+				 <p><a href="#">弗伦斯堡</a><a href="#">哈尔博</a><a href="#">喜力</a><a href="#">海特</a></p>
+				 <p><a href="#">青岛啤酒</a><a href="#">百威</a><a href="#">雪花</a><a href="#">德国</a></p>
+				<div class="subCate">
+						<div style="height:300px;">
+							啤酒
+						</div>
+				</div>
+		   </li>
+			
+		   <li id="mainCate-5" class="mainCate">
+				<h3><span>&gt;</span><a href="#">保健酒/</a><a href="#">黄酒</a></h3>
+				 <p><a href="#">青梅</a><a href="#">竹叶青</a><a href="#">劲牌</a><a href="#">椰岛</a></p>
+				 <p><a href="#">宁夏红</a><a href="#">唐宋</a><a href="#">即墨</a><a href="#">会稽山</a></p>
+				<div class="subCate">
+						<div style="height:300px;">
+							保健酒
+						</div>
+				</div>   
+		   </li>
+
+		  <li id="mainCate-6" class="mainCate evenLeval">
+				<h3><span>&gt;</span><a href="#">酒具</a></h3>
+				<p><a href="#">酒柜</a><a href="#">酒器</a><a href="#">越海酒柜</a><a href="#">新朝</a></p>
+				<div class="subCate">
+						<div style="height:300px;">
+							酒具
+						</div>
+				</div>   
+			</li> 
+
+	</ul>
+
+ </div>
+
+
+
+	<script type="text/javascript">
+		jQuery("#nav").slide({ 
+				type:"menu", //效果类型
+				titCell:".mainCate", // 鼠标触发对象
+				targetCell:".subCate", // 效果对象，必须被titCell包含
+				delayTime:0, // 效果时间
+				triggerTime:0, //鼠标延迟触发时间
+				defaultPlay:false,//默认执行
+				returnDefault:true//返回默认
+			});
+	</script> 
+
+
+	<div class="js">
+		<p><span>效果参考网址：<a target="_blank" href="http://www.jiuxian.com/">http://www.jiuxian.com/</a></span>js调用：</p>
+		<textarea>
+jQuery("#nav").slide({  type:"menu", titCell:".mainCate", targetCell:".subCate", delayTime:0, triggerTime:0, defaultPlay:false, returnDefault:true });
+		</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+

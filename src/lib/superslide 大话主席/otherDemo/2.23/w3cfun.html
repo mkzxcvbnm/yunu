@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,w3cfun首页焦点图">
+<meta name="Description" content="SuperSlide,w3cfun首页焦点图">
+<title>w3cfun首页焦点图 - SuperSlide</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体; width:100%;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	#footer{ text-align:center; padding-top:20px;  }
+
+	/* 本例子css */
+	.w3cFocus{ width:100%;  position:relative;  height:250px; padding:10px 0; background:#292929;    }
+	.w3cFocus .prev,.w3cFocus .next{ position:absolute;  display:block;  left:10px; top:97px; width:46px; height:62px; background:url(images/focusAdvBg.png) no-repeat; filter:alpha(opacity=80);opacity:0.8;  }
+	.w3cFocus .next{ left:auto; right:10px; background-position:-46px 0; }
+	.w3cFocus .prev:hover,.w3cFocus .next:hover{ filter:alpha(opacity=100) !important;opacity:1 !important;  }
+	.w3cFocusIn{ width:960px; height:250px; position:relative;  margin:0 auto;  overflow:hidden;  }
+	.w3cFocusIn .bd li{ vertical-align:middle; }
+	.w3cFocusIn .bd li img{ width:960px; height:250px; display:block;  }
+	.w3cFocusIn .hd{ position: absolute; right:4px; bottom:6px;  }
+	.w3cFocusIn .hd ul{ vertical-align:middle; display:inline-block; *display:inline; overflow:hidden; zoom:1; }
+	.w3cFocusIn .hd ul li{  position:relative; float:left; display:inline; padding-top:4px;  margin-right:6px; filter:alpha(opacity=80); opacity:0.8;  cursor:pointer;  }
+	.w3cFocusIn .hd ul li img{ width:76px; height:46px; border:2px solid #fff; display:block;  }
+	.w3cFocusIn .hd ul li.on{ filter:alpha(opacity=100);opacity:1; background:url(images/focusArrow.png) center 0 no-repeat; }
+	.w3cFocusIn .hd ul li.on img{ border:2px solid #3499EA; border-bottom-width:4px;   }
+
+</style>
+
+<div class="w3cFocus">
+
+		<div class="w3cFocusIn">
+					<div class="bd">
+						<ul>
+							<li><a target="_blank" href="http://www.superslide2.com"><img src="images/pic1.png" /></a></li>
+							<li><a target="_blank" href="http://www.superslide2.com"><img src="images/pic2.jpg" /></a></li>
+							<li><a target="_blank" href="http://www.superslide2.com"><img src="images/pic3.jpg" /></a></li>
+							<li><a target="_blank" href="http://www.superslide2.com"><img src="images/pic4.jpg" /></a></li>
+						</ul>
+					</div>
+
+					<div class="hd">
+						<ul>
+							<li><img src="images/pic1_s.png" /></li>
+							<li><img src="images/pic2_s.png" /></li>
+							<li><img src="images/pic3_s.png" /></li>
+							<li><img src="images/pic4_s.png" /></li>
+						</ul>
+					</div>
+		</div>
+		<a class="prev" href="javascript:void(0)"></a>
+		<a class="next" href="javascript:void(0)"></a>
+
+</div>
+
+<script type="text/javascript">
+
+	//焦点图功能，用到SuperSlide插件
+	jQuery(".w3cFocus").slide({ mainCell:".bd ul", effect:"fold", delayTime:300, autoPlay:true });
+
+	//按钮位移函数
+	function moveBtn(){
+				var prev=jQuery(".w3cFocus .prev");
+				var next=jQuery(".w3cFocus .next");
+
+				var body_w = document.body.clientWidth;
+				var side_w = (body_w - 960) / 2 -50;
+
+				if(body_w < 1080)
+				{
+					prev.animate({"left":30, "opacity":0.5});
+					next.animate({"right":30, "opacity":0.5});
+				}
+				else
+				{
+					prev.animate({"left":side_w, "opacity":0.5});
+					next.animate({"right":side_w, "opacity":0.5});
+				}
+	}
+	moveBtn();
+
+	//拉伸浏览器时触发，为了适应不同浏览设备
+	jQuery(window).resize(function(){moveBtn();});
+
+</script>
+
+<div id="footer">Copyright ©2011-2013 大话主席 <a target="_blank" href="http://www.superslide2.com">www.superslide2.com</a></div>
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>

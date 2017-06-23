@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery-网易游戏频道焦点图">
+<meta name="Description" content="SuperSlide,jQuery-网易游戏频道焦点图">
+<title>SuperSlide - 网易游戏频道焦点图</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:100px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.game163{ position: relative; border: 1px solid #dcdddd; padding: 4px; overflow: hidden; width: 300px; }
+	.game163 .bigImg{ height: 258px; position: relative;}
+	.game163 .bigImg li img{ vertical-align:middle; width:300px; height:225px;   }
+	.game163 .bigImg  h4{ font-size: 14px; font-weight: bold; line-height: 33px; height: 33px; padding-right: 30px; overflow: hidden; text-align: left; }
+
+	.game163 .smallScroll{ height: 47px; margin-bottom: 6px;}
+	.game163 .sPrev,.game163 .sNext{ float: left; display: block; width: 14px; height: 47px; text-indent: -9999px; background: url(images/sprites1008.png) no-repeat 0 -3046px; }
+	.game163 .sNext{ background-position: 0 -2698px;}
+	.game163 .sPrev:hover{ background-position: 0 -3133px;}
+	.game163 .sNext:hover{ background-position: 0 -2785px;}
+
+	.game163 .smallImg{ float:left;  margin: 0 6px; display:inline; width: 260px; overflow: hidden;}
+	.game163 .smallImg ul{ height:54px;  width: 9999px; overflow: hidden; }
+	.game163 .smallImg li{ float: left; padding: 0 4px 0 0; width:62px; cursor:pointer;  display: inline;  }
+	.game163 .smallImg img{ border: 1px solid #dcdddd; width:60px; height:45px;  }
+	.game163 .smallImg .on img{ border-color: #1e50a2;}
+
+	.game163 .pageState{ position: absolute; top: 235px; right: 5px; font-family: "Times New Roman", serif; letter-spacing: 1px;}
+	.game163 .pageState span{ color: #f00; font-size: 16px;}
+
+</style>
+
+<div class="game163" style="margin:0 auto">
+	 <ul class="bigImg">
+		<li>
+			<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/1.jpg" /></a>
+			<h4><a href="http://www.SuperSlide2.com" target="_blank">美女玩家猎魔人 Cosplay</a></h4>
+		</li>
+		<li>
+			<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/2.jpg" /></a>
+			<h4><a href="#">《第2次机战OG》魔装机神系机体情报</a></h4></li>
+		<li>
+			<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/3.jpg" /></a>
+			<h4><a href="#">Dreamhack冬季赛：Hero夺冠 香槟狂欢</a></h4>
+		</li>
+		<li>
+			<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/4.jpg" /></a>
+			<h4><a href="#">妹子战丧尸！Bioware王牌画师插画赏</a></h4>
+		</li>
+		<li>
+			<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/5.jpg" /></a>
+			<h4><a href="#">《刺客信条3》简体中文版已送审</a></h4>
+		</li>
+		<li>
+			<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/6.jpg" /></a>
+			<h4><a href="#">《上古世纪》 中文版截图独家曝光</a></h4>
+		</li>
+		<li>
+			<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/7.jpg" /></a>
+			<h4><a href="#">本周精选大湿级Cos欣赏 佐助亲吻小樱</a></h4>
+		</li>
+		<li>
+			<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/8.jpg" /></a>
+			<h4><a href="#">《斗仙》11月29日封测 试玩截图首曝</a></h4>
+		</li>
+	</ul>
+
+	<div class="smallScroll">
+		<a class="sPrev" href="javascript:void(0)">←</a>
+		<div class="smallImg">
+				 <ul>
+					<li><a><img src="images/1.jpg" /></a></li>
+					<li><a><img src="images/2.jpg" /></a></li>
+					<li><a><img src="images/3.jpg" /></a></li>
+					<li><a><img src="images/4.jpg" /></a></li>
+					<li><a><img src="images/5.jpg" /></a></li>
+					<li><a><img src="images/6.jpg" /></a></li>
+					<li><a><img src="images/7.jpg" /></a></li>
+					<li><a><img src="images/8.jpg" /></a></li>
+				</ul>
+		</div>
+		<a class="sNext" href="javascript:void(0)">→</a>
+	</div>
+
+	<div class="pageState"></div>
+
+</div>
+
+
+	<script type="text/javascript">
+		//大图切换
+		jQuery(".game163").slide({ titCell:".smallImg li", mainCell:".bigImg", effect:"fold", autoPlay:true,delayTime:200,
+			startFun:function(i,p){
+				//控制小图自动翻页
+				if(i==0){ jQuery(".game163 .sPrev").click() } else if( i%4==0 ){ jQuery(".game163 .sNext").click()}
+			}
+		});
+
+		//小图左滚动切换
+		jQuery(".game163 .smallScroll").slide({ mainCell:"ul",delayTime:100,vis:4,scroll:4,effect:"left",autoPage:true,prevCell:".sPrev",nextCell:".sNext",pnLoop:false });
+	</script>
+
+
+	<div class="js">
+		<p><span>效果参考网址：<a target="_blank" href="http://game.163.com/">http://game.163.com/</a></span>js调用：(双重SuperSlide)</p>
+		<textarea>
+//大图切换
+jQuery(".game163").slide({ titCell:".smallImg li", mainCell:".bigImg", effect:"fold", autoPlay:true,delayTime:200});
+//小图左滚动切换
+jQuery(".game163 .smallScroll").slide({ mainCell:"ul",delayTime:100,vis:4,effect:"left",autoPage:true,prevCell:".sPrev",nextCell:".sNext" });
+		</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>

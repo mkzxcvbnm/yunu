@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery-多图滚动加载">
+<meta name="Description" content="SuperSlide,jQuery-多图滚动加载">
+<title>SuperSlide - 多图滚动加载</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#FF8400;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:50px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.picScroll{ margin:10px auto;  position:relative;  border:1px solid #eee; width:732px;  padding:10px 0 10px 30px; background:#fff; overflow:hidden;     }
+	.picScroll .prev,
+	.picScroll .next{ display:block; position:absolute; top:86px; left:5px; width:23px; height:23px; background:url(images/btns.png) no-repeat;   }
+	.picScroll .next{ left:auto; right:5px; background-position:-25px 0; }
+	.picScroll .prev:hover{ background-position:0 -30px; }
+	.picScroll .next:hover{ background-position:-25px -30px; }
+	.picScroll ul{ overflow:hidden; zoom:1; }
+	.picScroll ul li{ width:120px; float:left; overflow:hidden; padding:0 10px;     }
+	.picScroll ul li img{ width:120px; height:170px; display:block; background:url(images/loading.gif) center center no-repeat; }
+
+
+</style>
+
+	<!-- 本例子代码 开始 ------------------------------------------->
+	<div class="picScroll">
+		
+		<ul>
+			<li><a  target="_blank" href="http://www.superslide2.com/"><img _src="images/1.jpg" src="images/blank.png" /></a></li>
+			<li><a  target="_blank" href="http://www.superslide2.com/"><img _src="images/2.jpg" src="images/blank.png" /></a></li>
+			<li><a  target="_blank" href="http://www.superslide2.com/"><img _src="images/3.jpg" src="images/blank.png" /></a></li>
+			<li><a  target="_blank" href="http://www.superslide2.com/"><img _src="images/4.jpg" src="images/blank.png" /></a></li>
+			<li><a  target="_blank" href="http://www.superslide2.com/"><img _src="images/5.jpg" src="images/blank.png" /></a></li>
+			<li><a  target="_blank" href="http://www.superslide2.com/"><img _src="images/6.jpg" src="images/blank.png" /></a></li>
+			<li><a  target="_blank" href="http://www.superslide2.com/"><img _src="images/7.jpg" src="images/blank.png" /></a></li>
+			<li><a  target="_blank" href="http://www.superslide2.com/"><img _src="images/8.jpg" src="images/blank.png" /></a></li>
+			<li><a  target="_blank" href="http://www.superslide2.com/"><img _src="images/9.jpg" src="images/blank.png" /></a></li>
+			<li><a  target="_blank" href="http://www.superslide2.com/"><img _src="images/10.jpg" src="images/blank.png" /></a></li>
+		</ul>
+
+		<a class="prev" href="javascript:void(0)"></a>
+		<a class="next" href="javascript:void(0)"></a>
+	</div>
+
+	<script type="text/javascript">
+jQuery(".picScroll").slide({ mainCell:"ul", effect:"leftLoop", vis:5, scroll:2,  autoPage:true, switchLoad:"_src" });
+	</script>
+	<!-- 本例子代码 结束 ------------------------------------------->
+
+	<div class="js">
+		<p><span>效果参考网址：</span>js调用：</p>
+		<textarea>
+jQuery(".picScroll").slide({ mainCell:"ul", effect:"leftLoop", vis:5, scroll:2,  autoPage:true, switchLoad:"_src" });
+		</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+

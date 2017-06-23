@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery-多行无缝滚动">
+<meta name="Description" content="SuperSlide,jQuery-多行无缝滚动">
+<title>SuperSlide - 多行无缝滚动</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:50px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.layB{width:360px;padding:0px 15px;}
+	.layB .tbC{ width:336px; padding:10px 12px; position:relative;    }
+	.layB .prev,.layB .next{ background:url(images/icon.png) no-repeat; width:15px; height:276px; position:absolute; left:-7px; top:10px; background-position:-520px 0; }
+	.layB .next{ left:auto; right:-15px; background-position:-560px 0; }
+	.layB .prev:hover{ background-position:-540px 0; }
+	.layB .next:hover{ background-position:-580px 0; }
+	.layB .slide{ width:342px; overflow:hidden;    }
+	.layB ul{ overflow:hidden; zoom:1; }
+	.layB li{ width:102px; margin:0 5px 4px 5px; display:inline; float:left; line-height:20px;   }
+	.layB li img{ display:block; border:1px solid #e6e6e6;  }
+	.layB li a:hover img{ border-color:#888;  }
+
+
+</style>
+
+	<div class="layB" style="margin:0 auto">
+			<div class="tbC">
+				<a href="javascript:void(0)" class="prev"></a>
+				<div class="slide">
+							<ul>
+								<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/1.jpg" /></a></li>
+								<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/2.jpg" /></a></li>
+								<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/3.jpg" /></a></li>
+								<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/4.jpg" /></a></li>
+								<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/5.jpg" /></a></li>
+								<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/6.jpg" /></a></li>
+							</ul>
+							<ul>
+								<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/7.jpg" /></a></li>
+								<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/8.jpg" /></a></li>
+								<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/9.jpg" /></a></li>
+								<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/10.jpg" /></a></li>
+								<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/11.jpg" /></a></li>
+								<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/12.jpg" /></a></li>
+							</ul>
+
+				</div>
+				<a href="javascript:void(0)" class="next"></a>
+			</div>
+	</div>
+
+	<script type="text/javascript">
+	jQuery(".layB").slide({ mainCell:".slide",effect:"leftMarquee",interTime:30,autoPlay:true });
+	</script>
+
+
+	<div class="js">
+		<p><span>效果参考网址：<a target="_blank" href="http://www.pclady.com.cn/">http://www.pclady.com.cn/</a></span>js调用：</p>
+		<textarea>
+jQuery(".layB").slide({ mainCell:".slide",effect:"leftMarquee",interTime:30,autoPlay:true });
+		</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+

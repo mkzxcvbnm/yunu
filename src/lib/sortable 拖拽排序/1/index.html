@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="gbk" /> 
+<title>GBin1 HTML5 Sortable Demo</title>
+
+<!-- Used by example page -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- Used /by example page -->
+
+</head>
+<body>
+ <section id="intro">
+		 <h1>GBin1 HTML5 Sortable Demo</h1>
+ </section>
+ 
+ <section>
+	<ul class="gbin1-list">
+		<li>jQuery</li>
+		<li>javascript</li>
+		<li>HTML5</li>
+		<li>CSS3</li>
+	</ul>
+	
+	<div style="clear:both" id="msg"></div>
+ </section>
+
+ <!-- Dependencies -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="js/jquery.sortable.js"></script> 
+ 
+<script>
+    $('.gbin1-list').sortable().bind('sortupdate', function() {
+		$('#msg').html('position changed').fadeIn(200).delay(1000).fadeOut(200);
+	});
+</script>
+</body> 
+</html>

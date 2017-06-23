@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,横向全屏焦点图">
+<meta name="Description" content="SuperSlide,横向全屏焦点图">
+<title>横向全屏焦点图 - SuperSlide</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体; width:100%; }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	#footer{ text-align:center;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:50px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+
+	/* 本例子css */
+	.slider{ width:960px; margin:0 auto;  position:relative; overflow:hidden;   height:336px;; background:#000;  }
+	.slider .bd{ position:relative; z-index:0;  }
+	.slider .bd li{ height:336px; overflow:hidden; }
+	.slider .bd li img{ display:block;  }
+
+	.slider .hd{ width:100%;  position:absolute; z-index:1; bottom:0; left:0; height:30px; line-height:30px; }
+	.slider .hd ul{ text-align:center;  }
+	.slider .hd ul li{ cursor:pointer; display:inline-block; *display:inline; zoom:1; width:9px; height:9px; margin:0 4px; 
+		background:url(images/dot.png) 0 -16px;
+		overflow:hidden;  filter:alpha(opacity=70);opacity:0.7;  vertical-align:top; line-height:9999px; 
+	}
+	.slider .hd ul .on{ background-position:0 0;  }
+	.slider .timer{ position:absolute; z-index:1; left:0; bottom:0; height:4px; width:0; background:#000; filter:alpha(opacity=40);opacity:0.4; font-size:0; overflow:hidden;   }
+</style>
+
+	<div class="slider">
+		
+		<div class="bd">
+			<ul>
+				<li><a target="_blank" href="http://www.superslide2.com"><img src="images/1.jpg" /></a></li>
+				<li><a target="_blank" href="http://www.superslide2.com"><img src="images/2.jpg" /></a></li>
+				<li><a target="_blank" href="http://www.superslide2.com"><img src="images/3.jpg" /></a></li>
+				<li><a target="_blank" href="http://www.superslide2.com"><img src="images/4.jpg" /></a></li>
+			</ul>
+		</div>
+
+		<div class="hd"><ul><li></li><li></li></ul></div>
+		<div class="timer"></div><!-- 进度条 -->
+	</div>
+
+	<script type="text/javascript">
+	
+		jQuery(".slider").slide({ titCell:".hd ul", mainCell:".bd ul", effect:"fold",  autoPlay:true, autoPage:true, trigger:"click",
+			mouseOverStop:false,/* 鼠标移到容器层继续播放*/
+			/* 控制进度条 */
+			startFun:function(){
+				var timer = jQuery(".slider .timer");
+				timer.stop(true,true).animate({ "width":"0%" },0).animate({ "width":"100%" },2500);
+			}
+		});
+	</script>
+
+	<div class="js">
+		<p><span>效果参考网址：<a target="_blank" href="http://www.dgtle.com/">http://www.dgtle.com/</a></span>少量js+单个SuperSlide：</p>
+		<textarea style="height:150px;">
+jQuery(".slider").slide({ titCell:".hd ul", mainCell:".bd ul", effect:"fold",  autoPlay:true, autoPage:true, trigger:"click",
+		mouseOverStop:false,/* 鼠标移到容器层继续播放*/
+		/* 控制进度条 */
+		startFun:function(){
+			var timer = jQuery(".slider .timer");
+			timer.stop(true,true).animate({ "width":"0%" },0).animate({ "width":"100%" },2500);
+		}
+	});
+		</textarea>
+	</div>
+
+<div id="footer">Copyright ©2011-2013 大话主席 <a target="_blank" href="http://www.superslide2.com">www.superslide2.com</a></div>
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+

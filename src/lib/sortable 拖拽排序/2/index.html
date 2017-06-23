@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>基于jQuery的拖动排序插件|jsfoot 网页特效</title>
+<meta name="keywords" content="基于jQuery的拖动排序插件">
+<meta name="description" content="jquery特效,js特效,flash特效,div+css教程,html5教程">
+<link href="asset/style.css" type="text/css" rel="stylesheet">
+<script src="jquery.min.js"></script>
+<script type="text/javascript" src="asset/jquery-list-dragsort.js"></script>
+<link href="http://www.uedsc.com/wp-content/themes/uedsc_new/style.css" rel="stylesheet" type="text/css">
+<body>
+<!--演示内容开始-->
+<style type="text/css">
+/* dragfunction */
+.dragfunction{margin:40px 0 0 0;}
+.dragfunction dt{height:30px;font-weight:800;}
+.dragfunction dd{line-height:22px;padding:0 0 20px 0;color:#5e5e5e;}
+/* dragsort */
+.dragsort-ver li{height:30px;line-height:30px; border:1px solid #DDD; margin:5px 0; padding:0 5px;}
+.dragsort{width:350px;list-style-type:none;margin:0px;}
+.dragsort li{float:left;padding:5px;width:100px;height:100px;}
+.dragsort div{width:90px;height:50px;border:solid 1px black;background-color:#E0E0E0;text-align:center;padding-top:40px;}
+.placeHolder div{background-color:white!important;border:dashed 1px gray!important;}
+</style>
+
+<header>
+	<div class="wrap">
+        <nav class="floatL">
+			<ul><li id="menu-item-1465" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1465"><a href="/">首页</a></li>
+<li id="menu-item-1467" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1467"><a href="http://www.uedsc.com/works">作品</a>
+<ul class="sub-menu">
+	<li id="menu-item-3231" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3231"><a href="http://www.uedsc.com/works/ui">UI/UX</a></li>
+	<li id="menu-item-3232" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3232"><a href="http://www.uedsc.com/works/icon">图标设计</a></li>
+	<li id="menu-item-3235" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3235"><a href="http://www.uedsc.com/works/web">网页设计</a></li>
+	<li id="menu-item-3233" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3233"><a href="http://www.uedsc.com/works/game">游戏界面</a></li>
+	<li id="menu-item-3234" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3234"><a href="http://www.uedsc.com/works/moble">移动设备</a></li>
+	<li id="menu-item-3236" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3236"><a href="http://www.uedsc.com/works/software">软件界面</a></li>
+</ul>
+</li>
+<li id="menu-item-1466" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1466"><a href="http://www.uedsc.com/articles">文章</a>
+<ul class="sub-menu">
+	<li id="menu-item-3240" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3240"><a href="http://www.uedsc.com/articles/tutorial">网页制作</a></li>
+	<li id="menu-item-3239" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3239"><a href="http://www.uedsc.com/articles/seo">网站优化</a></li>
+	<li id="menu-item-3238" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3238"><a href="http://www.uedsc.com/articles/program">编程设计</a></li>
+	<li id="menu-item-3237" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3237"><a href="http://www.uedsc.com/articles/ued">用户研究</a></li>
+</ul>
+</li>
+<li id="menu-item-1470" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1470"><a href="http://www.uedsc.com/sucai">素材</a>
+<ul class="sub-menu">
+	<li id="menu-item-3247" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3247"><a href="http://www.uedsc.com/sucai/psd">PSD素材</a></li>
+	<li id="menu-item-3250" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3250"><a href="http://www.uedsc.com/sucai/vector">矢量素材</a></li>
+	<li id="menu-item-3248" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3248"><a href="http://www.uedsc.com/sucai/icon-sucai">PNG图标</a></li>
+	<li id="menu-item-3249" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3249"><a href="http://www.uedsc.com/sucai/webpage-template">网页模板</a></li>
+</ul>
+</li>
+<li id="menu-item-1469" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1469"><a href="http://www.uedsc.com/appreciate">欣赏</a>
+<ul class="sub-menu">
+	<li id="menu-item-3241" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3241"><a href="http://www.uedsc.com/appreciate/interaction-design">交互设计</a></li>
+	<li id="menu-item-3243" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3243"><a href="http://www.uedsc.com/appreciate/art-of-photography">摄影艺术</a></li>
+	<li id="menu-item-3242" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3242"><a href="http://www.uedsc.com/appreciate/wallpaper-design">壁纸设计</a></li>
+	<li id="menu-item-3244" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3244"><a href="http://www.uedsc.com/appreciate/to-appreciate">酷站欣赏</a></li>
+</ul>
+</li>
+<li id="menu-item-2668" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2668"><a href="http://www.uedsc.com/books">看书</a>
+<ul class="sub-menu">
+	<li id="menu-item-3245" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3245"><a href="http://www.uedsc.com/books/interaction-design-books">交互设计</a></li>
+	<li id="menu-item-3246" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3246"><a href="http://www.uedsc.com/books/programming-design">编程设计</a></li>
+</ul>
+</li>
+<li id="menu-item-2845" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2845"><a href="http://www.uedsc.com/designer">设计师</a></li>
+</ul>        </nav>
+        <ul class="floatR">
+		            <li><a href="/login">登录</a></li>
+            <li><a href="/register">注册</a></li>
+		        </ul>
+    </div>
+</header>
+<section class="wrap" style="width:980px; padding:20px;">
+	
+		<h1>jQuery列表拖动排列演示</h1>
+		
+		<h2>简单的一组列表:</h2>
+		
+		<ul data-listidx="0" class="dragsort-ver">
+			
+			<li data-itemidx="0" style="cursor: pointer;">蔬菜</li>
+			<li data-itemidx="1" style="cursor: pointer;">肉</li><li data-itemidx="2" style="cursor: move;">面包</li>
+			<li data-itemidx="3" style="cursor: pointer;">牛奶</li>
+			<li data-itemidx="4" style="cursor: pointer;">奶油</li>
+			<li data-itemidx="5" style="cursor: pointer;">冰淇淋</li>
+		</ul>
+		<br>
+		
+		<script type="text/javascript">
+			$(".dragsort-ver").dragsort();
+		</script>
+		
+		<h2>两组列表拖放:</h2>
+		
+		<ul data-listidx="0" class="dragsort" id="list2" style="float:right;">
+			<li data-itemidx="0"><div style="cursor: pointer;">10</div></li>
+			<li data-itemidx="1"><div style="cursor: pointer;">11</div></li>
+			<li data-itemidx="2"><div style="cursor: pointer;">12</div></li>
+			<li data-itemidx="3"><div style="cursor: pointer;">13</div></li>
+			<li data-itemidx="4"><div style="cursor: pointer;">14</div></li>
+			<li data-itemidx="5"><div style="cursor: pointer;">15</div></li>
+			<li data-itemidx="6"><div style="cursor: pointer;">16</div></li>
+			<li data-itemidx="7"><div style="cursor: pointer;">17</div></li>
+			<li data-itemidx="8"><div style="cursor: pointer;">18</div></li>
+		</ul>
+		
+		<ul data-listidx="1" class="dragsort" id="list1">
+			
+			<li data-itemidx="0"><div style="cursor: pointer;">2</div></li>
+			<li data-itemidx="1"><div style="cursor: pointer;">3</div></li><li style="" data-itemidx="2"><div style="cursor: pointer;">1</div></li>
+			<li data-itemidx="3"><div style="cursor: pointer;">4</div></li>
+			<li data-itemidx="4"><div style="cursor: pointer;">5</div></li>
+			<li data-itemidx="5"><div style="cursor: pointer;">6</div></li>
+			<li data-itemidx="6"><div style="cursor: pointer;">7</div></li>
+			<li data-itemidx="7"><div style="cursor: pointer;">8</div></li>
+			<li data-itemidx="8"><div style="cursor: pointer;">9</div></li>
+		</ul>
+		
+		<!-- 排序保存在这里可以检索服务器上的回传 -->
+		<input value="" name="list1SortOrder" type="hidden">
+	
+		<script type="text/javascript">
+		$("#list1, #list2").dragsort({
+			dragSelector: "div", 
+			dragBetween: true, 
+			dragEnd: saveOrder, 
+			placeHolderTemplate: "<li class='placeHolder'><div></div></li>",
+			scrollSpeed: 5
+		});
+		
+		function saveOrder() {
+			var data = $("#list1 li").map(function(){
+				return
+				$(this).children().html();
+			}).get();
+			$("input[name=list1SortOrder]").val(data.join("|"));
+		};
+		</script>
+	
+		<div style="clear:both;"></div>
+		<div class="content">
+		<h3>jquery list dragsort列表拖动插件使用方法</h3>  
+		<ol>
+		  <li>$("ul").dragsort({</li>
+		  <li>    dragSelector: "li",</li>
+		  <li>    dragEnd: function() { },</li>
+		  <li>    dragBetween: false,</li>
+		  <li>    placeHolderTemplate: "&lt;li&gt;&lt;/li&gt;"</li>
+		  <li>});</li>
+		</ol>  
+		<h3>jquery list dragsort列表拖动插件参数说明</h3>  
+		<p><strong>dragSelector</strong></p>  
+		<p>CSS选择器内的元素的列表项的拖动手柄。默认值是&ldquo;li&rdquo;。</p>  
+		<p><strong>dragSelectorExclude</strong></p>  
+		<p>CSS选择器的元素内的dragSelector不会触发dragsort的。默认值是&rdquo;input, textarea, a[href]&ldquo;。</p>  
+		<p><strong>dragEnd</strong></p>  
+		<p>拖动结束后将被调用的回调函数.</p>  
+		<p><strong>dragBetween</strong></p>  
+		<p>设置为&ldquo;true&rdquo;，如果你要启用多组列表之间拖动选定的列表。 默认值是false。</p>  
+		<p><strong>placeHolderTemplate</strong></p>  
+		<p>拖动列表的HTML部分。默认值是&rdquo;&lt;li&gt;&lt;/li&gt;&rdquo;.</p>  
+		<p><strong>scrollContainer</strong></p>  
+		<p>CSS选择器的元素，作为滚动容器，例如溢出的div设置为自动。 默认值是&ldquo;窗口&ldquo;.</p>  
+		<p><strong>scrollSpeed</strong></p>  
+		<p>一个数字，它代表了速度，页面拖动某一项时，将滚动容器外，较高使用价值的是速度和较低的值是较慢的。 如果设置为&rdquo;0″以禁用滚动。默认值是&rdquo;5″.</p>
+</div>
+
+<!--演示内容结束-->
+</section>
+<footer id="last">
+	<div class="wrap">
+    	<dl>
+        	<dt><i class="icon-address-book"></i> 关于</dt>
+            <dd><a target="_blank" href="/about">什么是互动殿堂？</a></dd>
+            <dd><a target="_blank" href="/user-protocol">用户协议</a></dd>
+            <dd><a target="_blank" href="/disclaimer">免责申明</a></dd>
+            <dd style="display:none"><script src="http://s17.cnzz.com/stat.php?id=5766641&web_id=5766641" language="JavaScript"></script></dd>
+        </dl>
+    	<dl>
+        	<dt><i class="icon-list"></i> 栏目</dt>
+            <dd><a target="_blank" href="/works">原创作品</a></dd>
+            <dd><a target="_blank" href="/articles">文章教程</a></dd>
+            <dd><a target="_blank" href="/sucai">素材分享</a></dd>
+            <dd><a target="_blank" href="/appreciate">界面欣赏</a></dd>
+            <dd><a target="_blank" href="/ued">用户研究</a></dd>
+        </dl>
+    	<dl>
+        	<dt><i class="icon-books"></i> 商务</dt>
+            <dd><a target="_blank" href="/ads-server">广告服务</a></dd>
+            <dd><a target="_blank" href="/contact">招聘服务</a></dd>
+            <dd><a target="_blank" href="/friend-link">友情链接</a></dd>
+        </dl>
+    	<dl>
+        	<dt><i class="icon-compass"></i> 联系</dt>
+            <dd><a target="_blank" href="/contact">联系我们</a></dd>
+            <dd><a target="_blank" href="http://www.weibo.com/uedsc" rel="nofollow">新浪微博</a></dd>
+            <dd><a target="_blank" href="/feedback">留言反馈</a></dd>        </dl>
+    	<dl>
+        	<dt><i class="icon-question"></i> 帮助</dt>
+            <dd><a target="_blank" href="/rule">互动殿堂规范</a></dd>
+            <dd><a target="_blank" href="/help">帮助中心</a></dd>
+            <dd><a target="_blank" href="/help">常见问题</a></dd>
+        </dl>
+        <div class="copyright">
+        	Copyright © 2012-2013 uedsc. All Rights Reserved. 蜀ICP备13016540号
+        </div>
+    </div>
+</footer>
+</body></html>

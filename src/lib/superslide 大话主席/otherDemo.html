@@ -1,0 +1,736 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta property="wb:webmaster" content="125d4c886033b1d0" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery万能特效,jQuery幻灯片,jQuery焦点图,jQuery Tab切换,jQuery图片滚动,jQuery无缝滚动">
+<meta name="Description" content="SuperSlide 致力于解决网站大部分特效展示问题，使网站代码规范整洁，方便维护更新。网站上常用的“焦点图/幻灯片”、“Tab标签切换”、“图片滚动”、“无缝滚动”等等只需要一个SuperSlide即可解决！还可以多个SuperSlide组合创造更多效果">
+<title>SuperSlide - 扩展效果</title>
+<script type="text/javascript" src="jquery1.42.min.js"></script>
+<link href="default.css" rel="stylesheet" type="text/css">
+</head>
+<body><script type="text/javascript">//document.oncontextmenu=function(){ return false }</script>
+
+
+<style type="text/css">
+#content{ position:static; padding:32px 0 30px 0;    }
+</style>
+<!-- header S -->
+<div id="header">
+	<div class="headerBg"></div>
+	<span class="nav">
+		<a href="index.html">首页</a>|<a href="howToUse.html">如何使用</a>|<a href="param.html">查看参数</a>|<a href="demo.html">基础效果</a>|<a href="otherDemo.html">扩展效果</a>|<a href="downLoad.html">下载页面</a>|<a target="_blank" href="http://www.superslide2.com/blog/?cat=1">常见问题</a>|<a target="_blank" href="http://www.superslide2.com/blog/?cat=4">其它发明</a>|<a target="_blank" href="http://www.superslide2.com/blog/?page_id=12">交流反馈</a>
+	</span>
+	<div class="title">
+			<h1 tite="SuperSlide" id="logo">SuperSlide</h1><em>v2.1</em><span class="author"> -- 大话主席</span>
+	</div>
+</div>
+<!-- header E -->
+
+
+<!-- content S -->
+<div id="content" class="otherDemo">
+
+<div class="authorWord">
+	<h3><a class="arrow arrowB"></a>作者的话</h3>
+	<div class="con">
+			<p>1、以下全部效果都是用SuperSlide制作的，有些特殊的效果会加少量js，如果你熟练掌握SuperSlide，你也可以制作一模一样的效果；</p>
+			<p>2、大部分效果都是参考主流网站，但主流网站的就不一定就是好的，你可以根据需要修改一下参数，效果可能会更好；</p>
+			<p>3、以下效果都是要收费的（别扔鸡蛋 -。-）<a href="downLoad.html#whyPay" target="_blank">为什么要收费？</a></p>
+	</div>
+
+</div><!-- authorWord E -->
+<script type="text/javascript">$(".authorWord h3").click(function(){ $(this).next().toggle() });</script>
+
+
+	<!-- 0 professional S -->
+	<div id="professional" class="demoBox ">
+		<div name="effect0" id="effect0" class="hd"><h3><span>0. </span>综合效果/SuperSlide组合</h3></div>
+		<div class="bd">
+
+			<ul class="demoList">
+				<li class="o new">
+						<div class="pic">
+							<a href="otherDemo/0.1/webSite.html" target="_blank"><img _src="otherDemo/0.1/webSite.jpg" /></a>
+						</div>
+						<h3>综合首页</h3>
+						<i></i>
+				</li>
+			</ul>
+
+		</div><!-- bd E -->
+	</div>
+	<!-- 1 switchTab E -->
+
+	<!-- 1 switchTab S -->
+	<div id="switchTab" class="demoBox ">
+		<div name="effect1" id="effect1" class="hd"><h3><span>1. </span>书签切换系列</h3></div>
+		<div class="bd">
+
+			<ul class="demoList">
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/1.1/TB-tab.jpg" />
+						</div>
+						<h3>淘宝首页右侧公告</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/1.2/360buy-tab.jpg" />
+						</div>
+						<h3>京东首页产品切换</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/1.3/suning-brand.jpg" />
+						</div>
+						<h3>苏宁易购首页品牌切换</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/1.4/yihaodian.jpg" />
+						</div>
+						<h3>1号店双重切换</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/1.5/Tx-health.jpg" />
+						</div>
+						<h3>腾讯健康频道切换</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/1.6/m18-tab.jpg" />
+						</div>
+						<h3>麦考林产品切换</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/1.7/msn-tab.jpg" />
+						</div>
+						<h3>msn书签/焦点图切换</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/1.8/tabBar.jpg" />
+						</div>
+						<h3>带左右按钮点击切换</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/1.9/hasMoreTab.jpg" />
+						</div>
+						<h3>带"更多"的标签切换</h3>
+				</li>
+				<li class="new">
+						<div class="pic">
+							<img _src="otherDemo/1.10/tabRank.jpg" />
+						</div>
+						<h3>Tab+排行详简切换</h3>
+						<i></i>
+				</li>
+			</ul>
+
+		</div><!-- bd E -->
+	</div>
+	<!-- 1 switchTab E -->
+
+	<!-- 2 focusNews S -->
+	<div id="focusNews" class="demoBox ">
+		<div name="effect2" id="effect2" class="hd"><h3><span>2. </span>幻灯片 / 焦点图系列</h3></div>
+		<div class="bd">
+
+			<ul class="demoList">
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/2.1/TB.jpg" />
+						</div>
+						<h3>淘宝首页焦点图</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/2.2/TX-ent.jpg" />
+						</div>
+						<h3>腾讯娱乐频道焦点图</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/2.3/TX-movie.jpg" />
+						</div>
+						<h3>腾讯电影频道焦点图</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/2.4/163-game.jpg" />
+						</div>
+						<h3>网易游戏频道焦点图</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/2.5/51buy.jpg" />
+						</div>
+						<h3>易迅首页焦点图[多格滚动]</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/2.6/tudou-movie.jpg" />
+						</div>
+						<h3>土豆电影频道焦点图</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/2.7/Mtime.jpg" />
+						</div>
+						<h3>Mtime焦点图(已改版)</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/2.8/qunar.jpg" />
+						</div>
+						<h3>去哪儿焦点图</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/2.9/wowsai.jpg" />
+						</div>
+						<h3>哇噻网首页焦点图</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/2.10/vjia.jpg" />
+						</div>
+						<h3>凡客V+首页焦点图[多格聚焦]</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/2.11/guangjie.jpg" />
+						</div>
+						<h3>逛街网首页焦点图</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/2.12/blogchina.jpg" />
+						</div>
+						<h3>博客中国首页焦点图</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/2.13/focusBox.jpg" />
+						</div>
+						<h3>实用焦点图</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/2.14/qqShop.jpg" />
+						</div>
+						<h3>qq商城焦点图</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/2.15/qq3g.jpg" />
+						</div>
+						<h3>手机腾讯焦点图[改进]</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/2.16/kk-music.jpg" />
+						</div>
+						<h3>迅雷看看音乐频道[改进]</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/2.17/kk-fun.jpg" />
+						</div>
+						<h3>迅雷看看娱乐频道</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/2.18/duitang.jpg" />
+						</div>
+						<h3>推搪首页焦点图</h3>
+				</li>
+
+				<li class="o new">
+						<div class="pic">
+							<a href="otherDemo/2.19/fullSlide1.html" target="_blank"><img _src="otherDemo/2.19/fullSlide1.jpg" /></a>
+						</div>
+						<h3>横向全屏焦点图1</h3>
+						<i></i>
+				</li>
+				<li class="o new">
+						<div class="pic">
+							<a href="otherDemo/2.20/fullSlide2.html" target="_blank"><img _src="otherDemo/2.20/fullSlide2.jpg" /></a>
+						</div>
+						<h3>横向全屏焦点图2</h3>
+						<i></i>
+				</li>
+				<li class="o new">
+						<div class="pic">
+							<a href="otherDemo/2.21/fullSlide3.html" target="_blank"><img _src="otherDemo/2.21/fullSlide3.jpg" /></a>
+						</div>
+						<h3>横向全屏焦点图3</h3>
+						<i></i>
+				</li>
+				<li class="o new">
+						<div class="pic">
+							<a href="otherDemo/2.22/fullSlide4.html" target="_blank"><img _src="otherDemo/2.22/fullSlide4.jpg" /></a>
+						</div>
+						<h3>真·全屏焦点图</h3>
+						<i></i>
+				</li>
+				<li class="o new">
+						<div class="pic">
+							<a href="otherDemo/2.23/w3cfun.html" target="_blank"><img _src="otherDemo/2.23/w3cfun.jpg" /></a>
+						</div>
+						<h3>w3cfun首页焦点图</h3>
+						<i></i>
+				</li>
+				<li class="new">
+						<div class="pic">
+							<img _src="otherDemo/2.24/dgtle.jpg" />
+						</div>
+						<h3>数字尾巴（进度条）</h3>
+						<i></i>
+				</li>
+				<li class="new">
+						<div class="pic">
+							<img _src="otherDemo/2.25/previewSlider.jpg" />
+						</div>
+						<h3>前后图片预览焦点图</h3>
+						<i></i>
+				</li>
+				<li class="o new">
+						<div class="pic">
+							<a href="otherDemo/2.26/previewSlider.html" target="_blank"><img _src="otherDemo/2.26/previewSlider.jpg" /></a>
+						</div>
+						<h3>前后图片预览焦点图（全屏）</h3>
+						<i></i>
+				</li>
+
+			</ul>
+
+		</div><!-- bd E -->
+	</div>
+	<!-- 2 focusNews E -->
+
+
+	<!-- 3 btnSwitchTab S -->
+	<div id="btnSwitchTab" class="demoBox ">
+		<div name="effect3" id="effect3" class="hd"><h3><span>3. </span>带按钮切换</h3></div>
+		<div class="bd">
+
+			<ul class="demoList">
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/3.1/TB-today.jpg" />
+						</div>
+						<h3>淘宝首页今日活动</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/3.2/douban-book.jpg" />
+						</div>
+						<h3>豆瓣读书频道</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/3.3/tmall-brand.jpg" />
+						</div>
+						<h3>天猫首页品牌切换</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/3.4/gewara.jpg" />
+						</div>
+						<h3>格瓦拉首页活动进行中...</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/3.5/QQ-blog.jpg" />
+						</div>
+						<h3>腾讯博客图片滚动</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/3.6/doubleLeft.jpg" />
+						</div>
+						<h3>多行滚动-太平洋女性网</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/3.7/Mtime-news.jpg" />
+						</div>
+						<h3>Mtime微新闻[改进]</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/3.8/Tx-picCenter.jpg" />
+						</div>
+						<h3>一次调用，执行多个相同效果</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/3.9/ladyScroll.jpg" />
+						</div>
+						<h3>mm滚动</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/3.10/kk-picScroll.jpg" />
+						</div>
+						<h3>迅雷看看图片滚动</h3>
+				</li>
+			</ul>
+
+		</div><!-- bd E -->
+	</div>
+	<!-- 3 btnSwitchTab E -->
+
+	<!-- 4 Menu S -->
+	<div id="Menu" class="demoBox ">
+		<div name="effect4" id="effect4" class="hd"><h3><span>4. </span>导航/菜单效果</h3></div>
+		<div class="bd">
+
+			<ul class="demoList">
+				<li class="new">
+						<div class="pic">
+							<img _src="otherDemo/4.1/nav.jpg" />
+						</div>
+						<h3>常用导航-立刻显示</h3>
+						<i></i>
+				</li>
+				<li class="new">
+						<div class="pic">
+							<img _src="otherDemo/4.2/nav-slideDown.jpg" />
+						</div>
+						<h3>常用导航-下拉效果</h3>
+						<i></i>
+				</li>
+				<li class="new">
+						<div class="pic">
+							<img _src="otherDemo/4.3/nav-fadeIn.jpg" />
+						</div>
+						<h3>横向渐显导航</h3>
+						<i></i>
+				</li>
+				<li class="new">
+						<div class="pic">
+							<img _src="otherDemo/4.4/slideNav.jpg" />
+						</div>
+						<h3>滑动块导航</h3>
+						<i></i>
+				</li>
+				<li class="new">
+						<div class="pic">
+							<img _src="otherDemo/4.5/hNav.jpg" />
+						</div>
+						<h3>横向导航（相当于tab切换）</h3>
+						<i></i>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/4.6/SS-nav.jpg" />
+						</div>
+						<h3>美食天下网站导航</h3>
+				</li>
+				<li class="new">
+						<div class="pic">
+							<img _src="otherDemo/4.7/sNav.jpg" />
+						</div>
+						<h3>竖向导航（商城导航）</h3>
+						<i></i>
+				</li>
+				<li class="new">
+						<div class="pic">
+							<img _src="otherDemo/4.8/sina-top.jpg" />
+						</div>
+						<h3>新浪顶部导航条</h3>
+						<i></i>
+				</li>
+			</ul>
+
+		</div><!-- bd E -->
+	</div>
+	<!-- 4 Menu E -->
+
+	<!-- 5 switchLoad S -->
+	<div id="switchLoad" class="demoBox ">
+		<div name="effect5" id="effect5" class="hd"><h3><span>5. </span>切换加载系列/switchLoad</h3></div>
+		<div class="bd">
+
+			<ul class="demoList">
+				<li class="o">
+						<div class="pic">
+							<a href="otherDemo/T2.5/switchLoad.html" target="_blank"><img _src="otherDemo/T2.5/switchLoad.jpg" /></a>
+						</div>
+						<h3>switchLoad参数详解</h3>
+				</li>
+				<li class="new">
+						<div class="pic">
+							<img _src="otherDemo/5.1/tab-switchLoad.jpg" />
+						</div>
+						<h3>Tab切换加载</h3>
+						<i></i>
+				</li>
+				<li class="new">
+						<div class="pic">
+							<img _src="otherDemo/5.2/focus-switchLoad.jpg" />
+						</div>
+						<h3>焦点图切换加载</h3>
+						<i></i>
+				</li>
+				<li class="new">
+						<div class="pic">
+							<img _src="otherDemo/5.3/picScroll-switchLoad.jpg" />
+						</div>
+						<h3>多图滚动加载</h3>
+						<i></i>
+				</li>
+				<li class="new">
+						<div class="pic">
+							<img _src="otherDemo/5.4/picMarquee-switchLoad.jpg" />
+						</div>
+						<h3>多图无缝滚动加载</h3>
+						<i></i>
+				</li>
+				<li class="new">
+						<div class="pic">
+							<img _src="otherDemo/5.5/ajax-switchLoad.jpg" />
+						</div>
+						<h3> ajax切换加载url</h3>
+						<i></i>
+				</li>
+				<li class="o new">
+						<div class="pic">
+							<a href="otherDemo/5.6/fullSlide-switchLoad.html" target="_blank"><img _src="otherDemo/5.6/fullSlide-switchLoad.jpg" /></a>
+						</div>
+						<h3>全屏焦点图切换加载</h3>
+						<i></i>
+				</li>
+			</ul>
+
+		</div><!-- bd E -->
+	</div>
+	<!-- 5 Menu E -->
+
+
+	<!-- T1 others S -->
+	<div id="others" class="demoBox ">
+		<div name="effectT1" id="effectT1" class="hd"><h3><span>T1. </span>其它效果</h3></div>
+		<div class="bd">
+
+			<ul class="demoList">
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/T1.1/tmall-ad.jpg" />
+						</div>
+						<h3>天猫首页竖条广告</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/T1.2/allFocus.jpg" />
+						</div>
+						<h3>大家正在关注的...</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/T1.3/fantong.jpg" />
+						</div>
+						<h3>饭桶网团购详简切换</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/T1.4/doubleLeftMarquee.jpg" />
+						</div>
+						<h3>多行无缝滚动</h3>
+				</li>
+				<li>
+						<div class="pic">
+							<img _src="otherDemo/T1.5/msn-stars.jpg" />
+						</div>
+						<h3>msn星座切换</h3>
+				</li>
+				<li class="new">
+						<div class="pic">
+							<img _src="otherDemo/T1.6/focusSwitch.jpg" />
+						</div>
+						<h3>多格聚焦切换</h3>
+						<i></i>
+				</li>
+			</ul>
+
+		</div><!-- bd E -->
+	</div>
+	<!-- T1 others E -->
+
+
+	<!-- T2 paramIntro S -->
+	<div id="paramIntro" class="demoBox ">
+		<div name="effectT2" id="effectT2" class="hd"><h3><span>T2. </span>参数说明/特殊事例</h3></div>
+		<div class="bd">
+
+			<ul class="demoList">
+				<li class="o">
+						<div class="pic">
+							<a href="otherDemo/T2.1/easing.html" target="_blank"><img _src="otherDemo/T2.1/easing.jpg" /></a>
+						</div>
+						<h3>所有easing缓动效果</h3>
+				</li>
+				<li class="o">
+						<div class="pic">
+							<a href="otherDemo/T2.2/funIntro.html" target="_blank"><img _src="otherDemo/T2.2/funIntro.jpg" /></a>
+						</div>
+						<h3>starFun/endFun详细介绍</h3>
+				</li>
+				<li class="o">
+						<div class="pic">
+							<a href="otherDemo/T2.3/targetCell.html" target="_blank"><img _src="otherDemo/T2.3/targetCell.jpg" /></a>
+						</div>
+						<h3>targetCell详细介绍</h3>
+				</li>
+				<li class="o">
+						<div class="pic">
+							<a href="otherDemo/T2.4/jsGroup.html" target="_blank"><img _src="otherDemo/T2.4/jsGroup.jpg" /></a>
+						</div>
+						<h3>多行/列滚动-js分组</h3>
+				</li>
+				<li class="o">
+						<div class="pic">
+							<a href="otherDemo/T2.5/switchLoad.html" target="_blank"><img _src="otherDemo/T2.5/switchLoad.jpg" /></a>
+						</div>
+						<h3>switchLoad参数详解</h3>
+				</li>
+
+			</ul>
+
+		</div><!-- bd E -->
+	</div>
+	<!-- T2 paramIntro E -->
+
+
+</div>
+<!-- content E -->
+
+<!-- 右侧导航 -->
+<div class="rightNav">
+	<a href="#content"><em>^</em>回到顶部</a>
+	<a class="new" href="#effect0"><em>0</em>综合/组合[new]</a>
+	<a href="#effect1"><em>1</em>书签切换</a>
+	<a href="#effect2"><em>2</em>幻灯片</a>
+	<a href="#effect3"><em>3</em>带按钮切换</a>
+	<a class="new" href="#effect4"><em>4</em>导航/菜单[new]</a>
+	<a class="new" href="#effect5"><em>5</em>切换加载[new]</a>
+	<a href="#effectT1"><em>T1</em>其它效果</a>
+	<a href="#effectT1"><em>T2</em>特殊</a>
+	<a id="viewNew" class="new"><em>new</em>只显示New</a>
+	
+</div>
+<script type="text/javascript">
+	//右侧导航
+	var btb=$(".rightNav");
+	var tempS;
+	$(".rightNav").hover(function(){
+			var thisObj = $(this);
+			tempS = setTimeout(function(){
+			thisObj.find("a").each(function(i){
+				var tA=$(this);
+				setTimeout(function(){ tA.animate({right:"0"},200);},50*i);
+			});
+		},200);
+
+	},function(){
+		if(tempS){ clearTimeout(tempS); }
+		$(this).find("a").each(function(i){
+			var tA=$(this);
+			setTimeout(function(){ tA.animate({right:"-110"},200,function(){
+			});},50*i);
+		});
+
+	});
+	
+	var vn = $("#viewNew");
+	vn.click(function(){
+		if ( vn.hasClass("new") ){ $(".demoList li:not('.new')").hide(); vn.removeClass("new").html("<em>all</em>显示全部") }
+		else{ $(".demoList li").show(); vn.addClass("new").html("<em>new</em>只显示New") }
+
+	});
+
+
+	$(".newOnly").click(function(){
+		$(".demoList li:not('.new')").hide()
+	});
+	$(".showAll").click(function(){
+		$(".demoList li").show()
+	});
+
+</script>
+
+
+
+
+
+<!-- 隐藏代码盒子 S -->
+<div id="displayBox">
+	<div class="hd"><a>X</a><h3></h3></div>
+	<div class="bd">
+		<iframe scrolling="yse" src="" frameborder="0"></iframe>
+	</div>
+</div>
+<script type="text/javascript">
+		//隔行添加demoBoxEven
+		$(".demoBox").each(function(i){ if (i%2!=0)$(this).addClass("demoBoxEven"); });
+
+		$(".demoList li").hover(function(){ $(this).addClass("on") },function(){ $(this).removeClass("on") });
+		$(".demoList li").each(function(i){
+			$("img",this).attr("src","images/blank.png");
+			$(this).attr("title", $("img",this).attr("_src").split("/")[1] +"-"+ $("h3",this).text() )
+		});
+		//$(".demoList li").dblclick(function(){ window.open($("img",this).attr("src").replace(".jpg",".html")) });
+		$(".demoList li:not('.o')").click(function(){
+			$("#displayBox h3").text( $("img",this).attr("src").split("/")[1] +"-"+ $("h3",this).text() );
+			$("#displayBox iframe").attr("src",$("img",this).attr("src").replace(".jpg",".html"));
+			$("#displayBox").show();
+		});
+
+		//当前效果代码
+		$("#displayBox .hd a").click(function(){ $("#displayBox").hide(); $("#displayBox iframe").attr("src","") }); //关闭隐藏盒子
+		$("#displayBox").blur( function(){ $(this).hide } );
+
+		var isIE6 = !!window.ActiveXObject&&!window.XMLHttpRequest;
+
+
+		//滚动加载
+		var scrollLoad =function(){
+			$("#content img[_src]").each(function(){
+					var t = $(this);
+					
+					if( t.offset().top<= $(document).scrollTop() + $(window).height()  )
+					{
+						t.attr( "src",t.attr("_src") ).removeAttr("_src");
+					}
+			});//each E
+		}
+
+		scrollLoad();
+		$(window).scroll(function(){ 
+			if(isIE6){ $("#displayBox").css("top", $(document).scrollTop()+10) }
+			if(isIE6){ btb.css("top", $(document).scrollTop()+30) }
+			scrollLoad();
+		});
+
+
+</script>
+
+
+
+<div id="footer">Copyright ©2011-2013 大话主席 </div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>

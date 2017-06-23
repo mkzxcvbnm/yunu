@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery缓动效果,jQuery缓动效果详细演示">
+<meta name="Description" content="SuperSlide,jQuery缓动效果,jQuery缓动效果详细演示">
+<title>SuperSlide - jQuery缓动效果 jQuery缓动效果详细演示</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script>
+
+<style type="text/css">
+
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ color:#333;font:12px/20px Arial,"Microsoft YaHei","宋体",sans-serif; text-align:center; }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+
+	/* 顶部导航条 */
+	#header{ height:32px; line-height:30px; color:#fff; text-align:left; padding:0 10px; overflow:hidden; background: #333;}
+	#header a{ color:#fff;  }
+	#header #logo{ display:inline-block; *display:inline; zoom:1; font-size:14px; margin-right:5px;  }
+	#header .nav{ float:right; }
+	#header .nav a{ padding:0 10px;  }
+	#header .nav a.imp{ color:#ff0;  }
+
+	#content{ margin:0 auto; padding:30px;  position:relative; text-align:left;  }
+	#footer{ height:34px; line-height:34px; clear:both; }
+
+	#demoContent{ width:100%; margin-top:10px;  }
+	#demoContent .effect{ float:left; width:480px; margin-left:10px;  _display:inline;  height:325px; overflow:hidden; text-align:right;  }
+	#effectSelect{ margin-right:24px;  }
+	.curSlide span{ color:#f00;  }
+	.easing{  text-align:left; o}
+	.easing li{ width:110px; height:138px; float:left; margin-left:10px; _display:inline;  }
+	.easing li a{ display:block; width:100px; height:100px; background:url(images/easing.jpg) 0 -30px; overflow:hidden; cursor:pointer; }
+	.easing .eGood{ color:#0000ff;  }
+	.easing .eOn { color:#f00;  }
+
+	.easing .e2 a{ background-position:-130px -30px; }
+	.easing .e3 a{ background-position:-260px -30px; }
+	.easing .e4 a{ background-position:-390px -30px; }
+	.easing .e5 a{ background-position:-520px -30px; }
+	.easing .e6 a{ background-position:-650px -30px; }
+	.easing .e7 a{ background-position:-780px -30px; }
+	.easing .e8 a{ background-position:-910px -30px; }
+	.easing .e9 a{ background-position:-1040px -30px; }
+	.easing .e10 a{ background-position:-1170px -30px; }
+
+	.easing .e11 a{ background-position:0 -160px; }
+	.easing .e12 a{ background-position:-130px -160px; }
+	.easing .e13 a{ background-position:-260px -160px; }
+	.easing .e14 a{ background-position:-390px -160px; }
+	.easing .e15 a{ background-position:-520px -160px; }
+	.easing .e16 a{ background-position:-650px -160px; }
+	.easing .e17 a{ background-position:-780px -160px; }
+	.easing .e18 a{ background-position:-910px -160px; }
+	.easing .e19 a{ background-position:-1040px -160px; }
+	.easing .e20 a{ background-position:-1170px -160px; }
+
+	.easing .e21 a{ background-position:0 -290px; }
+	.easing .e22 a{ background-position:-130px -290px; }
+	.easing .e23 a{ background-position:-260px -290px; }
+	.easing .e24 a{ background-position:-390px -290px; }
+	.easing .e25 a{ background-position:-520px -290px; }
+	.easing .e26 a{ background-position:-650px -290px; }
+	.easing .e27 a{ background-position:-780px -290px; }
+	.easing .e28 a{ background-position:-910px -290px; }
+	.easing .e29 a{ background-position:-1040px -290px; }
+	.easing .e30 a{ background-position:-1170px -290px; }
+	.easing .e31 a{ background-position:-1040px -290px; }
+	.easing .e32 a{ background-position:-1170px -290px; }
+
+</style>
+
+</head>
+<body>
+<!-- header S -->
+<div id="header">
+	<span class="nav">
+		<a href="../../index.html">返回首页</a>
+	</span>
+
+	<div class="title">
+			<h1 tite="SuperSlide" id="logo">SuperSlide</h1><em></em><span class="author"> -- 大话主席</span>
+	</div>
+</div>
+<!-- header E -->
+
+<!-- content S -->
+	<div id="demoContent">
+
+		<div class="effect">
+				<iframe id="eFrame" width="100%" height="282" scrolling="no" style="overflow-x:hidden" src="easing-iframe.html" frameborder=0></iframe>
+				可应用于：<select id="effectSelect">
+					<option value="left">左滚动</option>
+					<option value="top">上滚动</option>
+					<option value="leftLoop">左滚动（循环）</option>
+					<option value="topLoop">上滚动（循环）</option>
+					<option value="fade">渐显</option>
+				</select>
+		</div>
+
+		<ul class="easing">
+			<li speed="500"  class="e1"><span>1.linear</span><a></a></li>
+			<li speed="500"  class="e2 eGood"><span>2.swing</span><a></a></li>
+			<li speed="500"  class="e3"><span>3.easeInQuad</span><a></a></li>
+			<li speed="500"  class="e4"><span>4.easeOutQuad</span><a></a></li>
+			<li speed="500"  class="e5"><span>5.easeInOutQuad</span><a></a></li>
+			<li speed="500"  class="e6 eGood"><span>6.easeInCubic</span><a></a></li>
+			<li speed="500"  class="e7 eGood"><span>7.easeOutCubic</span><a></a></li>
+			<li speed="500"  class="e8"><span>8.easeInOutCubic</span><a></a></li>
+			<li speed="500"  class="e9 eGood"><span>9.easeInQuart</span><a></a></li>
+			<li speed="500"  class="e10"><span>10.easeOutQuart</span><a></a></li>
+
+			<li speed="500"  class="e11"><span>11.easeInOutQuart</span><a></a></li>
+			<li speed="500"  class="e12 eGood"><span>12.easeInQuint</span><a></a></li>
+			<li speed="500"  class="e13"><span>13.easeOutQuint</span><a></a></li>
+			<li speed="500"  class="e14"><span>14.easeInOutQuint</span><a></a></li>
+			<li speed="500"  class="e15"><span>15.easeInExpo</span><a></a></li>
+			<li speed="500"  class="e16"><span>16.easeOutExpo</span><a></a></li>
+			<li speed="500"  class="e17"><span>17.easeInOutExpo</span><a></a></li>
+			<li speed="500"  class="e18"><span>18.easeInSine</span><a></a></li>
+			<li speed="500"  class="e19"><span>19.easeOutSine</span><a></a></li>
+			<li speed="500"  class="e20"><span>20.easeInOutSine</span><a></a></li>
+
+			<li speed="500"  class="e21"><span>21.easeInCirc</span><a></a></li>
+			<li speed="500"  class="e22 eGood"><span>22.easeOutCirc</span><a></a></li>
+			<li speed="500"  class="e23 eGood"><span>23.easeInOutCirc</span><a></a></li>
+			<li speed="1000"  class="e24"><span>24.easeInElastic</span><a></a></li>
+			<li speed="1000"  class="e25 eGood"><span>25.easeOutElastic</span><a></a></li>
+			<li speed="1000"  class="e26 eGood"><span>26.easeInOutElastic</span><a></a></li>
+			<li speed="500"  class="e27 eGood"><span>27.easeInBack</span><a></a></li>
+			<li speed="500"  class="e28 eGood"><span>28.easeOutBack</span><a></a></li>
+			<li speed="500"  class="e29 eGood"><span>29.easeInOutBack</span><a></a></li>
+			<li speed="700"  class="e30"><span>30.easeInBounce</span><a></a></li>
+			<li speed="700"  class="e31 eGood"><span>31.easeOutBounce</span><a></a></li>
+			<li speed="1000"  class="e32"><span>32.easeInOutBounce</span><a></a></li>
+
+		</ul>
+
+
+	</div>
+	<script type="text/javascript">
+		$(".easing li").click(function(){
+			var curEasing=$(this).find("span").text().split(".")[1];
+			var curSpeed = $(this).attr("speed");
+			var effectSelect = $("#effectSelect").val();
+			$(this).addClass("eOn").siblings().removeClass("eOn");
+			$("#eFrame").attr("src","easing-iframe.html?"+curEasing+"&"+curSpeed+"&"+effectSelect)
+		});
+
+
+		$(".easing li").first().click();
+
+		$("#effectSelect").change( function() {
+			$(".easing .eOn").click();
+		});
+	</script>
+<!-- content E -->
+<div id="footer">Copyright ©2011-2013 大话主席  <a href="http://www.SuperSlide2.com">www.SuperSlide2.com</a></div>
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>

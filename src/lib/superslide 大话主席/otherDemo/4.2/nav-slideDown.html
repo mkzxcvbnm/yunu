@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery-常用导航-下拉效果">
+<meta name="Description" content="SuperSlide,jQuery-常用导航-下拉效果">
+<title>SuperSlide - 常用导航-下拉效果</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#FF8400;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:50px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+	.navBar{  background:#000; position:relative; z-index:1;   color:#fff; height:40px; line-height:40px;   }
+	.nav{ width:980px; margin:0 auto; font-family:"Microsoft YaHei",SimSun,SimHei;  }
+	.nav h3{ font-size:100%; font-weight:normal; font-size:14px;  }
+	.nav .m{  position:relative; float:left; width:86px; margin:0 10px; display:inline; text-align:center;   }
+	.nav .m h3 i{ display:inline-block; *display:inline; zoom:1; width:7px; height:4px; background:url(images/icon.png) 0 -280px no-repeat; overflow:hidden; margin:-2px 0 0 5px; 
+		vertical-align:middle; filter:alpha(opacity=50);opacity:0.5; 
+	}
+	.nav h3 a{  zoom:1;  height:16px; line-height:16px; padding:12px 0;  display:block; color:#fff }
+	.nav .on h3 a{padding:11px 0;  border-bottom:2px solid #c00;   }
+	.nav .on h3 a i{ filter:alpha(opacity=100);opacity:1;  }
+	.nav .sub{ display:none; /*默认隐藏*/ width:108px; padding:10px 0;  position:absolute; left:-10px; top:40px;  background:#eee;  float:left; line-height:30px; 
+	}
+	.nav .sub li{ text-align:center;  }
+	.nav .sub li a{ color:#333; display:block; zoom:1;}
+	.nav .sub li a:hover{  background:#ddd; color:#c00;   }
+	.nav .sub dl{ display:inline-block; *display:inline; zoom:1; vertical-align:top; padding:15px 29px; line-height:26px;  }
+	.nav .sub dl a:hover{ color:#c00;  }
+	.nav .sub dl dt a{ color:#000;  }
+	.nav .sub dl dd a{ color:#999; padding-left:7px; background:url(images/icon.png) 0 -332px no-repeat;  }
+
+	.nav #m2 .sub{ z-index:1; width:980px; left:-116px;  }
+</style>
+
+	<!-- 本例子代码 开始 ------------------------------------------->
+	<div class="navBar">
+			<ul class="nav clearfix">
+				<li id="m1" class="m">
+					<h3><a target="_blank" href="http://www.superslide2.com/">网站首页</a></h3>
+				</li>
+
+				<li id="m2" class="m">
+					<h3><a target="_blank" href="http://www.superslide2.com/">如何使用<i></i></a></h3>
+					<div class="sub">
+						<dl>
+							 <dt><a href="#">个人电脑及周边</a></dt>
+							 <dd><a href="#">个人电脑</a></dd>
+							 <dd><a href="#">个人电脑配件</a></dd>
+							 <dd><a href="#">电脑周边外设</a></dd>
+							 <dd><a href="#">MV随身存</a></dd>
+						</dl>
+						<dl>
+							 <dt><a href="#">家庭影像产品</a></dt>
+							 <dd><a href="#">Blu-ray DiscTM</a></dd>
+							 <dd><a href="#">DVD 播放器</a></dd>
+							 <dd><a href="#">投影机</a></dd>
+						</dl>
+
+						<dl>
+							 <dt><a href="#">数码影戏产品</a></dt>
+							 <dd><a href="#">微单TM 数码相机</a></dd>
+							 <dd><a href="#">数码单反/单电相机</a></dd>
+							 <dd><a href="#">佩戴式摄像机</a></dd>
+							 <dd><a href="#">摄录望远镜</a></dd>
+							 <dd><a href="#">数码相片打印机</a></dd>
+							 <dd><a href="#">数码相框</a></dd>
+							 <dd><a href="#">索尼存储卡</a></dd>
+							 <dd><a href="#">DV带和光盘</a></dd>
+						</dl>
+
+						<dl>
+							 <dt><a href="#">3D影像产品</a></dt>
+							 <dd><a href="#">3D全线产品站点</a></dd>
+							 <dd><a href="#">3D液晶电视机</a></dd>
+							 <dd><a href="#">3D Blu-ray DiscTM</a></dd>
+							 <dd><a href="#">3D家庭影音系统</a></dd>
+							 <dd><a href="#">3D个人电脑</a></dd>
+							 <dd><a href="#">3D数码摄像机</a></dd>
+						</dl>
+						<dl>
+							 <dt><a href="#">个人电脑及周边</a></dt>
+							 <dd><a href="#">个人电脑</a></dd>
+							 <dd><a href="#">个人电脑配件</a></dd>
+							 <dd><a href="#">电脑周边外设</a></dd>
+							 <dd><a href="#">MV随身存</a></dd>
+						</dl>
+						<dl>
+							 <dt><a href="#">家庭影像产品</a></dt>
+							 <dd><a href="#">Blu-ray DiscTM</a></dd>
+							 <dd><a href="#">DVD 播放器</a></dd>
+							 <dd><a href="#">投影机</a></dd>
+						</dl>
+
+					</div>
+				</li>
+
+				<li id="m3" class="m">
+					<h3><a target="_blank" href="http://www.superslide2.com/">查看参数<i></i></a></h3>
+					<ul class="sub">
+						<li><a href="#">查看参数</a></li>
+						<li><a href="#">查看参数</a></li>
+						<li><a href="#">查看参数</a></li>
+						<li><a href="#">查看参数</a></li>
+					</ul>
+				</li>
+
+				<li id="m4" class="m">
+					<h3><a target="_blank" href="http://www.superslide2.com/">基础效果<i></i></a></h3>
+					<ul class="sub">
+						<li><a href="#">基础效果</a></li>
+						<li><a href="#">基础效果</a></li>
+						<li><a href="#">基础效果</a></li>
+						<li><a href="#">基础效果</a></li>
+					</ul>
+				</li>
+
+				<li id="m5" class="m">
+					<h3><a target="_blank" href="http://www.superslide2.com/">扩展效果<i></i></a></h3>
+					<ul class="sub">
+						<li><a href="#">扩展效果</a></li>
+						<li><a href="#">扩展效果</a></li>
+						<li><a href="#">扩展效果</a></li>
+						<li><a href="#">扩展效果</a></li>
+					</ul>
+				</li>
+
+				<li id="m5" class="m">
+					<h3><a target="_blank" href="http://www.superslide2.com/">SuperSlide</a></h3>
+				</li>
+
+				<li id="m5" class="m">
+					<h3><a target="_blank" href="http://www.superslide2.com/">大话主席</a></h3>
+				</li>
+			</ul>
+	</div>
+	<div class="content" style="height:200px"><!-- 内容 --></div>
+
+	<script type="text/javascript">
+		jQuery(".nav").slide({ 
+				type:"menu", //效果类型
+				titCell:".m", // 鼠标触发对象
+				targetCell:".sub", // 效果对象，必须被titCell包含
+				effect:"slideDown",//下拉效果
+				delayTime:300, // 效果时间
+				triggerTime:0, //鼠标延迟触发时间
+				returnDefault:true  //返回默认状态
+			});
+	</script> 
+	<!-- 本例子代码 结束 ------------------------------------------->
+
+
+	<div class="js">
+		<p><span>效果参考网址：<a href="#"></a></span>js调用：</p>
+		<textarea>
+jQuery(".nav").slide({ type:"menu",  titCell:".m", targetCell:".sub",effect:"slideDown", delayTime:300, triggerTime:0,returnDefault:true  });
+		</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+

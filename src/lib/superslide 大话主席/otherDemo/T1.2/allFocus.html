@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery-大家正在关注的...">
+<meta name="Description" content="SuperSlide,jQuery-大家正在关注的...">
+<title>SuperSlide - 大家正在关注的...</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:50px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.allFocus{ width:300px; text-align:left;   }
+	.allFocus a{ color:#2C629E;  }
+	.allFocus h4{ font-size:14px; font-weight:bold;   }
+	.allFocus .m2list li{ text-align:left; padding:8px 0; height:40px; color:#666; line-height:14px; }
+	.allFocus .m2list li .pic{ width:58px; float:left;}
+	.allFocus .m2list li p{ width:232px; float:left; overflow:hidden; height:40px}
+</style>
+
+
+<div class="allFocus" style="margin:0 auto">
+	<h4> <b> 大家正在关注的. . . </b> </h4>
+	<div class="t2_n">
+		<ul class="m2list">
+			<li>
+				<div class="pic"> <a href="#"> <img src="images/1.jpg"> </a> </div>
+				<p class="tint"> <a href="#"> 乄陈先森 </a> 评论了 <a href="#"> 虫子艾尔 </a> 的日志 <a href="#"> 四川特色小吃——军屯锅盔 </a> <span class="gray"> 现在 </span> </p>
+			</li>
+			<li>
+				<div class="pic"> <a href="#"> <img src="images/2.jpg"> </a> </div>
+				<p class="tint"> <a href="#"> 熊猫酒仙 </a> 评论了文章 <a href="#"> 微波炉的危害 </a> <span class="gray"> 现在 </span> </p>
+			</li>
+			<li>
+				<div class="pic"> <a href="#"> <img src="images/3.jpg"> </a> </div>
+				<p class="tint"> <a href="#"> 雨后的梧桐树叶 </a> 想做 <a href="#"> 上汤香菇青菜火腿煨面 </a> <span class="gray"> 现在 </span> </p>
+			</li>
+			<li>
+				<div class="pic"> <a href="#"> <img src="images/4.jpg"> </a> </div>
+				<p class="tint"> <a href="#"> 猫语者 </a> 想做 <a href="#"> 百年经典—玛德琳蛋糕 </a> <span class="gray"> 现在 </span> </p>
+			</li>
+			<li>
+				<div class="pic"> <a href="#"> <img src="images/5.jpg"> </a> </div>
+				<p class="tint"> <a href="#"> 暮紫阑珊 </a> 评论了 <a href="#"> HY飞燕 </a> 的菜谱 <a href="#"> 鼓油水小黄鱼 </a> <span class="tint"> (来自Android) </span> <span class="gray"> 现在 </span> </p>
+			</li>
+			<li>
+				<div class="pic"> <a href="#"> <img src="images/6.jpg"> </a> </div>
+				<p class="tint"> <a href="#"> 李桃千金 </a> 将 <a href="#"> 葡萄干蓝莓戚风卷 </a> 设为想做 <span class="gray"> 现在 </span> </p>
+			</li>
+			<li>
+				<div class="pic"> <a href="#"> <img src="images/2.jpg"> </a> </div>
+				<p class="tint"> <a href="#"> 天山雪莲h </a> 收藏了文章 <a href="#"> 一步一步做面食：最健康的油条！（无泡打粉版） </a> <span class="gray"> 现在 </span> </p>
+			</li>
+		</ul>
+	</div>
+</div>
+
+	<script type="text/javascript">
+	jQuery(".allFocus").slide({ mainCell:".m2list", effect:"topLoop", vis:3, opp:true, autoPlay:true, delayTime:800 });
+	</script>
+
+
+	<div class="js">
+		<p>js调用：</p>
+		<textarea>
+jQuery(".allFocus").slide({ mainCell:".m2list", effect:"topLoop", vis:3, opp:true, autoPlay:true, delayTime:800 });
+		</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+

@@ -1,0 +1,2 @@
+script.js 中的ws_rotate JSON 格式问题  去除末尾的， 搜索maxWidth:"none"
+

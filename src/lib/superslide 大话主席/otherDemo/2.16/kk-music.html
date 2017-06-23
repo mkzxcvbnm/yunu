@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery-迅雷音乐频道焦点图">
+<meta name="Description" content="SuperSlide,jQuery-迅雷音乐频道焦点图">
+<title>SuperSlide - 迅雷音乐频道焦点图</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:100px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.foucebox {width:970px;height:400px;background:#000;margin:0 auto;}
+	.foucebox .bd{position:relative;float:left;width:720px;height:400px;overflow:hidden;}
+	.foucebox .showDiv {position:relative;width:720px;height:400px;}
+	.foucebox .showDiv img {width:720px;height:400px;}
+	.foucebox .showDiv p { position:absolute;left:20px;bottom:0;padding-right:20px;color:#aaa;z-index:9; height:44px; }
+	.foucebox .showDiv h2 { position:absolute;left:20px; bottom:0; width:380px;height:34px;  background:url(images/foucebox_h2.png) no-repeat 0 4px;_background:none;padding-left:40px;_padding-left:0;font-size:24px;font-family:"Microsoft Yahei";line-height:34px;z-index:9;overflow:hidden;}
+	.foucebox .showDiv h2 a {color:#8ecf12;font-weight:normal;}
+	.foucebox .foucebox_bg {position:absolute;left:0;bottom:0;width:720px;height:107px;background:#000;filter:alpha(opacity=60);opacity:0.6;z-index:8;overflow:hidden;}
+
+	.foucebox .hd{width:244px; height:318px;float:right;}
+	.foucebox .hd ul li{width:114px; height:91px; float:left; margin:0 0 10px 4px; display:inline; position:relative;}
+	.foucebox .hd ul a {display:block;width:114px;height:91px;}
+	.foucebox .hd ul img{width:108px; height:84px; border:3px solid #2b2b2b;}
+	.foucebox .hd ul .txt_bg{width:108px; height:24px; position:absolute; left:3px; top:63px; background:url(images/bg_png.png) no-repeat; _background:none;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, src="images/bg_png.png");}
+	.foucebox .hd ul .txt{width:103px; height:24px; line-height:24px; color:#fff; position:absolute; left:4px; bottom:4px; z-index:2; text-align:right; padding-right:5px;overflow:hidden;}
+	.foucebox .hd ul .mask{width:108px; height:85px; display:block; position:absolute; left:3px; bottom:3px; z-index:3; filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#66000000', endColorstr='#66000000');background:rgba(0,0,0,0.4);}
+	.foucebox .hd ul a:hover .mask, .foucebox .hd ul .on .mask{display:none; position:relative;}
+	.foucebox .hd ul a:hover img, .foucebox .hd ul .on img{border-color:#70a20f;}
+	.foucebox .hd ul a:hover{color:#fff;}
+	.foucebox .hd ul a:hover .txt_bg {background:#70a20f;}
+
+	</style>
+
+	<div class="foucebox" style="margin:0 auto">
+
+			<!-- 大图 -->
+			<div  class="bd">
+				<div  class="showDiv">
+					<a href="#"><img  src="images/1.jpg" ></a>
+					<div class="foucebox_bg"></div>
+					<div>
+						<h2><a href="#">One Direction 《Kiss You》</a></h2>
+						<p>One Direction的《Kiss You》MV首播，在提前曝光的花絮中，1D的五位正太在《Kiss You》中裸身玩冲浪，吊足胃口啦！</p>
+					</div>
+				</div>
+
+				<div  class="showDiv" >
+					<a href="#"><img  src="images/2.jpg" ></a>
+					<div class="foucebox_bg"></div>
+					<div>
+						<h2><a href="#">欧美歌手 《The 40 Sexiest Music Videos of 2012》</a></h2>
+						<p>2012年来自欧美地区排名前40的sexyMV合集。</p>
+					</div>
+				</div>
+
+				<div  class="showDiv" >
+					<a href="#"><img  src="images/3.jpg" ></a>
+					<div class="foucebox_bg"></div>
+					<div>
+						<h2><a href="#">Sori 《Dual Life》</a></h2>
+						<p>韩国性感女歌手Sori时隔两年发行的新曲《Dual Life》MV出炉。在MV中她展现了雄厚的舞蹈基础，更是有高难度的托举旋转动作，与舞曲的配合也是淋漓尽致!来一起欣赏韩流音乐新年性感弹第一曲吧！</p>
+					</div>
+				</div>
+				<div  class="showDiv" >
+					<a href="#"><img  src="images/4.jpg" ></a>
+					<div class="foucebox_bg"></div>
+					<div>
+						<h2><a href="#">Super Junior 《BREAK DOWN》</a></h2>
+						<p>由东海、始源、厉旭、圭贤、Henry、周觅、银赫、晟敏组成的Super Junior的华语圈小分队Super Junior-M正式推出第二张正规专辑《Break Down》,展开全新活动。</p>
+					</div>
+				</div>
+
+				<div  class="showDiv" >
+					<a href="#"><img  src="images/5.jpg" ></a>
+					<div class="foucebox_bg"></div>
+					<div>
+						<h2><a href="#"> 电影主题音乐</a></h2>
+						<p>电影音乐是电影的重要组成部分，当你听到一段音乐的时候也许会想起一部经典的电影，这就是电影音乐的魅力。一首好的电影音乐，对整个影片起着至关重要的作用。通常一部电影会由多首音乐相衬，以更好的衬托出电影需要表现的内容。 </p>
+					</div>
+				</div>
+
+				<div  class="showDiv" >
+					<a href="#"><img  src="images/6.jpg" ></a>
+					<div class="foucebox_bg"></div>
+					<div>
+						<h2><a href="#"> 《韩国单曲排行榜 年度Top100》</a></h2>
+						<p>神马！江南style才排16！小编最爱的T妞40名开外！你钟爱的idol在年榜里排多少自己来看吧！！2012韩流金曲全包括，这也是MV收集控们查漏补缺的利器啊！这么多帅哥美女美颜美腿表示淡定不能了，来一起跟小编喷鼻血吧！！！</p>
+					</div>
+				</div>
+
+				<div  class="showDiv" >
+					<a href="#"><img  src="images/7.jpg" ></a>
+					<div class="foucebox_bg"></div>
+					<div>
+						<h2><a href="#">少女时代 《I Got A Boy》</a></h2>
+						<p>少女时代的新专辑主打歌《I Got a Boy》完整版大公开！这首主打曲由韩国和欧洲顶尖作曲家打造，从推出前开始就受到音乐粉丝的高度期待。绝对靓丽的色彩搭配和帅气的编舞，给你不一样的惊喜！</p>
+					</div>
+				</div>
+
+				<div  class="showDiv" >
+					<a href="#"><img  src="images/8.jpg" ></a>
+					<div class="foucebox_bg"></div>
+					<div>
+						<h2><a href="#">Blue 《Hurt Lovers》</a></h2>
+						<p>英伦天团Blue再次扬帆起航，从新单《Hurt Lovers》已能窥见全新大碟的冰山一角。新单整体感觉大气磅礴，由Duncan略带沙哑的磁性嗓音带入，随后Lee的高音将爱的刺痛感展现得淋漓尽致四人完美的和声如蓄势已久。</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- 小图 -->
+			<div class="hd">
+				<ul>
+					 <li><a href="http://www.SuperSlide2.com"><img src="images/1.1.jpg"><span class="txt">Kiss You</span><span class="txt_bg"></span><span class="mask"></span></a></li>
+					 <li><a href="http://www.SuperSlide2.com"><img src="images/1.2.jpg"><span class="txt">The 40 Sexiest Music Videos of 2012</span><span class="txt_bg"></span><span class="mask"></span></a></li>
+					 <li><a href="http://www.SuperSlide2.com"><img src="images/1.3.jpg"><span class="txt">Dual Life</span><span class="txt_bg"></span><span class="mask"></span></a></li>
+					 <li><a href="http://www.SuperSlide2.com"><img src="images/1.4.jpg"><span class="txt">BREAK DOWN</span><span class="txt_bg"></span><span class="mask"></span></a></li>
+					 <li><a href="http://www.SuperSlide2.com"><img src="images/1.5.jpg"><span class="txt">电影主题音乐</span><span class="txt_bg"></span><span class="mask"></span></a></li>
+					 <li><a href="http://www.SuperSlide2.com"><img src="images/1.6.jpg"><span class="txt">韩国单曲排行榜 年度Top100</span><span class="txt_bg"></span><span class="mask"></span></a></li>
+					 <li><a href="http://www.SuperSlide2.com"><img src="images/1.7.jpg"><span class="txt">I Got A Boy</span><span class="txt_bg"></span><span class="mask"></span></a></li>
+					 <li><a href="http://www.SuperSlide2.com"><img src="images/1.8.jpg"><span class="txt">Hurt Lovers</span><span class="txt_bg"></span><span class="mask"></span></a></li>
+					</ul>
+			</div>
+
+	</div>
+
+	<script type="text/javascript">
+		jQuery(".foucebox").slide({ effect:"fold", autoPlay:true, delayTime:300, startFun:function(i){
+				//下面代码控制文字显示
+				jQuery(".foucebox .showDiv").eq(i).find("h2").css({display:"none",bottom:0}).animate({opacity:"show",bottom:"60px"},300);
+				jQuery(".foucebox .showDiv").eq(i).find("p").css({display:"none",bottom:0}).animate({opacity:"show",bottom:"10px"},300);
+			}
+		});
+	</script>
+
+
+	<div class="js">
+		<p><span>效果参考网址：<a target="_blank" href="http://yinyue.kankan.com/">http://yinyue.kankan.com/</a></span>js调用：少量js+单个SuperSlide</p>
+		<textarea>
+jQuery(".foucebox").slide({ effect:"fold", autoPlay:true, delayTime:300, startFun:function(i){
+		//下面代码控制文字显示
+		jQuery(".foucebox .showDiv").eq(i).find("h2").css({display:"none",bottom:0}).animate({opacity:"show",bottom:"60px"},300);
+		jQuery(".foucebox .showDiv").eq(i).find("p").css({display:"none",bottom:0}).animate({opacity:"show",bottom:"10px"},300);
+	}
+});
+		</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>

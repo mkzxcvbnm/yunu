@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../js/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+	<!-- fancybox -->
+	<a class="fancybox-thumbs" data-fancybox-group="thumb" href="1.jpg"><img src="1.jpg" alt="" /></a>
+	<a class="fancybox-thumbs" data-fancybox-group="thumb" href="1.jpg"><img src="1.jpg" alt="" /></a>
+	<a class="fancybox-thumbs" data-fancybox-group="thumb" href="1.jpg"><img src="1.jpg" alt="" /></a>
+	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox-thumbs.css">
+	<script type="text/javascript" src="js/jquery.fancybox.js"></script>
+	<script type="text/javascript" src="js/jquery.fancybox-thumbs.js"></script>
+	<script type="text/javascript">
+		$('.fancybox-thumbs').fancybox({
+			prevEffect : 'elastic',//动画切换效果 'elastic'左右渐入, 'fade'透明变化 or 'none'
+			nextEffect : 'elastic',
+            closeBtn  : true,//显示关闭按钮
+            arrows    : true,//显示左右箭头
+            nextClick : true,//显示切换按钮
+            autoPlay  : false,//自动播放
+            playSpeed : 3000,//幻灯片速度
+			helpers : {
+				thumbs : {
+					width  : 80,
+					height : 80
+				}
+			}
+		});
+	</script>
+	<!-- fancybox -->
+</body>
+</html>
