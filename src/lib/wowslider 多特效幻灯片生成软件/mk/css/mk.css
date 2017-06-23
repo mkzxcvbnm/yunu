@@ -1,0 +1,45 @@
+/****************************** reset ******************************/
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0;}
+header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}
+table{border-collapse:collapse;border-spacing:0;}
+caption,th{text-align:left;font-weight:normal;}
+html,body,fieldset,img,iframe,abbr{border:0;}
+i,cite,em,var,address,dfn{font-style:normal;}
+[hidefocus],summary{outline:0;}
+ul{list-style:none;}
+h1,h2,h3,h4,h5,h6,small{font-size:100%;}
+sup,sub{font-size:83%;}
+pre,code,kbd,samp{font-family:inherit;}
+q:before,q:after{content:none;}
+textarea{overflow:auto;/*resize:none;*/}
+label,summary{cursor:default;}
+a,button{cursor:pointer;}
+h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;}
+del,ins,u,s,a,a:hover{text-decoration:none;}
+body,textarea,input,button,select,keygen,legend{font:16px/1.14 "\5FAE\8F6F\96C5\9ED1","arial";color:#333;/*outline:0;*/} 
+a,a:hover{color:inherit;color:expression(this.parentNode.currentStyle.color);}
+/****************************** mk ******************************/
+.border-box * {-moz-box-sizing: border-box;  -webkit-box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box;}
+html {min-width: 1000px;}
+.center {width: 1000px;margin: 0 auto;}
+.imgcenter {vertical-align: middle;}
+.opacity {opacity: .5;filter:alpha(opacity=50);}
+.fl {float: left;}
+.fr {float: right;}
+.clear {clear: both;}
+.clearfix:after {content: ".";display: block;height:0;clear:both;visibility: hidden;}
+.clearfix {*zoom:1;}
+.oh {overflow: hidden;}
+.ws {white-space:nowrap;}
+.tc {text-align: center;}
+.fontoh {text-overflow: ellipsis;white-space:nowrap;overflow: hidden;}
+.big:hover,.bigger {transform:scale(1.1);-webkit-transform:scale(1.1);-moz-transform:scale(1.1);-o-transform:scale(1.1);-ms-transform:scale(1.1);transition: all .5s;-moz-transition: all .5s;-webkit-transition: all .5s;-o-transition: all .5s;}
+.c5s{ transition: all .5s;-moz-transition: all .5s;-webkit-transition: all .5s;-o-transition: all .5s;}
+.c4s{-moz-transition: all 0.4s ease 0s;-webkit-transition: all 0.4s ease 0s;-o-transition: all 0.4s ease 0s;transition: all 0.4s ease 0s;}
+.no_tran {transition:normal;}
+::-webkit-input-placeholder {color: #666;}
+:-moz-placeholder {color: #666;}
+::-moz-placeholder {color: #666;}
+:-ms-input-placeholder {color: #666;}
+/****************************** style ******************************/
+body,textarea,input,button,select,keygen,legend {font: 12px/1.4 "\5FAE\8F6F\96C5\9ED1";color: #5a5a5a;}

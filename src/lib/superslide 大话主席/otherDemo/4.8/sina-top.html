@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery-新浪顶部导航">
+<meta name="Description" content="SuperSlide,jQuery-新浪顶部导航">
+<title>SuperSlide - 新浪顶部导航</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#FF8400;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:50px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+
+	.topNav{position:relative; z-index:1; height: 40px; line-height:40px;  border-top: 3px solid #ff8500; border-bottom: 1px solid #EDEEF0; background-color: #FCFCFC;
+		font-family:"Microsoft YaHei",SimSun; font-size:12px;
+	}
+	.topNav-width{ width:1000px; margin:0 auto;   }
+	.topNav h3{ font-weight:normal; font-size:100%; }
+	.topNav dl{ zoom:1; }
+	.topNav .tnLeft{ float:left;  }
+	.topNav .tnRight{ float:right;  }
+	.topNav dd{ float:left; position:relative;  }
+	.topNav dd h3{ float:left;  }
+	.topNav dd h3 a{ display:inline-block; *display:inline; zoom:1; height:14px; line-height:14px; padding:13px 20px;  }
+	.topNav dd h3 a i{ display:inline-block; width:8px; height:5px; margin:0 0 0 5px; overflow:hidden; vertical-align:middle; font-size:12px; line-height:13px; background: url(images/icon.png) 0 -61px no-repeat;   }
+        
+	.topNav dd h3 a:hover,
+	.topNav dd.on h3 a{ background:#EDEEF0; color:#FF8400;    }
+
+	.topNav .welcome{ padding-right:15px; color:#FF8400;   }
+	.topNav .welcome a{  color:#FF8400;   }
+
+	.topNav dd ul{ display:none; /*默认隐藏*/ position:absolute; width:110px;  top:40px; left:0;  border:1px solid #FECC5B; border-top:0;  background:#fff; 
+		-moz-box-shadow: 3px 3px 3px rgba(0, 0, 0, .1); -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, .1); box-shadow: 3px 3px 3px rgba(0, 0, 0, .1);	
+	}
+	.topNav dd ul li{ line-height: 31px; border-bottom: 1px solid #FECC5B;  }
+	.topNav dd ul li a{ display: block; color: #333; padding: 0 15px;  }
+	.topNav dd ul li a:hover{ background:#FFF5DA; color:#E67902;    }
+	.topNav dd ul li a span{ color:#FF8400; margin-left:5px;   }
+
+</style>
+
+	<!-- 本例子代码 开始 ------------------------------------------->
+	<div class="topNav">
+		<div class="topNav-width clearfix">
+				<dl class="tnLeft">
+					<dd><h3><a target="_blank" href="http://www.superslide2.com/">设为首页</a></h3></dd>    
+					<dd>
+						<h3><a target="_blank" href="http://www.superslide2.com/">我的菜单<i></i></a></h3>
+						<ul>
+							<li><a href="#">新闻</a></li>
+							<li><a href="#">电视视频</a></li>
+							<li><a href="#">电影</a></li>
+							<li><a href="#">明星</a></li>
+							<li><a href="#">国内</a></li>
+						</ul>
+					</dd>
+					<dd><h3><a target="_blank" href="http://www.superslide2.com/">手机新浪网</a></h3></dd>
+					<dd>
+						<h3><a target="_blank"  href="http://www.superslide2.com/">移动客户端<i></i></a></h3>
+						<ul>
+							<li><a href="#">新浪微博</a></li>
+							<li><a href="#">新浪新闻</a></li>
+							<li><a href="#">新浪体育</a></li>
+							<li><a href="#">新浪拍客</a></li>
+							<li><a href="#">天气通</a></li>
+						</ul>
+					</dd>
+				</dl><!-- tnLeft E -->
+
+				<dl class="tnRight">
+					<dd class="welcome">
+						欢迎您，<a target="_blank" href="http://www.superslide2.com/" title="大话主席">大话主席</a> <a href="#">退出</a></i>
+					</dd>    
+					<dd>
+						<h3><a target="_blank" href="http://www.superslide2.com/">微博<i></i></a></h3>
+						<ul>
+							<li><a href="#">私信<span>1</span></a></li>
+							<li><a href="#">评论</a></li>
+							<li><a href="#">@我</a></li>
+						</ul>
+					</dd>
+					<dd>
+						<h3><a target="_blank" href="http://www.superslide2.com/">博客<i></i></a></h3>
+						<ul>
+							<li><a href="#">博客评论</a></li>
+							<li><a href="#">未读提醒</a></li>
+						</ul>
+					</dd>
+					<dd>
+						<h3><a target="_blank" href="http://www.superslide2.com/">邮箱<i></i></a></h3>
+						<ul>
+							<li><a href="#">免费邮箱</a></li>
+							<li><a href="#">VIP邮箱</a></li>
+							<li><a href="#">企业邮箱</a></li>
+						</ul>
+					</dd>
+					<dd>
+						<h3><a target="_blank" href="http://www.superslide2.com/">网站导航</a></h3>
+					</dd>
+				</dl><!-- tnLeft E -->
+
+		</div>
+	</div>
+	<div class="content" style="height:200px"><!-- 内容 --></div>
+
+	<script type="text/javascript">
+		jQuery(".topNav").slide({ 
+				type:"menu", //效果类型
+				titCell:"dd", // 鼠标触发对象
+				targetCell:"ul", // 效果对象，必须被titCell包含
+				delayTime:0, // 效果时间
+				defaultPlay:false,  //默认不执行
+				returnDefault:true // 返回默认
+			});
+	</script>
+	<!-- 本例子代码 结束 ------------------------------------------->
+
+	<div class="js">
+		<p><span>效果参考网址：<a target="_blank" href="http://www.sina.com.cn/">http://www.sina.com.cn/</a></span>js调用：</p>
+		<textarea>
+jQuery(".topNav").slide({ type:"menu",  titCell:"dd", targetCell:"ul", delayTime:0,defaultPlay:false,returnDefault:true  });
+		</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+

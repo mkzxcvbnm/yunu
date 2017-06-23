@@ -63,6 +63,8 @@ yunu内部使用的前段自动化工具
     │
     ├── js                      # 脚本代码
     │
+    ├── lib                     # 插件
+    │
     ├── source                  # css与js源代码
     │   │
     │   ├── css                 # css源代码
@@ -71,9 +73,7 @@ yunu内部使用的前段自动化工具
     │   │
     │   └── js                  # js源代码
     │
-    ├── grid.html               # 栅格布局例子
-    │
-    └── index.html              # 首页例子
+    └── index.html              # 首页
 ```
 
 

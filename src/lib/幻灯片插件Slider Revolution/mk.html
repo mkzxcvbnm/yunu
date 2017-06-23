@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript" src="jquery-2.2.0.min.js"></script>
+	<script type="text/javascript" src="jquery.themepunch.plugins.min.js"></script>
+	<script type="text/javascript" src="jquery.themepunch.revolution.min.js"></script>
+	<style type="text/css">
+		.tp-banner-container{position: relative;height: 500px;}
+	</style>
+</head>
+<body>
+	<div class="revolution-slider">
+	    <div class="fullwidthbanner-container">
+	      	<div class="fullwidthbanner">
+		        <ul>
+		          	<li data-transition="random">
+			          	<img src="images/banner1.jpg">
+		          	</li>
+		          	<li data-transition="random">
+		          		<img src="images/banner2.jpg">
+		          	</li>
+		          	<li data-transition="random">
+			          	<img src="images/banner3.jpg">
+		          	</li>
+		        </ul>
+	      		<!-- <div class="tp-loader"></div> -->
+	      		<div class="tp-bannertimer"></div>
+	      	</div>
+	    	<!-- <div class="tp-bannershadow tp-shadow1"></div>
+	   		<div class="tp-bullets simplebullets round">
+			    <div class="bullet first selected"></div>
+			    <div class="bullet"></div>
+			    <div class="bullet last"></div>
+			    <div class="clear"></div>
+	   		</div>
+		    <div class="tp-leftarrow tparrows default"></div>
+		    <div class="tp-rightarrow tparrows default"></div> -->
+	    </div>
+	</div>
+	<div class="tp-banner-container"> 
+	    <div class="tp-banner" > 
+	        <ul> 
+	            <!-- SLIDE  --> 
+	            <li data-transition="fade" data-slotamount="7" data-masterspeed="1500" > 
+	                <!-- MAIN IMAGE --> 
+	                <img src="images/bg1.jpg"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat"> 
+	                <!-- LAYERS --> 
+	                <!-- LAYER NR. 1 --> 
+	                <div class="tp-caption lightgrey_divider skewfromrightshort fadeout" 
+	                    data-x="85" 
+	                    data-y="224" 
+	                    data-speed="500" 
+	                    data-start="1200" 
+	                    data-easing="Power4.easeOut">My Caption 
+	                </div> 
+	                ... 
+	 
+	            </li> 
+	            <li data-transition="zoomout" data-slotamount="7" data-masterspeed="1000" > 
+	                <!-- MAIN IMAGE --> 
+	                <img src="images/bg2.jpg"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat"> 
+	                <!-- LAYERS --> 
+	                <!-- LAYER NR. 1 --> 
+	                <div class="tp-caption lightgrey_divider skewfromrightshort fadeout" 
+	                    data-x="85" 
+	                    data-y="224" 
+	                    data-speed="500" 
+	                    data-start="1200" 
+	                    data-easing="Power4.easeOut">My Caption 
+	                </div> 
+	                ... 
+	            </li> 
+	            .... 
+	        </ul> 
+	    	<div class="tp-bannertimer"></div> 
+	    </div> 
+	</div>
+<script type="text/javascript">
+	
+	$(function() { 
+	    $('.tp-banner').revolution({ 
+	        delay:9000, 
+	        startwidth:1170, 
+	        startheight:500, 
+	        hideThumbs:10 
+	    }); 
+	    
+	$('.fullwidthbanner').revolution(
+		{
+			delay:8000,
+			startwidth:1170,
+			startheight:500,
+
+			onHoverStop:"off",						
+			thumbWidth:100,							
+			thumbHeight:50,
+			thumbAmount:3,
+
+			hideThumbs:0,
+			navigationType:"bullet",				
+			navigationArrows:"solo",				
+
+			navigationStyle:"round",				
+
+			navigationHAlign:"center",				
+			navigationVAlign:"bottom",					
+			navigationHOffset:30,
+			navigationVOffset: 40,
+
+			soloArrowLeftHalign:"left",
+			soloArrowLeftValign:"center",
+			soloArrowLeftHOffset:40,
+			soloArrowLeftVOffset:0,
+
+			soloArrowRightHalign:"right",
+			soloArrowRightValign:"center",
+			soloArrowRightHOffset:40,
+			soloArrowRightVOffset:0,
+
+			touchenabled:"on",		
+
+			stopAtSlide:-1,							
+			stopAfterLoops:-1,						
+
+			hideCaptionAtLimit:0,					
+			hideAllCaptionAtLilmit:0,				
+			hideSliderAtLimit:0,					
+
+			fullWidth:"on",
+
+			shadow:1								
+		});
+	}); 
+</script>
+</body>
+</html>

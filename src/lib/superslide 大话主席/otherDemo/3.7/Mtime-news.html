@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery-Mtime微新闻">
+<meta name="Description" content="SuperSlide,jQuery-Mtime微新闻">
+<title>SuperSlide - Mtime微新闻</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:50px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.m_wnews { width:600px;  background: #F4F4F4; line-height:150%;  position: relative; border: 1px solid #CBCBCB; zoom: 1; height: 60px; padding-left: 35px; overflow: hidden; padding-right: 45px; }
+	.m_wnews a{ color:#2A78B4;  }
+	.m_wnews strong { background: #D7D7D7; position: absolute; left: 0; top: 0; width: 12px; padding: 3px 8px; height: 54px; overflow: hidden; text-align: center; font-weight: normal; }
+	.m_wnews div { padding: 3px; line-height: 2em; }
+	.m_wnews .m_wmore { position: absolute; right: 50px; top: 25px; font-family: "宋体"; }
+	.m_wnews .pagesize { position: absolute; right: 5px; top: 3px; }
+	.m_wnews .pagesize a { background: url(images/index_newadd.png) no-repeat -21px 0; width: 21px; height: 21px; display: block; overflow: hidden; line-height: 0; text-indent: -999em; margin-bottom: 3px; }
+	.m_wnews .pagesize a.prev:hover { background-position: 0 0; }
+	.m_wnews .pagesize a.next { background-position: -21px -26px; }
+	.m_wnews .pagesize a.next:hover {background-position: 0 -26px;}
+</style>
+
+	<div class="m_wnews" style="margin:0 auto">
+		<strong>微新闻</strong>
+		<div id="miniNewsRegion">
+				<div>
+					年度喜剧 <a href="#">《人再囧途之泰囧》</a>将于12月12日公映，今日再曝终极奇幻旅程特辑《少年囧宝的泰国漂流》， <a href="#">王宝强</a>、<a href="#">徐峥</a>搭档奇妙旅程。（<a href="#">详情</a>）...
+				</div>
+				<div>
+					墨西哥导演 <a href="#">亚利桑德罗·冈萨雷斯·伊纳里多</a>（ <a href="#">《通天塔》</a>、<a href="#">《美错》</a>）将拍新片《鸟人》（Birdman），计划明年三月开机。 <a href="#">详细</a>...
+				</div>
+				<div>
+					<p> 趁昆汀版 <a href="#">《被解放的迪亚戈》</a>即将上映之际，Rialto Pictures宣布将在12月21日起重映1966年经典版的 <a href="#">《迪亚戈》</a>。</p> ...
+				</div>
+				<div>
+					狮门影业出品的 <a href="#">《德州电锯杀人狂3D》</a>日前再发新剧照，媚眼美女开Party，享受“最后的晚餐” <a href="#">（点击大图）</a>...
+				</div>
+				<div>
+					<a href="#">《无敌破坏王》</a>导演向外媒透露，经典角色“超级玛丽”望出现在续集中，但迪士尼官方尚未确认续集计划 <a href="#">（查看详情）</a>...
+				</div>
+				<div>
+					<a href="#">李·佩斯</a>（ <a href="#">《霍比特人》</a>、<a href="#">《灵指神探》</a>）确认加盟漫威超级英雄电影 <a href="#">《银河护卫队》</a>，将出演护卫队领袖人物星爵（Star-Lord）。详细...
+				</div>
+				<div>
+					<p> 迪士尼或将拍 <a href="#">《爱丽丝梦游仙境》</a>续集，外媒报道称，前作编剧 <a href="#">琳达·沃尔夫顿</a>已经在为续集撰写剧本。 </p> ...
+				</div>
+				<div>
+					迪士尼在为其 <a href="#">《布偶大电影》</a>续集物色演员， <a href="#">《摩登家庭》</a>男配角 <a href="#">泰·布利尔</a>率先加盟，续集将继续由 <a href="#">詹姆斯·波宾</a>执导，计划2013年12月20日上映。...
+				</div>
+				<div>
+					<a href="#">乔治·克鲁尼</a>自编自导自演的商业大片 <a href="#">《古迹卫士》</a>定于2013年12月12日上映， <a href="#">马特·达蒙</a>、<a href="#">比尔·默瑞</a>、<a href="#">凯特·布兰切特</a>等加盟出演。 ...
+				</div>
+				<div>
+					华纳或投拍喜剧新片《Get Hard》，计划由 <a href="#">威尔·法瑞尔</a>和 <a href="#">Kevin Hart</a>主演，前者的角色是一个富有的投行经理，后者是一个聪明的街头小人物。...
+				</div>
+		</div>
+		<div class="m_wmore"><a href="#">更多微新闻&gt;&gt;</a></div>
+		<div class="pagesize">
+			<a href="javascript:void(0)" class="prev">上一条</a>
+			<a href="javascript:void(0)" class="next">下一条</a>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+	jQuery(".m_wnews").slide({ mainCell:"#miniNewsRegion", effect:"topLoop", autoPlay:true});
+	</script>
+
+
+	<div class="js">
+		<p><span>效果参考网址：<a target="_blank" href="http://www.mtime.com/">http://www.mtime.com/</a></span>js调用：</p>
+		<textarea>
+jQuery(".m_wnews").slide({ mainCell:"#miniNewsRegion", effect:"topLoop", autoPlay:true, delayTime:0});
+		</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+

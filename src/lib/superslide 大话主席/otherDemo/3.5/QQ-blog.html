@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery-腾讯博客图片滚动">
+<meta name="Description" content="SuperSlide,jQuery-腾讯博客图片滚动">
+<title>SuperSlide - 腾讯博客图片滚动</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:50px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.scrollBox{ width:940px;  background:url(images/scrollBg.png) ;padding:10px;border-top:1px solid #fff; position:relative; }
+	.scrollBox .piclist{ overflow:hidden; zoom:1;}
+	.scrollBox .ohbox{overflow:hidden; position:relative;width:818px;left:60px}
+	.scrollBox {position:relative;overflow:hidden;zoom:1;}
+	.scrollBox .piclist li{float:left; display:inline; width:185px;background:#fff;border:1px solid #c9bea9;margin-right:10px;padding:5px;}
+	.scrollBox .piclist li span{height:25px;line-height:25px;display:block;text-align:center;   }
+	.scrollBox .pageBtn span{ background:url(images/bntBg.png) no-repeat; display:block;width:37px;height:59px;position:absolute;top:72px;cursor:pointer;text-indent:-999em;overflow:hidden; }
+	.scrollBox .pageBtn .prev{left:20px;background-position:-11px -84px ;}
+	.scrollBox .pageBtn .next{right:20px;background-position:-53px -84px ;}
+	.scrollBox .pageBtn .list{overflow:hidden;zoom:1;margin:10px 0 0 413px; }
+	.scrollBox .pageBtn .list li{ background:url(images/bntBg.png); float:left; display:inline; width:15px;height:15px;background-position:-86px -57px ;cursor:pointer;margin-left:10px;line-height:10000px;overflow:hidden;  }
+	.scrollBox .pageBtn .list li.on{background-position:-114px -57px }
+
+
+</style>
+
+
+	<div class="scrollBox" style="margin:0 auto">
+			<div class="ohbox">
+					<ul class="piclist">
+						<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/1.jpg" /><span>和尚携性感美女召唤被平坟亡灵</span></a></li>
+						<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/2.jpg" /><span>多家企业前往国旗班“抢”老兵</span></a></li>
+						<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/3.jpg" /><span>岁月的痕迹</span></a></li>
+						<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/4.jpg" /><span>印度排灯节上嬉戏的人们</span></a></li>
+						<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/5.jpg" /><span>游阳朔：实拍老外嬉戏泥巴浴</span></a></li>
+						<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/6.jpg" /><span>青海老人过寿儿子往棺木里扔钱</span></a></li>
+						<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/7.jpg" /><span>实拍晋南集市上的有趣表情</span></a></li>
+						<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/8.jpg" /><span>王菲和李亚鹏的幸福</span></a></li>
+						<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/9.jpg" /><span>2050年中国的老外农民工</span></a></li>
+						<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/10.jpg" /><span>美国学生边听讲座边学中国功夫</span></a></li>
+						<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/11.jpg" /><span>游泰国普吉岛：沙滩遇猎艳美女</span></a></li>
+						<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/12.jpg" /><span>游巴基斯坦：美女带路观边境小村</span></a></li>
+					</ul>
+			</div>
+			<div class="pageBtn">
+				<span class="prev">&lt;</span>
+				<span class="next">&gt;</span>
+				<ul class="list"><li>0</li><li>1</li><li>2</li></ul>
+			</div>
+	</div>
+	<script type="text/javascript">jQuery(".scrollBox").slide({ titCell:".list li", mainCell:".piclist", effect:"left",vis:4,scroll:4,delayTime:800,trigger:"click",easing:"easeOutCirc"});</script>
+
+
+	<div class="js">
+		<p><span>效果参考网址：<a target="_blank" href="http://blog.qq.com/">http://blog.qq.com/</a></span>js调用：</p>
+		<textarea>jQuery(".scrollBox").slide({ titCell:".list li", mainCell:".piclist", effect:"left",vis:4,scroll:4,delayTime:800,trigger:"click",easing:"easeOutCirc"});</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+

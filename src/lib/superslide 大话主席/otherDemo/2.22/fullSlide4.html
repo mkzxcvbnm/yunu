@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,真·全屏焦点图">
+<meta name="Description" content="SuperSlide,真·全屏焦点图">
+<title>真·全屏焦点图 - SuperSlide</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体; width:100%; }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	#footer{ text-align:center;  }
+
+	/* 本例子css */
+	body,html{ width:100%; height:100%; ;   } 
+	.fullSlide{ position:absolute; left:0; top:0; width:100%;  height:100%;  min-width:1000px; background:#000  }
+	.fullSlide ul{ height:100% !important; width:100% !important;  }
+	.fullSlide li{  height:100% !important; width:100% !important; }
+	.fullSlide .prev,
+	.fullSlide .next{ position:absolute; z-index:1; display:block; width:30px; height:50px; top:50%; margin-top:-100px; left:20px;  
+		background:url(images/icons.png) 0 0 no-repeat; 
+		cursor:pointer;  filter:alpha(opacity=60);opacity:0.6;  }
+	.fullSlide .next{ left:auto; right:30px; background-position:-51px 0; }
+	.fullSlide .prev:hover,
+	.fullSlide .next:hover{ filter:alpha(opacity=100);opacity:1; }
+	.fullSlide .playState{ display:block; position:absolute; z-index:1; right:30px; top:50%; margin-top:-20px; width:51px; height:51px; overflow:hidden;  background:url(images/icons.png) 23px -132px #000  no-repeat; filter:alpha(opacity=60);opacity:0.6;  }
+	.fullSlide .pauseState{ background-position:23px -201px; }
+	.fullSlide .playState:hover{ filter:alpha(opacity=100);opacity:1;  }
+
+	/* 内容&导航，演示用，与SuperSlide无关 */
+	.content{ width:1000px; position:relative; z-index:1; margin:0 auto; padding:30px 0; }
+	.nav{ height:40px; line-height:40px; background:#c00; color:#fff; overflow:hidden;  font:normal 14px/40px "Microsoft YaHei"; _font-weight:bold;
+		-webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; filter:alpha(opacity=80);opacity:0.8; 
+	}
+	.nav li{ width:120px; float:left; text-align:center; border:1px solid #d50000; border-top:0; border-bottom:0; margin-left:-1px;  }
+	.nav li a{ display:block;  color:#fff; height:100%;  }
+	.nav li a:hover,.nav li.on a{ background:#880000; color:#fff;  } 
+
+
+</style>
+
+	<div class="fullSlide">
+		<ul>
+			<li style="background:url(images/1.jpg) center center no-repeat;"></li>
+			<li style="background:url(images/2.jpg) center center no-repeat;"></li>
+			<li style="background:url(images/3.jpg) center center no-repeat;"></li>
+		</ul>
+		<a class="prev" href="javascript:void(0)"></a>
+		<a class="next" href="javascript:void(0)"></a>
+		<a class="playState" href="javascript:void(0)"></a>
+	</div>
+
+	<!-- 内容&导航，演示用，与SuperSlide无关 -->
+	<div class="content">
+		<ul class="nav">
+			<li class="on"><a href="#">网站首页</a></li>
+			<li><a href="#">关于我们</a></li>
+			<li><a href="#">最新动态</a></li>
+			<li><a href="#">产品战士</a></li>
+			<li><a href="#">联系我们</a></li>
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+			
+		jQuery(".fullSlide").slide({ mainCell:"ul", effect:"fold",  autoPlay:true, mouseOverStop:false });
+
+	</script>
+
+<div id="footer">Copyright ©2011-2013 大话主席 <a target="_blank" href="http://www.superslide2.com">www.superslide2.com</a></div>
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>

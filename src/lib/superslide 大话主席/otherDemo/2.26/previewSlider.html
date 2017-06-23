@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,前后图片预览焦点图（全屏）">
+<meta name="Description" content="SuperSlide,前后图片预览焦点图（全屏）">
+<title>前后图片预览焦点图（全屏） - SuperSlide</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体; width:100%; }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	#footer{ text-align:center;  }
+
+	/* 本例子css */
+	.slider{ width:100%;  min-width:980px;  height:335px;  position:relative; overflow:hidden; background:#fff; text-align:center;   }
+	.slider .bd{ width:980px; position:absolute; left:50%; margin-left:-490px  }
+	.slider .bd li{ width:980px;  overflow:hidden; }
+	.slider .bd li img{ display:block; width:980px; height:335px;    }
+	.slider .tempWrap{ overflow:visible !important }
+	.slider .tempWrap ul{  margin-left:-980px !important; /*强制位置*/  }
+
+	.slider .hd{ position:absolute; width:100%; left:0;  z-index:1; height:8px; bottom:20px;  text-align:center;  }
+	.slider .hd li{ display:inline-block; *display:inline; zoom:1; width:8px; height:8px; line-height:99px; overflow:hidden; background:url(images/slider-btn.png) 0 -10px no-repeat; 
+		margin:0 5px; cursor:pointer; filter:alpha(opacity=60);opacity:0.6;  }
+	.slider .hd li.on{ background-position:0 0; filter:alpha(opacity=100);opacity:1;  }
+	.slider .pnBtn{  position:absolute; z-index:1; top:0; width:100%;  height:335px; cursor:pointer;   }
+	.slider .prev{ left:-50%; margin-left:-490px;  }
+	.slider .next{ left:50%;  margin-left:490px;  }
+	.slider .pnBtn .blackBg{ display:block;  position:absolute; left:0; top:0; width:100%; height:335px; background:#000; filter:alpha(opacity=50);opacity:0.5;   }
+	.slider .pnBtn .arrow{ display:none;   position:absolute; top:0; z-index:1; width:60px; height:335px;  }
+	.slider .pnBtn .arrow:hover{ filter:alpha(opacity=60);opacity:0.6; }
+	.slider .prev .arrow{ right:0; background:url(images/slider-arrow.png) -120px 0 no-repeat;   }
+	.slider .next .arrow{ left:0; background:url(images/slider-arrow.png) 0 0 no-repeat;  }
+
+</style>
+
+	<div class="slider">
+		
+		<div class="bd">
+			<ul>
+				
+				<li><a target="_blank" href="http://www.superslide2.com"><img src="images/1.jpg" /></a></li>
+				<li><a target="_blank" href="http://www.superslide2.com"><img src="images/2.jpg" /></a></li>
+				<li><a target="_blank" href="http://www.superslide2.com"><img src="images/3.jpg" /></a></li>	
+				<li><a target="_blank" href="http://www.superslide2.com"><img src="images/4.jpg" /></a></li>	
+
+			</ul>
+		</div>
+
+		<div class="hd"><ul></ul></div><!-- 自动分页 -->
+
+		<div class="pnBtn prev">
+			<span class="blackBg"></span>
+			<a class="arrow" href="javascript:void(0)"></a>
+		</div>
+		<div class="pnBtn next">
+			<span class="blackBg"></span>
+			<a class="arrow" href="javascript:void(0)"></a>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		/* 把最后一个放到第一个前面，然后通过外层ul{margin-left:-980px !important; }来显示第一个 */
+		jQuery(".slider .bd li").first().before( jQuery(".slider .bd li").last() );
+		/* 控制左右按钮显示 */
+		jQuery(".slider").hover(function(){ jQuery(this).find(".arrow").stop(true,true).fadeIn(300) },function(){ jQuery(this).find(".arrow").fadeOut(300) });
+		/* 调用SuperSlide */
+		jQuery(".slider").slide({ titCell:".hd ul", mainCell:".bd ul", effect:"leftLoop",  autoPlay:true, vis:3, autoPage:true, trigger:"click"});
+	</script>
+
+
+
+<div id="footer">Copyright ©2011-2013 大话主席 <a target="_blank" href="http://www.superslide2.com">http://www.superslide2.com</a></div>
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+

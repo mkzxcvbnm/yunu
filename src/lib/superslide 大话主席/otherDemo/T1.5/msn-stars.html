@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery-msn星座切换">
+<meta name="Description" content="SuperSlide,jQuery-msn星座切换">
+<title>SuperSlide - msn星座切换</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:50px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.newstars { width: 145px; height: 108px; padding: 14px 11px; background-color: #38a3db; margin-top: 5px; color: #ffffff; overflow: hidden; color:#fff;  }
+	.newstars a:link, .newstars a:visited { color: #fff; }
+	.more_newstars { font-size: 12px; margin-left: 40px; }
+	.list_newstars { margin-bottom: 10px; height: 84px; overflow: hidden; position: relative; }
+	.list_newstars ul { position: absolute; top: 0px; }
+	.list_newstars li { height: 84px; overflow: hidden; }
+	.list_newstars li p { line-height: 16px; }
+	.name_newstars { font-size: 16px; font-weight: bold; margin-bottom: 4px; }
+	.detail_newstars { line-height: 16px; height: 64px; overflow: hidden; }
+	.title_newstars { font-size: 16px; font-weight: bold; height: 16px; line-height: 16px; overflow: hidden; }
+
+
+</style>
+
+	<div class="newstars" style="margin:0 auto">
+		<a href="http://www.SuperSlide2.com" target="_blank">
+			<div class="list_newstars">
+				<ul>
+					<li>
+						<p class="name_newstars"> 白羊座 </p>
+						<p class="detail_newstars"> 白羊座的朋友对事情都会有自己的独特想法，不会人云亦云，更不会被别人的观点左右。 </p>
+					</li>
+					<li>
+						<p class="name_newstars"> 金牛座 </p>
+						<p class="detail_newstars"> 金牛座的朋友各方面压力都不大，心情舒畅，做事情相对顺利。 </p>
+					</li>
+					<li>
+						<p class="name_newstars"> 双子座 </p>
+						<p class="detail_newstars"> 双子座的朋友在工作方面压力非常大，常常要放弃自己的事情全力对付各种突发状况。 </p>
+					</li>
+					<li>
+						<p class="name_newstars"> 巨蟹座 </p>
+						<p class="detail_newstars"> 巨蟹座的朋友对工作和学习方面的事情很用心。 </p>
+					</li>
+					<li>
+						<p class="name_newstars"> 狮子座 </p>
+						<p class="detail_newstars"> 狮子座的朋友要做的事情非常多，有时候你甚至会怀疑，如果没有了你，地球到底能不能正常运转。 </p>
+					</li>
+					<li>
+						<p class="name_newstars"> 处女座 </p>
+						<p class="detail_newstars"> 处女座的朋友整体运势一般。周日，很平常的一天，上阶段的工作要有个总结，顺便为下一个阶段做计划。 </p>
+					</li>
+					<li>
+						<p class="name_newstars"> 天秤座 </p>
+						<p class="detail_newstars"> 天秤座的朋友整体运势不是特别好，很多麻烦缠来绕去令你苦恼不已。 </p>
+					</li>
+					<li>
+						<p class="name_newstars"> 天蝎座 </p>
+						<p class="detail_newstars"> 天蝎座的朋友事情非常多，脑子中经常在思考怎样搞定一件事情，怎样解决另一件事情。 </p>
+					</li>
+					<li>
+						<p class="name_newstars"> 射手座 </p>
+						<p class="detail_newstars"> 射手座的朋友心态非常好，虽然有各种各样的困难，但是在你眼中这些都不算什么，由于在精神上占了优势，以后解决问题的时候就会顺手些。 </p>
+					</li>
+					<li>
+						<p class="name_newstars"> 摩羯座 </p>
+						<p class="detail_newstars"> 魔羯座的朋友过得极为平静，没有什么大的风浪。 </p>
+					</li>
+					<li>
+						<p class="name_newstars"> 水瓶座 </p>
+						<p class="detail_newstars"> 水瓶座的朋友整体运势不顺，各方面都会出现大小不一的毛病，你必须不时地抽出时间来做修补工作。 </p>
+					</li>
+					<li>
+						<p class="name_newstars"> 双鱼座 </p>
+						<p class="detail_newstars"> 双鱼座的朋友做事情总是做不到点儿上，费了力气又讨不到好处，心中难免会有些不平衡。 </p>
+					</li>
+
+				</ul>
+			</div>
+			<p class="title_newstars">
+				<span>星座</span>
+				<span class="more_newstars">更多&gt;&gt;</span>
+			</p>
+		</a>
+	</div>
+
+	<script type="text/javascript">
+	jQuery(".newstars").slide({ mainCell:"ul", effect:"topLoop", autoPlay:true, delayTime:1200,interTime:2500,easing:"easeInCubic"});
+	</script>
+
+
+	<div class="js">
+		<p><span>效果参考网址：<a target="_blank" href="http://cn.msn.com/">http://cn.msn.com/</a></span>js调用：</p>
+		<textarea>
+jQuery(".newstars").slide({ mainCell:"ul", effect:"topLoop", autoPlay:true, delayTime:1200,interTime:3500,easing:"easeInCubic"});
+		</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+

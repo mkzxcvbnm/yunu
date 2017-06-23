@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,横向全屏焦点图">
+<meta name="Description" content="SuperSlide,横向全屏焦点图">
+<title>横向全屏焦点图 - SuperSlide</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体; width:100%; }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	#footer{ text-align:center;  }
+
+	/* 本例子css */
+	.fullSlide{ width:100%;  position:relative;  height:460px; background:#000;  }
+	.fullSlide .bd{ margin:0 auto; position:relative; z-index:0; overflow:hidden;  }
+	.fullSlide .bd ul{ width:100% !important;  }
+	.fullSlide .bd li{ width:100% !important;  height:460px; overflow:hidden; text-align:center;  }
+	.fullSlide .bd li a{ display:block; height:460px; }
+
+	.fullSlide .hd{ width:100%;  position:absolute; z-index:1; bottom:0; left:0; height:30px; line-height:30px; background:url(images/touming.png) repeat-x; text-align:center;
+		 _background:#000; _filter:alpha(opacity=60); 
+	}
+	.fullSlide .hd ul{ text-align:center;  padding-top:5px;  }
+	.fullSlide .hd ul li{ cursor:pointer; display:inline-block; *display:inline; zoom:1; width:8px; height:8px; margin:5px; background:url(images/tg_flash_p.png) -18px 0; overflow:hidden; 
+		line-height:9999px; 
+	}
+	.fullSlide .hd ul .on{ background-position:0 0; }
+</style>
+
+	<div class="fullSlide">
+		
+		<div class="bd">
+			<ul>
+				<li style="background:url(images/1.jpg) #194982 center 0 no-repeat;"><a target="_blank" href="http://www.superslide2.com"></a></li>
+				<li style="background:url(images/2.jpg) #15181e center 0 no-repeat;"><a target="_blank" href="http://www.superslide2.com"></a></li>
+				<li style="background:url(images/3.jpg) #0b0b0b center 0 no-repeat;"><a target="_blank" href="http://www.superslide2.com"></a></li>
+				<li style="background:url(images/4.jpg) #000000 center 0 no-repeat;"><a target="_blank" href="http://www.superslide2.com"></a></li>
+				<li style="background:url(images/5.jpg) #04304b center 0 no-repeat;"><a target="_blank" href="http://www.superslide2.com"></a></li>
+			</ul>
+		</div>
+
+		<div class="hd"><ul></ul></div>
+	</div>
+
+	<script type="text/javascript">
+		jQuery(".fullSlide").slide({ titCell:".hd ul", mainCell:".bd ul", effect:"fold",  autoPlay:true, autoPage:true, trigger:"click" });
+	</script>
+
+<div id="footer">Copyright ©2011-2013 大话主席 <a target="_blank" href="http://www.superslide2.com">www.superslide2.com</a></div>
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>

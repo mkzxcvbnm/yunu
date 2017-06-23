@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,targetCell详细介绍">
+<meta name="Description" content="SuperSlide,targetCell详细介绍">
+<title>SuperSlide - targetCell详细介绍</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+
+<!-- 以下为代码着色插件引用 -->
+<script type="text/javascript" src="../../syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="../../syntaxhighlighter/scripts/shBrushXml.js"></script>
+<script type="text/javascript" src="../../syntaxhighlighter/scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="../../syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<link type="text/css" rel="stylesheet" href="../../syntaxhighlighter/styles/shCoreRDark.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<style type="text/css">
+
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ color:#333;font:12px/20px Arial,"Microsoft YaHei","宋体",sans-serif; text-align:center; }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+
+	/* 顶部导航条 */
+	#header{ height:32px; line-height:30px; color:#fff; text-align:left; padding:0 10px; overflow:hidden; background: #333;}
+	#header a{ color:#fff;  }
+	#header #logo{ display:inline-block; *display:inline; zoom:1; font-size:14px; margin-right:5px;  }
+	#header .nav{ float:right; }
+	#header .nav a{ padding:0 10px;  }
+	#header .nav a.imp{ color:#ff0;  }
+
+	#content{ margin:0 auto; padding:30px;  position:relative; text-align:left;  }
+	#demoContent{ width:100%; margin-top:10px;  }
+
+	.usePageDl{ width:1000px;  }
+	.usePageDl dt h2{ font:normal 22px/150% "Microsoft YaHei"; _font-weight:bold; color:#176D97;  }
+	.usePageDl dt p{ padding:5px 0 10px 33px;  }
+	.usePageDl dd{ margin-bottom:50px; padding-left:33px;  }
+	.syntaxhighlighter table td.code{ padding:10px 0 !important;  }
+	.syntaxhighlighter{ margin:0;  }
+	p.imp{ color:#c00;  }
+
+
+	/* 本例子css */
+	#slideTxtBox{ width:450px; border:1px solid #ddd; text-align:left; background:#fff;  }
+	#slideTxtBox .hd{ height:30px; line-height:30px; background:#176D97; padding:0 20px; border-bottom:1px solid #ddd;  position:relative;  }
+	#slideTxtBox .more{ float:right; }
+	#slideTxtBox .more a{ color:#fff;  }
+	#slideTxtBox .hd ul{ float:left; position:absolute; left:20px; top:1px; height:32px;   }
+	#slideTxtBox .hd ul li{ float:left; padding:0 15px; cursor:pointer; color:#fff;  }
+	#slideTxtBox .hd ul li.on{ height:32px;  background:#fff;  color:#176D97; font-weight:bold;  }
+	#slideTxtBox .bd ul{ padding:15px;  zoom:1;  }
+	#slideTxtBox .bd li{ height:24px; line-height:24px;   }
+	#slideTxtBox .bd li .date{ float:right; color:#999;  }
+
+</style>
+
+</head>
+<body>
+<!-- header S -->
+<div id="header">
+	<span class="nav">
+		<a href="../../index.html">返回首页</a>
+	</span>
+
+	<div class="title">
+			<h1 tite="SuperSlide" id="logo">SuperSlide</h1><em></em><span class="author"> -- 大话主席</span>
+	</div>
+</div>
+<!-- header E -->
+
+<!-- content S -->
+<div id="content">
+		<dl class="usePageDl">
+		<dt><h2>1、图解</h2>
+			<p></p>
+		</dt>
+		<dd>
+			<img src="images/targetCell.png" />
+		</dd>
+
+		<dt><h2>2、实例：titCell、mainCell、targetCell 同时应用</h2>
+			<p>有时候我们会遇到 Tab 切换右侧有“更多”的情况，此时 targetCell 能很好解决问题</p>
+		</dt>
+		<dd>
+
+			<p class="imp">效果如下：</p>
+
+			<div  id="slideTxtBox">
+				<div class="hd">
+					<span class="more">
+						<a href='#'>&gt; 更多1</a>
+						<a href='#'>&gt; 更多2</a>
+						<a href='#'>&gt; 更多3</a>
+					</span>
+					<ul><li>教育</li><li>培训</li><li>出国</li></ul>
+				</div>
+				<div class="bd">
+					<ul>
+						<li><span class="date">2011-11-11</span><a href="#">中国打破了世界软件巨头规则</a></li>
+						<li><span class="date">2011-11-11</span><a href="#">口语：会说中文就能说英语！</a></li>
+						<li><span class="date">2011-11-11</span><a href="#">农场摘菜不如在线学外语好玩</a></li>
+						<li><span class="date">2011-11-11</span><a href="#">数理化老师竟也看学习资料？</a></li>
+					</ul>
+					<ul>
+						<li><span class="date">2011-11-11</span><a href="#">名师教作文：３妙招巧写高分</a></li>
+						<li><span class="date">2011-11-11</span><a href="#">耶鲁小子：教你备考SAT</a></li>
+						<li><span class="date">2011-11-11</span><a href="#">施强：高端专业语言教学</a></li>
+						<li><span class="date">2011-11-11</span><a href="#">数理化老师竟也看学习资料？</a></li>
+					</ul>
+					<ul>
+						<li><span class="date">2011-11-11</span><a href="#">澳大利亚八大名校招生说明会</a></li>
+						<li><span class="date">2011-11-11</span><a href="#">2012世界大学排名新鲜出炉</a></li>
+						<li><span class="date">2011-11-11</span><a href="#">新加坡留学，国际双语课程</a></li>
+						<li><span class="date">2011-11-11</span><a href="#">高考后留学日本名校随你选</a></li>
+					</ul>
+				</div>
+			</div>
+			<script type="text/javascript">jQuery("#slideTxtBox").slide({ titCell:".hd li", mainCell:".bd", targetCell:".more a", autoPlay:true});</script>
+
+
+			<p>&nbsp;</p>
+			<p class="imp">代码如下，注意观察 targetCell：</p>
+			<p>
+				<pre class="brush: html;">
+
+					<div class="slideTxtBox">
+						<div class="hd">
+							<span class="more">
+								<a href='#'>&gt; 更多1</a>
+								<a href='#'>&gt; 更多2</a>
+								<a href='#'>&gt; 更多3</a>
+							</span>
+							<ul><li>教育</li><li>培训</li><li>出国</li></ul>
+						</div>
+						<div class="bd">
+							<ul>
+								<li><span class="date">2011-11-11</span><a href="#">中国打破了世界软件巨头规则</a></li>
+								<li><span class="date">2011-11-11</span><a href="#">口语：会说中文就能说英语！</a></li>
+								<li><span class="date">2011-11-11</span><a href="#">农场摘菜不如在线学外语好玩</a></li>
+								<li><span class="date">2011-11-11</span><a href="#">数理化老师竟也看学习资料？</a></li>
+							</ul>
+							<ul>
+								<li><span class="date">2011-11-11</span><a href="#">名师教作文：３妙招巧写高分</a></li>
+								<li><span class="date">2011-11-11</span><a href="#">耶鲁小子：教你备考SAT</a></li>
+								<li><span class="date">2011-11-11</span><a href="#">施强：高端专业语言教学</a></li>
+								<li><span class="date">2011-11-11</span><a href="#">数理化老师竟也看学习资料？</a></li>
+							</ul>
+							<ul>
+								<li><span class="date">2011-11-11</span><a href="#">澳大利亚八大名校招生说明会</a></li>
+								<li><span class="date">2011-11-11</span><a href="#">2012世界大学排名新鲜出炉</a></li>
+								<li><span class="date">2011-11-11</span><a href="#">新加坡留学，国际双语课程</a></li>
+								<li><span class="date">2011-11-11</span><a href="#">高考后留学日本名校随你选</a></li>
+							</ul>
+						</div>
+					</div>
+
+				</pre>
+			</p>
+			<p>
+				<pre class="brush:js;">
+					jQuery(".slideTxtBox").slide({ titCell:".hd li", mainCell:".bd", targetCell:".more a", autoPlay:true});
+				</pre>
+			</p>
+
+		</dd>
+
+
+		<dt><h2>3、有了targetCell就能处理更多情况，赶快试试吧~</h2></dt>
+		</dl>
+</div>
+
+
+<!-- content E -->
+<div id="footer">Copyright ©2011-2013 大话主席  <a href="http://www.SuperSlide2.com">www.SuperSlide2.com</a></div>
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>

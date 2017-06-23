@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery-逛街网首页焦点图">
+<meta name="Description" content="SuperSlide,jQuery-逛街网首页焦点图">
+<title>SuperSlide - 逛街网首页焦点图</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:50px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.m-slide{ position: relative; width:683px;  height: 200px; border-left: 1px solid #e9e9e9; border-right: 1px solid #e9e9e9; background: #fff }
+	.m-slide .bottom-shadow{ position: absolute; bottom: -3px; left: 0; width: 100%; height: 1px; overflow: hidden; border-top: 1px solid #e0e0e0; background: #e6e6e6; border-bottom: 1px solid #ececec }
+	.m-slide .img { float: left; position: relative }
+	.m-slide .img li, .m-slide .img a, .m-slide .img img { display: block; width: 490px; height: 200px }
+	.m-slide .img li { display: none; position: absolute; left: 0; top: 0 }
+	.m-slide .img .first { display: block }
+	.m-slide .tab { float: right }
+	.m-slide .tab li { *margin-bottom: -3px; border-top: 1px solid #e5e5e5; width: 193px }
+	.m-slide .tab .first { border-top: 0 }
+	.m-slide .tab a { text-decoration: none; display: block; position: relative; width: 190px; height: 49px; border-left: 3px solid #fff }
+	.m-slide .tab a b { position: absolute; left: 0; top: 20px; width: 4px; height: 11px; overflow: hidden }
+	.m-slide .tab a span { position: absolute; overflow: hidden }
+	.m-slide .tab a .title { left: 17px; top: 6px; height: 20px; line-height: 20px; font-size: 14px; font-weight: bold; color: #666 }
+	.m-slide .tab a .des { left: 18px; top: 26px; height: 16px; line-height: 16px; color: #999 }
+	.m-slide .tab .first a { height: 50px }
+	.m-slide .tab .on a { border-left: 3px solid #41a1f2 }
+	.m-slide .tab .on a b { background: url(images/dot.png) no-repeat}
+	.m-slide .tab .on a span { color: #41a1f2 }
+
+</style>
+
+	<div class="m-slide" style="margin:0 auto">
+			<ul class="img">
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/1.jpg" /></a></li>
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/2.jpg" /></a></li>
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/3.jpg" /></a></li>
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/4.jpg" /></a></li>
+			</ul>
+			<ul class="tab">
+				<li>
+					<a href="#">
+						<b></b>
+						<span class="title"> 餐垫艺术 </span>
+						<span class="des"> 让餐桌色彩丰富起来 </span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<b></b>
+						<span class="title"> 秋冬款连衣裙 </span>
+						<span class="des"> 优雅的小女人味 </span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<b></b>
+						<span class="title"> 秋冬围巾 </span>
+						<span class="des"> 温暖来袭 </span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<b></b>
+						<span class="title"> 帅气军工装 </span>
+						<span class="des"> 时尚中性风 </span>
+					</a>
+				</li>
+			</ul>
+			<b class="bottom-shadow"></b>
+	</div>
+
+	<script type="text/javascript">
+		jQuery(".m-slide").slide({ titCell:".tab li", mainCell:".img",effect:"fold", autoPlay:true});
+	</script>
+
+
+	<div class="js">
+		<p><span>效果参考网址：<a target="_blank" href="http://guangjie.hao123.com">http://guangjie.hao123.com</a></span>js调用：</p>
+		<textarea>
+jQuery(".m-slide").slide({ titCell:".tab li", mainCell:".img",effect:"fold", autoPlay:true});
+		</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>

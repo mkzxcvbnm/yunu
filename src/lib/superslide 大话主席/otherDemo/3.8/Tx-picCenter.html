@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide一次调用，执行多个相同效果">
+<meta name="Description" content="SuperSlide一次调用，执行多个相同效果">
+<title>SuperSlide - 一次调用，执行多个相同效果</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:50px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.picCenter{ width:600px; overflow:hidden; border:1px solid #ddd; padding:0 10px;  }
+	.picCenter dl{ width:180px; float:left; padding:0 10px; text-align:center; }
+	.picCenter dd{ position:relative; height:210px;  }
+	.picCenter dd ul li{ width:178px; overflow:hidden; }
+	.picCenter dd ul li img{ width:178px; height:178px; display:block;    }
+	.picCenter dd p{ height:30px; line-height:30px;   }
+	.picCenter .prev,.picCenter .next{ display:block; position:absolute; width:15px; height:13px; bottom:10px; right:18px; background:url(images/arrow.png) no-repeat;  }
+	.picCenter .next{ right:0px; background-position:-20px 0; }
+
+</style>
+
+	<div class="picCenter" style="margin:0 auto">
+
+			<dl>
+			 <dt><img src="images/1.jpg" /></dt>
+			 <dd>
+					 <ul>
+						<li>
+							<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/1.1.jpg" /></a>
+							<p>毕节的冬天</p>
+						</li>
+						<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/1.2.jpg" /></a>
+							<p>金婚的秘密</p>
+						</li>
+						<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/1.3.jpg" /></a>
+							<p>黑暗中的球手</p>
+						</li>
+					 </ul>
+					<a class="prev" href="javascript:void(0)"></a>
+					<a class="next" href="javascript:void(0)"></a>
+			 </dd>
+			</dl>
+
+			<dl>
+			 <dt><img src="images/2.jpg" /></dt>
+			 <dd>
+					 <ul>
+						<li>
+							<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/2.1.jpg" /></a>
+							<p>毕节的冬天</p>
+						</li>
+						<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/2.2.jpg" /></a>
+							<p>金婚的秘密</p>
+						</li>
+						<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/2.3.jpg" /></a>
+							<p>黑暗中的球手</p>
+						</li>
+					 </ul>
+					<a class="prev" href="javascript:void(0)"></a>
+					<a class="next" href="javascript:void(0)"></a>
+			 </dd>
+			</dl>
+
+			<dl>
+			 <dt><img src="images/3.jpg" /></dt>
+			 <dd>
+					 <ul>
+						<li>
+							<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/3.1.jpg" /></a>
+							<p>毕节的冬天</p>
+						</li>
+						<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/3.2.jpg" /></a>
+							<p>金婚的秘密</p>
+						</li>
+						<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/3.3.jpg" /></a>
+							<p>黑暗中的球手</p>
+						</li>
+					 </ul>
+					<a class="prev" href="javascript:void(0)"></a>
+					<a class="next" href="javascript:void(0)"></a>
+			 </dd>
+			</dl>
+
+	</div>
+
+	<script type="text/javascript">
+	jQuery(".picCenter dl").slide({ mainCell:"ul", effect:"leftLoop"});
+	</script>
+
+
+	<div class="js">
+		<p><span>效果参考网址：<a target="_blank" href="http://news.qq.com/photo.shtml">http://news.qq.com/photo.shtml</a></span>js调用：单个SuperSlide</p>
+		<textarea>
+jQuery(".picCenter dl").slide({ mainCell:"ul", effect:"leftLoop"});
+		</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+

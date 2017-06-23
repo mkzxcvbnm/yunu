@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery-腾讯电影频道焦点图">
+<meta name="Description" content="SuperSlide,jQuery-腾讯电影频道焦点图">
+<title>SuperSlide - 腾讯电影频道焦点图</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:150px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.txMovie{position:relative;width:980px;height:280px; background:#000; }
+	.focus_pic{width:980px;height:280px;overflow:hidden}
+	.focus_pic li{vertical-align:top}
+	.focus_pic img{width:980px;height:280px;display:inline-block;vertical-align:top}
+	.focus_nav{position:absolute;left:0;bottom:0;background-color:rgba(0, 0,0,.6);filter:progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#7F000000',endColorstr='#7F000000');width:670px;height:60px;*zoom:1; padding-left:10px;  }
+	:root .focus_nav{-ms-filter:none}
+	.focus_nav ul{position:relative;*zoom:1; padding-top:10px !important;  }
+	.focus_nav li{position:relative;*zoom:1;float:left;display:inline;margin-right:10px; cursor:pointer;}
+	.focus_nav .navPrev,.focus_nav .navNext{border:1px solid #fff;background-color:rgba(0, 0,0,.6);filter:progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#7F000000',endColorstr='#7F000000');display:inline-block;*zoom:1;width:36px;height:36px;line-height:100;overflow:hidden;opacity:.6;filter:Alpha(Opacity=60);background-image:url(images/focus_nav.png);_background-image:url(images/focus_nav.ie6.png);background-repeat:no-repeat;position:absolute;top:10px}
+	.focus_nav .navPrev{background-position:10px 8px;right:47px;border-right-color:transparent}
+	.focus_nav .navNext{background-position:-22px 8px;right:10px}
+	.focus_nav .navPrev:hover, .focus_nav .navNext:hover{opacity:1;filter:Alpha(Opacity=100);border-right-color:#fff}
+	.focus_nav img{border:2px solid #fff;width:64px;height:34px}
+	.focus_nav .on b{color:#fff;position:absolute;top:-10px;left:30px;font-size:10px;font-family:arial;-webkit-text-size-adjust:none}
+	.focus_text{position:absolute;width:300px;height:280px;right:0;top:0;background-color:rgba(0, 0,0,.8);filter:progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#CC000000',endColorstr='#CC000000');overflow:hidden}
+	:root .focus_text{-ms-filter:none}
+	.focus_text h2 a{font-size:22px;color:#fff;font-family:'microsoft yahei',simhei;font-weight:normal;display:block;width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+	.focus_text h2 a:hover{color:#fff;text-decoration:underline}
+	.focus_text ul{padding:20px 20px 0}
+	.focus_text .sub_tit{padding-bottom:20px;color:#575757;height:18px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+	.focus_text .c_txt4,.focus_text .c_txt4 a{color:#787876;line-height:22px}
+	.focus_text .c_txt4 a:hover{color:#ccc}
+	.focus_text .c_txt4{width:260px;white-space:nowrap;overflow:hidden}
+	.focus_info{height:132px;overflow:hidden}
+	.focus_text .mod_desc{width:260px;white-space:normal;overflow:hidden;text-indent:2em}
+	.btn_play_big{ overflow: hidden;padding: 0 0 0 15px;cursor: pointer;background: url(images/bg_btn.png) no-repeat;margin-right: 5px;
+	height:40px;line-height:40px;line-height:44px\9;+line-height:44px;_line-height:40px;padding-left:50px;font-size:14px;font-weight:bold;color:#FFF;background-position:0 -275px}
+	.btn_play_big span{ float: left; height: 24px; padding: 0 15px 0 0;background: url(images/bg_btn.png) no-repeat; height:40px;background-position:right -320px}
+	.btn_play_big:hover{color:#FFF}
+	.focus_text .btn_play_big{position:absolute;bottom:13px;left:20px}
+	.txMovie .focus_nav li .cover{position:absolute;top:0;left:0;width:68px;height:38px;line-height:999px;overflow:hidden;font-size:0;background:#040303;filter:alpha(opacity=30);opacity:.3}
+	.txMovie .focus_nav li.on .cover{display:none}
+	.txMovie .focus_nav li b{display:none}
+	.txMovie .focus_nav li.on b{position:absolute;display:inline-block;top:-6px;left:29px;border-left:6px dashed transparent;border-right:6px dashed transparent;border-top:0;border-bottom:6px solid;color:#fff;font-size:0;width:0;height:0;line-height:0}
+
+</style>
+
+<div class="txMovie" style="margin:0 auto">
+	 <ul class="focus_pic" id="focus_pic_list">
+		<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/1.jpg" /></a></li>
+		<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/2.jpg" /></a></li>
+		<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/3.jpg" /></a></li>
+		<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/4.jpg" /></a></li>
+		<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/5.jpg" /></a></li>
+		<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/6.jpg" /></a></li>
+		<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/7.jpg" /></a></li>
+		<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/8.jpg" /></a></li>
+		<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/9.jpg" /></a></li>
+		<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/10.jpg" /></a></li>
+		<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/11.jpg" /></a></li>
+	</ul>
+
+	<div class="focus_nav">
+		<ul id="focus_smaillPic_list">
+			<li><a><img src="images/1.1.jpg"><span class="cover"></span></a><b>▲</b></li>
+			<li><a><img src="images/2.1.jpg"><span class="cover"></span></a><b>▲</b></li>
+			<li><a><img src="images/3.1.jpg"><span class="cover"></span></a><b>▲</b></li>
+			<li><a><img src="images/4.1.jpg"><span class="cover"></span></a><b>▲</b></li>
+			<li><a><img src="images/5.1.jpg"><span class="cover"></span></a><b>▲</b></li>
+			<li><a><img src="images/6.1.jpg"><span class="cover"></span></a><b>▲</b></li>
+			<li><a><img src="images/7.1.jpg"><span class="cover"></span></a><b>▲</b></li>
+			<li><a><img src="images/8.1.jpg"><span class="cover"></span></a><b>▲</b></li>
+			<li><a><img src="images/9.1.jpg"><span class="cover"></span></a><b>▲</b></li>
+			<li><a><img src="images/10.1.jpg"><span class="cover"></span></a><b>▲</b></li>
+			<li><a><img src="images/11.1.jpg"><span class="cover"></span></a><b>▲</b></li>
+		</ul>
+		<a href="javascript:;" title="上一个" class="navPrev">上一个</a>
+		<a href="javascript:;" title="下一个" class="navNext">下一个</a>
+	</div>
+
+	<div class="focus_text">
+		<ul id="focus_content_list">
+			<li>
+				<h2><a href="#">夺命金</a></h2>
+				<p class="sub_tit">勇夺第49届金马奖三项大奖</p>
+				<div class="focus_info">
+				<p class="c_txt4">导演：<a href="#">杜琪峰</a> </p>
+				<p class="c_txt4">主演：<a href="#">刘青云</a> <a href="#">何韵诗</a> <a href="#">任贤齐</a> <a href="#">胡杏儿</a> <a href="#">卢海鹏</a> </p>
+				<p class="c_txt4 mod_desc">《夺命金》借三个背景各异的角色：银行职员Teresa（何韵诗饰）、黑帮中人三脚豹（刘青云饰）及警队督察张正方（任...</p>
+				</div>
+				<a href="#" class="btn_play_big"><span>立即播放</span></a>
+			</li>
+		<li>
+			<h2><a href="#">逃离德黑兰</a></h2>
+			<p class="sub_tit">伊朗人质危机</p>
+			<div class="focus_info">
+			<p class="c_txt4">导演：<a href="#">本.阿弗莱克</a> </p>
+			<p class="c_txt4">主演：<a href="#">布莱恩.科兰斯顿</a> <a href="#">本.阿弗莱克</a> <a href="#">凯尔.钱德勒</a> </p>
+			<p class="c_txt4 mod_desc">《逃离德黑兰》根据一篇为名“中情局如何依靠一部假冒的电影将美国人带离德黑兰”的杂志文章改编而成，片名“Argo”来...</p>
+			</div>
+			<a href="#" class="btn_play_big"><span>立即播放</span></a>
+		</li>
+		<li>
+			<h2><a href="#">我十一</a></h2>
+			<p class="sub_tit">60年代少年的童年故事</p>
+			<div class="focus_info">
+			<p class="c_txt4">导演：<a href="#">王小帅</a> </p>
+			<p class="c_txt4">主演：<a href="#">闫妮</a> <a href="#">乔任梁</a> <a href="#">刘文卿</a> </p>
+			<p class="c_txt4 mod_desc">讲述1974年-1976年之间发生的一段青春往事，是王小帅本人和同时代人的刻骨记忆，像《青红》一样是发生在一个...</p>
+			</div>
+			<a href="#" class="btn_play_big"><span>立即播放</span></a>
+		</li>
+		<li>
+			<h2><a href="#">黑衣女人</a></h2>
+			<p class="sub_tit">被诅咒的村庄</p>
+			<div class="focus_info">
+			<p class="c_txt4">导演：<a href="#">James Watkins</a> </p>
+			<p class="c_txt4">主演：<a href="#">丹尼尔.雷德克里夫</a> <a href="#">塞伦.希德</a> <a href="#">珍妮.麦克蒂尔</a> </p>
+			<p class="c_txt4 mod_desc">丹尼尔·雷德克里夫在影片中饰演一名年轻的律师，他来到一个偏远的村庄，处理一桩客户遗嘱的案件，但是来到这里他逐渐...</p>
+			</div>
+			<a href="#" class="btn_play_big"><span>立即播放</span></a>
+		</li>
+
+		<li>
+			<h2><a href="#">《少年派》幕后特辑</a></h2>
+			<p class="sub_tit">李安解读少年派</p>
+			<div class="focus_info">
+			<p class="c_txt4">导演：<a href="#">李安</a> </p>
+			<p class="c_txt4">主演：<a href="#">苏拉.沙玛</a> <a href="#">拉菲.斯波</a> <a href="#">伊尔凡.可汗</a> </p>
+			<p class="c_txt4 mod_desc">故事开始于蒙特娄，也结束于蒙特娄。一名在找寻灵感的作家（拉菲·斯波 Rafe Spall 饰）无意间得知派·帕...</p>
+			</div>
+			<a href="#" class="btn_play_big"><span>立即播放</span></a>
+		</li>
+		<li>
+			<h2><a href="#">神枪手</a></h2>
+			<p class="sub_tit">盼拼命三郎黄晓明早日归来</p>
+			<div class="focus_info">
+			<p class="c_txt4">导演：<a href="#">林超贤</a> </p>
+			<p class="c_txt4">主演：<a href="#">任贤齐</a> <a href="#">黄晓明</a> <a href="#">陈冠希</a> <a href="#">叶璇</a> <a href="#">刘浩龙</a> </p>
+			<p class="c_txt4 mod_desc">凌靖，一个天生的猎杀者。他百发百中，每发子弹也绝无虚发，最难打的位置对他来说也是轻而易举，击倒对手准确无误，曾连续...</p>
+			</div>
+			<a href="#" class="btn_play_big"><span>立即播放</span></a>
+		</li>
+		<li>
+			<h2><a href="#">人在囧途</a></h2>
+			<p class="sub_tit">徐峥小旅馆惨被“捉奸”</p>
+			<div class="focus_info">
+			<p class="c_txt4">导演：<a href="#">叶伟民 </a> </p>
+			<p class="c_txt4">主演：<a href="#">徐峥</a> <a href="#">王宝强</a> <a href="#">李曼</a> <a href="#">姚文雪</a> <a href="#">李小璐</a> </p>
+			<p class="c_txt4 mod_desc">春节将近，玩具集团老板李成功（徐峥饰）回长沙过年，同时在情人嫚妮（李曼饰）的逼迫下，准备过年后跟老婆离婚。结果，在...</p>
+			</div>
+			<a href="#" class="btn_play_big"><span>立即播放</span></a>
+		</li>
+		<li>
+			<h2><a href="#">摩尔庄园2之海妖宝藏</a></h2>
+			<p class="sub_tit">黄渤张杰倾情献声</p>
+			<div class="focus_info">
+			<p class="c_txt4">导演：<a href="#">刘可欣</a> </p>
+			<p class="c_txt4">主演：<a href="#">丝尔特</a> <a href="#">么么公主</a> <a href="#">瑞琪</a> <a href="#">库拉</a> <a href="#">尼克</a> </p>
+			<p class="c_txt4 mod_desc">在充满传奇的摩尔大陆上，一群热爱和平的小鼹鼠创造了自己灿烂的文明，他们就是摩尔族。这些小摩尔与很多其他的...</p>
+			</div>
+			<a href="#" class="btn_play_big"><span>立即播放</span></a>
+		</li>
+		<li>
+			<h2><a href="#">在劫难逃</a></h2>
+			<p class="sub_tit">泰勒洛特纳新作</p>
+			<div class="focus_info">
+			<p class="c_txt4">导演：<a href="#">约翰.辛格顿</a> </p>
+			<p class="c_txt4">主演：<a href="#">泰勒.洛特纳</a> <a href="#">莉莉.柯林斯</a> <a href="#">阿尔弗雷德.莫里纳</a> </p>
+			<p class="c_txt4 mod_desc">《绑架》的故事创意来自Gotham集团的杰瑞米.贝尔（Jeremy Bell），讲述的是一个年轻人意外在一家寻...</p>
+			</div>
+			<a href="#" class="btn_play_big"><span>立即播放</span></a>
+		</li>
+
+		<li>
+			<h2><a href="#">哭笑不得</a></h2>
+			<p class="sub_tit">萧蔷柳岩美胸大PK</p>
+			<div class="focus_info">
+			<p class="c_txt4">导演：<a href="#">罗斌</a> </p>
+			<p class="c_txt4">主演：<a href="#">王喜</a> <a href="#">萧蔷</a> <a href="#">柳岩</a> <a href="#">李耕</a> <a href="#">刘波</a> </p>
+			<p class="c_txt4 mod_desc">表情丰富的郑满堂（王喜 饰）利用自身特点，成立了情感陪护公司，专门为那些需要带动情绪的场合提供哭和笑的服务。美...</p>
+			</div>
+			<a href="#" class="btn_play_big"><span>立即播放</span></a>
+		</li>
+		<li>
+			<h2><a href="#">青魇</a></h2>
+			<p class="sub_tit">港式惊悚回归</p>
+			<div class="focus_info">
+			<p class="c_txt4">导演：<a href="#">邱礼涛</a> </p>
+			<p class="c_txt4">主演：<a href="#">薛凯琪</a> <a href="#">黄轩</a> <a href="#">周楚楚</a> </p>
+			<p class="c_txt4 mod_desc">郝冬（黄轩 饰）在收听午夜电台节目时，谈到了自己失眠的痛苦经历。郝冬的女友——电台DJ依凡（薛凯琪 饰）开始对...</p>
+			</div>
+			<a href="#" class="btn_play_big"><span>立即播放</span></a>
+		</li>
+		<li>
+			<h2><a href="#">画皮2</a></h2>
+			<p class="sub_tit">陈坤周迅再续前缘</p>
+			<div class="focus_info">
+			<p class="c_txt4">导演：<a href="#">乌尔善</a> </p>
+			<p class="c_txt4">主演：<a href="#">周迅</a> <a href="#"> 赵薇</a> <a href="#">陈坤</a> <a href="#">冯绍峰</a> <a href="#">杨幂</a> </p>
+			<p class="c_txt4 mod_desc">在北冥以北的幽山之颠，有一座寒冰地狱，据说这是囚禁妖魔的地方，山顶的冰雪万年不化。这里，除了鸟雀，没有生灵来过...</p>
+			</div>
+			<a href="#" class="btn_play_big"><span>立即播放</span></a>
+		</li>
+		<li>
+			<h2><a href="#">暮光之城2：新月</a></h2>
+			<p class="sub_tit">贝拉身陷三角恋</p>
+			<div class="focus_info">
+			<p class="c_txt4">导演：<a href="#">克里斯.韦兹 </a> </p>
+			<p class="c_txt4">主演：<a href="#">克里斯汀.斯图尔特</a> <a href="#">罗伯特.帕丁森</a> </p>
+			<p class="c_txt4 mod_desc">爱德华担心贝拉受到吸血鬼世界的伤害，骗她说不再爱她并离开了福克斯小镇。情绪低落的贝拉转而向好朋友雅各布&amp;...</p>
+			</div>
+			<a href="#" class="btn_play_big"><span>立即播放</span></a>
+		</li>
+		</ul>
+	</div>
+
+</div>
+
+
+	<script type="text/javascript">
+		//大图和文字切换
+		jQuery(".txMovie").slide({ titCell:".focus_nav li", mainCell:".focus_pic", targetCell:".focus_text li", autoPlay:true,delayTime:100,startFun:function(i){
+				//控制小图自动翻页
+				if(i==0){ jQuery(".txMovie .navPrev").click() } else if( i%7==0 ){ jQuery(".txMovie .navNext").click()}
+			}
+		});
+		//小图滚动
+		jQuery(".txMovie").slide({ mainCell:".focus_nav ul",prevCell:".navPrev",nextCell:".navNext",effect:"left",vis:7,scroll:7,delayTime:0,autoPage:true,pnLoop:false});
+	</script>
+
+
+	<div class="js">
+		<p><span>效果参考网址：<a target="_blank" href="http://v.qq.com/movie/">http://v.qq.com/movie/</a></span>少量js+双重SuperSlide</p>
+		<textarea>
+//大图和文字切换
+jQuery(".txMovie").slide({ titCell:".focus_nav li", mainCell:".focus_pic", targetCell:".focus_text li", autoPlay:true,delayTime:100,startFun:function(i,p){
+	//控制小图自动翻页
+	if(i==0){ jQuery(".txMovie .navPrev").click() } else if( i%7==0 ){ jQuery(".txMovie .navNext").click()}
+	}
+});
+//小图滚动
+jQuery(".txMovie").slide({ mainCell:".focus_nav ul",prevCell:".navPrev",nextCell:".navNext",effect:"left",vis:7,scroll:7,delayTime:0,autoPage:true,pnLoop:false});
+		</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>

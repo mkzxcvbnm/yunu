@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../../js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="../../js/yunu.js"></script>
+	<style type="text/css">
+		[class^="div"],.imgAuto_box {border: 2px solid red;}
+		.div1 {width: 400px;height: 200px;}
+		.div2 {width: 400px;height: 200px;}
+	</style>
+</head>
+<body>
+	<h2>自适应居中</h2>
+	<div class="div1">
+		<img src="easings-example.png">
+	</div>
+	<script type="text/javascript">
+		$('.div1 img').imgAuto();
+	</script>
+	<h2>自适应填充</h2>
+	<p>可以通过传递参数'cover'或者给img标签添加imgAuto="cover"属性</p>
+	<div class="div2">
+		<img src="easings-example.png">
+	</div>
+	<script type="text/javascript">
+		$('.div2 img').imgAuto('cover');
+	</script>
+	<h2>父层没有固定高度自适应居中</h2>
+	<div class="nbox">
+		<img src="easings-example.png" no-Box="ture" width="400" height="200">
+	</div>
+	<script type="text/javascript">
+		$('.nbox img').imgAuto();
+	</script>
+	<h2>父层宽高不定 图片图片根据box-Scale属性(长宽比) 自适应居中</h2>
+	<div class="div4">
+		<img src="easings-example.png" box-Scale="4">
+	</div>
+	<script type="text/javascript">
+		$('.div4 img').imgAuto();
+	</script>
+</body>
+</html>

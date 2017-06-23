@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,多行/列滚动-js分组">
+<meta name="Description" content="SuperSlide,多行/列滚动-js分组">
+<title>SuperSlide - 多行/列滚动-js分组</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+
+<!-- 以下为代码着色插件引用 -->
+<script type="text/javascript" src="../../syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="../../syntaxhighlighter/scripts/shBrushXml.js"></script>
+<script type="text/javascript" src="../../syntaxhighlighter/scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="../../syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<link type="text/css" rel="stylesheet" href="../../syntaxhighlighter/styles/shCoreRDark.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<style type="text/css">
+
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ color:#333;font:12px/20px Arial,"Microsoft YaHei","宋体",sans-serif; text-align:center; }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+
+	/* 顶部导航条 */
+	#header{ height:32px; line-height:30px; color:#fff; text-align:left; padding:0 10px; overflow:hidden; background: #333;}
+	#header a{ color:#fff;  }
+	#header #logo{ display:inline-block; *display:inline; zoom:1; font-size:14px; margin-right:5px;  }
+	#header .nav{ float:right; }
+	#header .nav a{ padding:0 10px;  }
+	#header .nav a.imp{ color:#ff0;  }
+
+	#content{ margin:0 auto; padding:30px;  position:relative; text-align:left;  }
+	#demoContent{ width:100%; margin-top:10px;  }
+
+	.usePageDl{ width:1000px;  }
+	.usePageDl dt h2{ font:normal 22px/150% "Microsoft YaHei"; _font-weight:bold; color:#176D97;  }
+	.usePageDl dt p{ padding:5px 0 10px 33px;  }
+	.usePageDl dd{ margin-bottom:50px; padding-left:33px;  }
+	.syntaxhighlighter table td.code{ padding:10px 0 !important;  }
+	.syntaxhighlighter{ margin:0;  }
+	p.imp{ color:#c00;  }
+
+
+	/* 本例子css */
+	.multipleColumn{ overflow:hidden; position:relative; width:445px;  border:1px solid #ccc; background:#fff;   }
+	.multipleColumn .hd{ overflow:hidden;  height:30px; background:#f4f4f4; padding:0 10px;  }
+	.multipleColumn .hd .prev,.multipleColumn .hd .next{ display:block;  width:5px; height:9px; float:right; margin-right:5px; margin-top:10px;  overflow:hidden;
+		 cursor:pointer; background:url("images/icoLeft.gif") no-repeat;}
+	.multipleColumn .hd .next{ background:url("images/icoRight.gif") no-repeat;  }
+	.multipleColumn .hd ul{ float:right; overflow:hidden; zoom:1; margin-top:10px; zoom:1; }
+	.multipleColumn .hd ul li{ float:left;  width:9px; height:9px; overflow:hidden; margin-right:5px; text-indent:-999px; cursor:pointer; background:url("images/icoCircle.gif") 0 -9px no-repeat; }
+	.multipleColumn .hd ul li.on{ background-position:0 0; }
+
+	.multipleColumn .bd{ padding:10px; overflow:hidden;  }
+	.multipleColumn .bd ul{ overflow:hidden; zoom:1; width:426px;  float:left; _display:inline;  }
+	.multipleColumn .bd ul li{ margin:0 8px; float:left; _display:inline; overflow:hidden; text-align:center;  }
+	.multipleColumn .bd ul li .pic{ text-align:center; }
+	.multipleColumn .bd ul li .pic img{ width:120px; height:90px; display:block;  padding:2px; border:1px solid #ccc; }
+	.multipleColumn .bd ul li .pic a:hover img{ border-color:#999;  }
+	.multipleColumn .bd ul li .title{ line-height:24px;   }
+
+</style>
+
+</head>
+<body>
+<!-- header S -->
+<div id="header">
+	<span class="nav">
+		<a href="../../index.html">返回首页</a>
+	</span>
+
+	<div class="title">
+			<h1 tite="SuperSlide" id="logo">SuperSlide</h1><em></em><span class="author"> -- 大话主席</span>
+	</div>
+</div>
+<!-- header E -->
+
+<!-- content S -->
+<div id="content">
+		<dl class="usePageDl">
+		<dt><h2>1、图解</h2>
+			<p></p>
+		</dt>
+		<dd>
+			<img src="images/jsGroup.png" />
+		</dd>
+
+		<dt><h2>2、实例：多列滚动-js分组</h2>
+				<p></p>
+		</dt>
+		<dd>
+
+			<div class="multipleColumn">
+				<div class="hd">
+					<a class="next"></a>
+					<ul></ul>
+					<a class="prev"></a>
+					<span class="pageState"></span>
+				</div>
+				<div class="bd">
+
+							<div class="picList">
+								<li>
+									<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic1.jpg" /></a></div>
+									<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图1</a></div>
+								</li>
+								<li>
+									<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic1.jpg" /></a></div>
+									<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图1</a></div>
+								</li>
+								<li>
+									<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic1.jpg" /></a></div>
+									<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图1</a></div>
+								</li>
+								<li>
+									<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic1.jpg" /></a></div>
+									<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图1</a></div>
+								</li>
+								<li>
+									<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic1.jpg" /></a></div>
+									<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图1</a></div>
+								</li>
+								<li>
+									<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic1.jpg" /></a></div>
+									<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图1</a></div>
+								</li>
+
+								<li>
+									<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic2.jpg" /></a></div>
+									<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图2</a></div>
+								</li>
+								<li>
+									<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic2.jpg" /></a></div>
+									<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图2</a></div>
+								</li>
+								<li>
+									<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic2.jpg" /></a></div>
+									<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图2</a></div>
+								</li>
+								<li>
+									<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic2.jpg" /></a></div>
+									<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图2</a></div>
+								</li>
+								<li>
+									<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic2.jpg" /></a></div>
+									<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图2</a></div>
+								</li>
+								<li>
+									<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic2.jpg" /></a></div>
+									<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图2</a></div>
+								</li>
+
+								<li>
+									<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic3.jpg" /></a></div>
+									<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图3</a></div>
+								</li>
+								<li>
+									<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic3.jpg" /></a></div>
+									<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图3</a></div>
+								</li>
+								<li>
+									<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic3.jpg" /></a></div>
+									<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图3</a></div>
+								</li>
+								<li>
+									<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic3.jpg" /></a></div>
+									<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图3</a></div>
+								</li>
+								<li>
+									<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic3.jpg" /></a></div>
+									<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图3</a></div>
+								</li>
+								<li>
+									<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic3.jpg" /></a></div>
+									<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图3</a></div>
+								</li>
+							</div>
+
+				</div><!-- bd End -->
+			</div><!-- multipleColumn End -->
+
+			<script type="text/javascript">
+				/* 使用js分组，每6个li放到一个ul里面 */
+				jQuery(".multipleColumn .bd li").each(function(i){ jQuery(".multipleColumn .bd li").slice(i*6,i*6+6).wrapAll("<ul></ul>");});
+
+				/* 调用SuperSlide，每次滚动一个ul，相当于每次滚动6个li */
+				jQuery(".multipleColumn").slide({titCell:".hd ul",mainCell:".bd .picList",autoPage:true,effect:"leftLoop",autoPlay:true});
+			</script>
+
+
+			<p>&nbsp;</p>
+			<p class="imp">主要html代码：</p>
+			<p>
+				<pre class="brush: html;">
+
+					<div id="multipleColumn">
+						<div class="hd">
+							<a class="next"></a>
+							<ul></ul>
+							<a class="prev"></a>
+							<span class="pageState"></span>
+						</div>
+						<div class="bd">
+
+								<div class="picList">
+									<li>...1</li>
+									<li>...1</li>
+									<li>...1</li>
+									<li>...1</li>
+									<li>...1</li>
+									<li>...1</li>
+									<li>...2</li>
+									<li>...2</li>
+									<li>...2</li>
+									<li>...2</li>
+									<li>...2</li>
+									<li>...2</li>
+									<li>...3</li>
+									<li>...3</li>
+									<li>...3</li>
+									<li>...3</li>
+									<li>...3</li>
+									<li>...3</li>
+								</div>
+
+						</div>
+					</div>
+
+				</pre>
+			</p>
+			<p>
+				<pre class="brush:js;">
+				/* 使用js分组，每6个li放到一个ul里面 */
+				jQuery("#multipleColumn .bd li").each(function(i){ jQuery("#multipleColumn .bd li").slice(i*6,i*6+6).wrapAll("<ul></ul>");});
+
+				/* 调用SuperSlide，每次滚动一个ul，相当于每次滚动6个li */
+				jQuery("#multipleColumn").slide({titCell:".hd ul",mainCell:".bd .picList",autoPage:true,effect:"leftLoop",autoPlay:true});
+				</pre>
+			</p>
+
+		</dd>
+
+
+		<dt><h2>3、相信这个能解决麻烦的分组问题</h2></dt>
+		</dl>
+</div>
+
+
+<!-- content E -->
+<div id="footer">Copyright ©2011-2013 大话主席  <a href="http://www.SuperSlide2.com">www.SuperSlide2.com</a></div>
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>

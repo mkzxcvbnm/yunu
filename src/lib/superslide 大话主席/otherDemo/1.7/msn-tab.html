@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery-msn书签/焦点图切换">
+<meta name="Description" content="SuperSlide,jQuery-msn书签/焦点图切换">
+<title>SuperSlide - msn书签/焦点图切换</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:100px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.msn-focus { width: 300px; height: 260px; }
+	.msn-focus img { width: 300px; height: 223px; display: block }
+	.msn-focus .hd { font-size: 14px; height:30px;  line-height: 30px; width: 307px; margin-right: -7px }
+	.msn-focus .hd li { float: left; display: inline; float: left; margin: 0 7px 0 0; height: 35px }
+	.msn-focus .hd .on { background: url("images/arrow.png") no-repeat scroll center bottom }
+	.msn-focus .hd .on a { background-color: #38a3db; color: #fff }
+	.msn-focus .hd a { height: 30px; background-color: #eee; float: left; padding: 0 8px }
+	.msn-focus .bd { width: 300px; height: 223px; position: relative; overflow: hidden }
+	.msn-focus .bd ul { height: 223px; overflow: hidden; position:relative;  font-size: 14px; line-height: 28px }
+	.msn-focus .bd li { width: 300px; height: 223px; background-color: #fff; position: relative }
+	.msn-focus .bd li p { position: absolute; left: 0; bottom: 0; line-height: 35px; height: 35px; width: 300px; white-space: nowrap; overflow: hidden }
+	.msn-focus .bd li p i { position: absolute; left: 0; top: 0; display: block; width: 300px; height: 35px; background: #000; opacity: .5; filter: alpha(opacity=50) }
+	.msn-focus .bd li p a, .msn-focus .bd li p a:visited { position: relative; color: #fff; margin-left: 20px }
+	.msn-focus .bd li p a:hover { color: #f60 }
+	.msn-focus .prev, .msn-focus .next { position: absolute; bottom: 85px; width: 29px; height: 64px; opacity: .6; filter: alpha(opacity=60); overflow: hidden; display: none; text-indent: -999px; border: none; background:url(images/arrowLR.png) no-repeat; }
+	.msn-focus .prev: hover, .msn-focus .next: hover { opacity: .9; filter: alpha(opacity=90) }
+	.msn-focus .prev { left: 0; background-position: -50px 0 }
+	.msn-focus .next { right: 0;  }
+	.msn-focus .bdOn .prev,.msn-focus .bdOn .next{ display:block;  }
+
+</style>
+
+
+	<div class="msn-focus" style="margin:0 auto">
+		<div class="hd">
+			<ul>
+				<li><a target="_blank" href="http://www.SuperSlide2.com">资讯</a></li>
+				<li><a target="_blank" href="http://www.SuperSlide2.com">环球</a></li>
+				<li><a target="_blank" href="http://www.SuperSlide2.com">汽车</a></li>
+				<li><a target="_blank" href="http://www.SuperSlide2.com">娱乐</a></li>
+				<li><a target="_blank" href="http://www.SuperSlide2.com">奢品</a></li>
+				<li><a target="_blank" href="http://www.SuperSlide2.com">历史</a></li>
+			</ul>
+		</div>
+		<div class="bd">
+			<ul>
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/1.jpg" /></a>
+					<p> <i> </i> <a href="#"> 莫言造访瑞典一中学展示书法技艺 </a> </p>
+				</li>
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/2.jpg" /></a>
+					<p> <i> </i> <a href="#"> 美高中跳“江南style”被称最烂 </a> </p>
+				</li>
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/3.jpg" /></a>
+					<p> <i> </i> <a href="#"> 本周上市新车一览 雪铁龙C4 L领衔 </a> </p>
+				</li>
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/4.jpg" /></a>
+					<p> <i> </i> <a href="#"> 盘点2012年电影激情戏 杨幂半裸舒淇尺度大 </a> </p>
+				</li>
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/5.jpg" /></a>
+					<p> <i> </i> <a href="#"> 百年品牌记：中国老字号如何重生？ </a> </p>
+				</li>
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/6.jpg" /></a>
+					<p> <i> </i> <a href="#"> 我从哪里来？图解史上各国性教育尺度 </a> </p>
+				</li>
+			</ul>
+			<a class="prev" href="javascript:void(0)"></a>
+			<a class="next" href="javascript:void(0)"></a>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+	//鼠标移到大图，显示左右箭头
+	jQuery(".msn-focus .bd").hover(function(){ jQuery(this).addClass("bdOn") },function(){ jQuery(this).removeClass("bdOn") });
+	//SuperSlide书签切换
+	jQuery(".msn-focus").slide({ mainCell:".bd ul",delayTime:0,triggerTime:0,autoPlay:true });
+	</script>
+
+
+	<div class="js">
+		<p><span>效果参考网址：<a target="_blank" href="http://cn.msn.com/">http://cn.msn.com/</a></span>js调用：少量js+单个SuperSlide</p>
+		<textarea>
+//鼠标移到大图，显示左右箭头
+jQuery(".msn-focus .bd").hover(function(){ jQuery(this).addClass("bdOn") },function(){ jQuery(this).removeClass("bdOn") });
+//SuperSlide书签切换
+jQuery(".msn-focus").slide({ mainCell:".bd ul",delayTime:0,triggerTime:0,autoPlay:true });
+		</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>

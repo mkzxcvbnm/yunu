@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery-去哪儿焦点图">
+<meta name="Description" content="SuperSlide,jQuery-去哪儿焦点图">
+<title>SuperSlide - 去哪儿焦点图</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:50px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.qunar { width: 728px; margin: 0 auto 15px; position: relative; overflow: hidden; }
+	.qunar .e_pic_wrap { z-index: 1; white-space: nowrap; width: 728px; height: 215px; }
+	.qunar .e_pic_wrap li {position:relative;  display: inline; width: 728px; height: 215px; overflow: hidden; }
+	.qunar .e_bg_flt { position: absolute; right: 0; top: 0; width: 270px; height: 215px; background: #000; filter: alpha(opacity=50); -moz-opacity: .5; opacity: .5; z-index: 10; }
+	.qunar .e_flt_inf { position: absolute; right: 0; top: 0; width: 227px; height: 180px; padding: 25px 28px 10px 15px; overflow: hidden; z-index: 20; color: #fff; white-space: normal; word-wrap: break-word; }
+	.qunar .e_flt_inf h2 { font: 18px/25px "微软雅黑"; }
+	.qunar .e_flt_inf h3 { font: 16px/22px "微软雅黑"; margin-bottom: 22px; }
+	.qunar .e_flt_inf h3 a, .qunar .e_flt_inf h2 a { color: #fff; }
+	.qunar .e_flt_inf .t_info { line-height: 20px; height: 84px; overflow: hidden; }
+	.qunar .e_flt_inf .t_info a { color: #fff; }
+	.qunar .e_flt_inf .t_info .l_view { background: url(images/ico_p1.png) no-repeat scroll -120px 0; color: #fff; width: 39px; height: 14px; line-height: 14px; padding: 0 2px; display: inline-block; }
+	.qunar .e_sep { color: #81d6d3; position: absolute; bottom: 20px; right: 20px; width: 235px; z-index: 20; }
+	.qunar .e_sep a { color: #81d6d3; }
+
+
+	.qunar .prev, .qunar .next { position: absolute; z-index: 30; display: block; }
+	.qunar .prev { top: 93px; left: 10px; }
+	.qunar .next { top: 93px; right: 10px; }
+	.qunar .prev a, .qunar .next a { display: block; width: 25px; height: 32px; overflow: hidden; background: url(images/ico_prevnext.png) no-repeat scroll 0 0; _background-image: url(images/ico_prevnext_ie6.png); }
+	.qunar .prev a { background-position: 0 0; }
+	.qunar .prev a:hover { background-position: 0 -40px; }
+	.qunar .next a { background-position: 0 -80px; }
+	.qunar .next a:hover { background-position: 0 -120px; }
+
+</style>
+
+	<div class="qunar" style="margin:0 auto">
+
+			<div class="e_pic_wrap">
+				<ul>
+					<li>
+						<a href="http://www.SuperSlide2.com" target="_blank">
+							<img src="images/1.jpg">
+						</a>
+						<div class="e_flt_inf">
+							<h2><a href="#">恋恋温泉，秋冬泡汤指南</a></h2>
+							<h3><a href="#">3折起！随时更新最赞温泉团购</a></h3>
+							<p class="t_info"><a href="#">感恩月，精选全国多家超值温泉酒店，最全面的国内温泉指南！给自己和亲朋一份最养生的礼物！</a><a href="http://www.SuperSlide2.com/" class="l_view">去看看</a></p>
+						</div>
+						<div class="e_bg_flt"> </div>
+					</li>
+					<li>
+						<a href="http://www.SuperSlide2.com" target="_blank">
+							<img src="images/2.jpg">
+						</a>
+						<div class="e_flt_inf">
+							<h2><a href="#">带上她 国外过圣诞迎新...</a></h2>
+							<h3><a href="#">国际机票圣诞新年大抢购</a></h3>
+							<p class="t_info"><a href="#">平安夜，新年，甜蜜与浪漫，带上她，度过只属于你和她的Christmas Valentine...</a><a href="http://www.SuperSlide2.com/" class="l_view">去看看</a></p>
+						</div>
+						<div class="e_bg_flt"> </div>
+					</li>
+					<li>
+						<a href="http://www.SuperSlide2.com" target="_blank">
+							<img src="images/3.jpg">
+						</a>
+						<div class="e_flt_inf">
+							<h2><a href="#">暖冬温泉之旅</a></h2>
+							<h3><a href="#">2012去哪儿泡汤暖心线路</a></h3>
+							<p class="t_info"><a href="#">寒冷冬日，温暖的不只有爱人的怀抱。冬季出游休闲度假必选项，去哪儿温泉旅游线路精选。</a><a href="http://www.SuperSlide2.com/" class="l_view">去看看</a></p>
+						</div>
+						<div class="e_bg_flt"> </div>
+					</li>
+					<li>
+						<a href="http://www.SuperSlide2.com" target="_blank">
+							<img src="images/4.jpg">
+						</a>
+						<div class="e_flt_inf">
+							<h2><a href="#">缤纷香港大放“价”</a></h2>
+							<h3><a href="#">香港购物季 血拼进行时!</a></h3>
+							<p class="t_info"><a href="#">动感之都，购物天堂，还等什么？让我们向香港出发！</a><a href="http://www.SuperSlide2.com/" class="l_view">去看看</a></p>
+						</div>
+						<div class="e_bg_flt"> </div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="prev"><a href="javascript:void(0)"></a></div>
+			<div class="next"><a href="javascript:void(0)"></a></div>
+
+
+	</div>
+
+	<script type="text/javascript">
+		jQuery(".qunar").slide({ mainCell:".e_pic_wrap ul",effect:"leftLoop", autoPlay:false, delayTime:400});
+	</script>
+
+
+	<div class="js">
+		<p><span>效果参考网址：<a target="_blank" href="http://www.qunar.com/">http://www.qunar.com/</a></span>js调用：</p>
+		<textarea>
+jQuery(".qunar").slide({ mainCell:".e_pic_wrap ul",effect:"leftLoop", autoPlay:false, delayTime:400});
+		</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>

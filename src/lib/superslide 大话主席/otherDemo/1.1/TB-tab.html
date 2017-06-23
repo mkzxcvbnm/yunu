@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery淘宝首页右侧公告">
+<meta name="Description" content="SuperSlide,jQuery淘宝首页右侧公告">
+<title>SuperSlide - 淘宝首页右侧公告</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:50px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.notice { width: 298px; border: 1px solid #d5d5d5; overflow: hidden; }
+	.notice .tab-hd { height: 29px; background-color: #eee; margin-bottom: -1px; color: #404040; }
+	.notice .tab-hd ul { padding-top: 4px; margin-left: 7px; }
+	.notice .tab-hd li{ float: left; height: 24px; line-height: 18px; border-top: 1px solid #eee; }
+	.notice .tab-hd li a{ display:block; padding:0 14px;  }
+	.notice .tab-hd li a:hover{ color:#f60; text-decoration:underline;   }
+	.notice .tab-hd li.on{ border: 1px solid #d5d5d5; border-bottom: none; background-color: #fff; font-weight: bold; position: relative; margin-left: -1px; margin-right: -1px; }
+	.notice .tab-bd { border-top: 1px solid #e8e8e8; padding:5px;  }
+	.notice .tab-bd ul{ overflow:hidden; zoom:1; }
+	.notice .tab-bd li { height: 22px; line-height: 22px; padding: 0 10px 0 5px; overflow: hidden; width: 125px; float: left; }
+
+</style>
+
+
+	<div class="notice" style="margin:0 auto">
+		<div class="tab-hd">
+				<ul class="tab-nav">
+				  <li><a href="http://www.superslide2.com/" target="_blank">公告</a></li>
+				  <li><a href="http://www.superslide2.com/" target="_blank">规则</a></li>
+				  <li><a href="http://www.superslide2.com/" target="_blank">论坛</a></li>
+				  <li><a href="http://www.superslide2.com/" target="_blank">安全中心</a></li>
+				  <li><a href="http://www.superslide2.com/" target="_blank">公益</a></li>
+				</ul>
+		</div>
+		<div class="tab-bd">
+			<div class="tab-pal">
+					<ul>
+							<li><a href="#" class="h">[三联]疯狂的24小时</a></li>
+							<li><a href="#">[访谈]打造爆款有绝招</a></li>
+							<li><a href="#">[话题]那些感动淘宝事</a></li>
+							<li><a href="#">[123]别错过聚划算</a></li>
+					</ul>
+			</div>
+			<div class="tab-pal">
+					<ul>
+							<li><span>[<a href="#">规则</a>]</span> <a href="#">女装发布数量限制</a></li>
+							<li><span>[<a href="#">规则</a>]</span> <a href="#">违规信息升级</a></li>
+							<li><span>[<a href="#">规则</a>]</span> <a href="#">延迟发货变更</a></li>
+							<li><span>[<a href="#">规则</a>]</span> <a href="#" class="h">违背发货时间</a></li>
+					</ul>
+			</div>
+			<div class="tab-pal">
+					<ul>
+							<li><span>[<a href="#">杂谈</a>]</span> <a href="#">小而美无下限！</a></li>
+							<li><span>[<a href="#">焦点</a>]</span> <a href="#" class="h">减库存方式调整</a></li>
+							<li><span>[<a href="#">话题</a>]</span> <a href="#">小卖家抱团公约</a></li>
+							<li><span>[<a href="#">网商</a>]</span> <a href="#">1212小而美占位</a></li>
+					</ul>
+			</div>
+
+			<div class="tab-pal">
+					<ul>
+							<li><a href="#" class="h">十年积蓄一夕成空</a></li>
+							<li><a href="#">签收没验货的杯具</a></li>
+							<li><a href="#">快件短信有陷阱！</a></li>
+							<li><a href="#">禁售仿真人民币！</a></li>
+					 </ul>
+			</div>
+
+			<div class="tab-pal">
+					<ul>
+							<li><a href="#">爱心暖冬沱沱在行动</a></li>
+							<li><a href="#">残疾人云客服开放报名</a></li>
+							<li><a href="#">关注玉树震孤儿院重建</a></li>
+							<li><a href="#">微行大益，网商在行动</a></li>
+					</ul>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">jQuery(".notice").slide({ titCell:".tab-hd li", mainCell:".tab-bd",delayTime:0 });</script>
+
+
+	<div class="js">
+		<p><span>效果参考网址：<a target="_blank" href="http://www.taobao.com/">http://www.taobao.com/</a></span>js调用：</p>
+		<textarea>jQuery(".notice").slide({ titCell:".tab-hd li", mainCell:".tab-bd",delayTime:0 });</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>

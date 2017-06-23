@@ -57,6 +57,7 @@ gulp.task('js', function () {
         .pipe(plumber())
         .pipe(babel(processors))
         .pipe(gulpif(options.env === 'production', uglify()))
+        .pipe(plumber.stop())
         .pipe(sourcemaps.write('.', { sourceRoot: 'src/source/js' }))
         .pipe(gulp.dest('src/js'))
         .pipe(browserSync.reload({stream:true}));

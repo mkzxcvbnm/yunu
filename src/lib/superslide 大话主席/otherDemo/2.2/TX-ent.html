@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery-腾讯娱乐频道焦点图">
+<meta name="Description" content="SuperSlide,jQuery-腾讯娱乐频道焦点图">
+<title>SuperSlide - 腾讯娱乐频道焦点图</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:50px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.focus{width:304px;height:396px;border:3px solid #d9d9d9;position:relative;}
+	.focus #pic{width:304px;height:396px;overflow:hidden;}
+	.focus #pic ul{width:1216px;height:396px;float:left;}
+	.focus #pic li{width:304px;height:396px;float:left;}
+	.focus #pic li img{width:304px;height:396px;float:left;}
+	.focus .tip-bg{width:304px;height:21px;background:url(images/focus_tip_bg.png) no-repeat left top;position:absolute;left:0;bottom:0;z-index:12;}
+	.focus #tip{width:96px;height:14px;position:absolute;left:104px;bottom:3px;z-index:13;}
+	.focus #tip ul li{width:14px;height:14px;float:left;display:inline;margin:0 5px;cursor:pointer;background:url(images/focus_tip.png) no-repeat;}
+	.focus #tip ul li.on{background:url(images/focus_tip_current.png) no-repeat;}
+	.focus .btn{width:42px;height:9px;position:absolute;right:0;bottom:5px;z-index:14;overflow:hidden;}
+	.focus .btn ul{width:100%;float:left;}
+	.focus .btn li{width:7px;height:9px;float:left;display:inline;margin:0 7px;cursor:pointer;overflow:hidden;}
+	.focus .btn li.prev{background:url(images/focus_btn_left.png) no-repeat left top;}
+	.focus .btn li.next{background:url(images/focus_btn_right.png) no-repeat left top;}
+
+</style>
+
+
+	<div class="focus" style="margin:0 auto">
+		<div id="pic">
+			<ul>
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/1.jpg"></a> </li>
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/2.jpg"></a> </li>
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/3.jpg"></a> </li>
+				<li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/4.jpg"></a> </li>
+			</ul>
+		</div>
+		<div class="tip-bg"></div>
+		<div id="tip">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="btn">
+			<ul>
+				<li class="prev" id="focus_btn_left"></li>
+				<li class="next" id="focus_btn_right"></li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript">jQuery(".focus").slide({ titCell:"#tip li", mainCell:"#pic ul",effect:"left",autoPlay:true,delayTime:200 });</script>
+
+
+	<div class="js">
+		<p><span>效果参考网址：<a target="_blank" href="http://ent.qq.com/">http://ent.qq.com</a></span>js调用：</p>
+		<textarea>jQuery(".focus").slide({ titCell:"#tip li", mainCell:"#pic ul",effect:"left",autoPlay:true,delayTime:200 });</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>

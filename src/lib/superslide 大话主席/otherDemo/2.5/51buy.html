@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery-易迅首页焦点图[多格滚动]">
+<meta name="Description" content="SuperSlide,jQuery-易迅首页焦点图[多格滚动]">
+<title>SuperSlide - 易迅首页焦点图[多格滚动]</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:100px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.www51buy{ width:805px;height:327px; position:relative; }
+
+	.www51buy .item_477_327{ width:477px; height:327px;   }
+	.www51buy .item_163_327{ width:163px; height:327px;   }
+	.www51buy .item_163_327 img{ width:163px; height:367px;   }
+	.www51buy .item_327_163{ width:327px; height:163px;   }
+
+	.www51buy .main_content{ position:absolute; z-index:0; zoom:1; }
+	.www51buy .main_content li{ width:807px; height:327px; overflow:hidden; vertical-align:middle; }
+	.www51buy .main_content li a{ overflow: hidden; float: left; display: block; position:relative; margin: 0 1px 1px 0; _margin:0;  }
+	.www51buy .main_content li a img{ display:block; left:0; top:0; position:relative;  }
+	.www51buy .bor_slide{ position:absolute; top:9px; right:0; width:22px;  }
+	.www51buy .bor_slide li { width: 22px; height: 50px; margin-bottom:2px; text-align:center;   cursor: pointer; font:normal 26px/50px Arial; color:#fff; background:#474E5D; }
+	.www51buy .bor_slide li.on{ background:#3382EF;  }
+
+</style>
+
+	<div class="www51buy" style="margin:0 auto">
+		<ul class="main_content">
+			<li>
+				<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/1.jpg"/></a>
+			</li>
+			<li class="s">
+				<a href="http://www.SuperSlide2.com/" class="item_477_327"><img src="images/2.1.jpg"/></a>
+				<a href="http://www.SuperSlide2.com/" class="item_163_327"><img src="images/2.2.jpg"/></a>
+				<a href="http://www.SuperSlide2.com/" class="item_163_327"><img src="images/2.3.jpg"/></a>
+			</li>
+			<li class="s">
+				<a href="http://www.SuperSlide2.com/" class="item_477_327"><img src="images/3.1.jpg"/></a>
+				<a href="http://www.SuperSlide2.com/" class="item_327_163"><img src="images/3.2.jpg"/></a>
+				<a href="http://www.SuperSlide2.com/" class="item_163_163"><img src="images/3.3.jpg"/></a>
+				<a href="http://www.SuperSlide2.com/" class="item_163_163"><img src="images/3.4.jpg"/></a>
+			</li>
+			<li>
+				<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/4.jpg"/></a>
+			</li>
+			<li>
+				<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/5.jpg"/></a>
+			</li>
+			<li>
+				<a href="http://www.SuperSlide2.com" target="_blank"><img src="images/6.jpg"/></a>
+			</li>
+		</ul>
+		<div class="bor_slide">
+			<ul class="ctrl">
+				<li class="item0">1</li>
+				<li class="item1">2</li>
+				<li class="item2">3</li>
+				<li class="item3">4</li>
+				<li class="item4">5</li>
+				<li class="item5">6</li>
+			</ul>
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript">
+	jQuery(".www51buy .s img").hover(function(){ $(this).animate({"top":-40},200) },function(){ $(this).animate({"top":0},200) } );//鼠标移到小图时上滚动
+	jQuery(".www51buy").slide({ titCell:".bor_slide li", mainCell:".main_content", effect:"top", autoPlay:true});
+	</script>
+
+
+	<div class="js">
+		<p><span>效果参考网址：<a target="_blank" href="http://www.51buy.com/">http://www.51buy.com/</a></span>js调用：少量js+单个SuperSlide</p>
+		<textarea>
+//鼠标移到小图时上滚动
+jQuery(".www51buy .s img").hover(function(){ $(this).animate({"top":-40},200) },function(){ $(this).animate({"top":0},200) } );
+//SuperSlide大图切换
+jQuery(".www51buy").slide({ titCell:".bor_slide li", mainCell:".main_content", effect:"top", autoPlay:true});
+		</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>

@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery-ajax切换加载url">
+<meta name="Description" content="SuperSlide,jQuery-ajax切换加载url">
+<title>SuperSlide - ajax切换加载url</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#FF8400;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:150px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.ajaxBox{ width:400px; margin:10px auto; border:1px solid #ccc; border-top:2px solid #000;   }
+	.ajaxBox .hd{ border-bottom:1px solid #ccc;  height:40px; line-height:40px; background:#F5F5F5; padding:0 10px;    }
+	.ajaxBox .hd ul{ position:relative; margin-bottom:-1px;  overflow:hidden; zoom:1; }
+	.ajaxBox .hd ul li{ float:left; border-right:1px solid #ccc; border-left:1px solid #ccc; margin-right:-1px; font:normal 16px/40px "Microsoft YaHei"; _font-weight:bold; }
+	.ajaxBox .hd ul li a{ display:block; padding:0 15px;  }
+	.ajaxBox .hd ul li.on{ background:#fff; border-bottom:2px solid #fff;  }
+	.ajaxBox .bd{ padding:10px 20px; overflow:hidden;  }
+	.ajaxBox .bd .con{  height:210px;  overflow:hidden;  background:url(images/loading.gif) center center no-repeat; }
+	.ajaxBox .bd .picList{ overflow:hidden; zoom:1; }
+	.ajaxBox .bd .picList li{ float:left; margin-right:20px; display:inline;    }
+	.ajaxBox .bd .picList li img{ width:140px; height:93px;   }
+	.ajaxBox .bd .list li{ height:22px; line-height:22px; color:#666;    }
+
+
+</style>
+
+	<!-- 本例子代码 开始 ------------------------------------------->
+	<div class="ajaxBox">
+		<div class="hd">
+			<ul>
+				<li><a href="#">文化</a></li>
+				<li><a href="#">读书</a></li>
+				<li><a href="#">新闻</a></li>
+			</ul>
+		</div>
+		<div class="bd">
+			<div class="con" rel="ajaxHtml/1.html"></div><!-- ajax加载地址写到rel里面，这里以加载静态html为示范 -->
+			<div class="con" rel="ajaxHtml/2.html"></div>
+			<div class="con" rel="ajaxHtml/3.html"></div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+	/* 注意！！若本地没有效果，则把demo放到服务器，用http访问即可！ */
+	(function($){
+		$(".ajaxBox").slide({
+			startFun:function(i){
+				var curCon = $(".ajaxBox .con").eq(i); /* 当前切换内容对象 */
+				$.ajax({
+				  url: curCon.attr("rel"), /* 获取ajax地址 */
+				  cache: false,
+				  success: function(html){
+					curCon.html( html ).css("background","none");/* 获取html后赋予给当前内容对象，并设置background去掉loading */
+				  }
+				});
+			}
+		});
+
+	})(jQuery);
+
+	</script>
+	<!-- 本例子代码 结束 ------------------------------------------->
+
+	<div class="js">
+		<p><span>效果参考网址：</span>js调用：	/* 注意！！若本地没有效果，则把demo放到服务器，用http访问即可！ */</p>
+		<textarea>
+(function($){
+	$(".ajaxBox").slide({
+		startFun:function(i){
+			var curCon = $(".ajaxBox .con").eq(i); /* 当前切换内容对象 */
+			$.ajax({
+			  url: curCon.attr("rel"), /* 获取ajax地址 */
+			  cache: false,
+			  success: function(html){
+				curCon.html( html ).css("background","none");/* 获取html后赋予给当前内容对象，并设置background去掉loading */
+			  }
+			});
+		}
+	});
+
+})(jQuery);
+		</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+

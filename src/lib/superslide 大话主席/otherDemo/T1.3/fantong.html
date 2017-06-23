@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery-饭桶网团购详简切换">
+<meta name="Description" content="SuperSlide,jQuery-饭桶网团购详简切换">
+<title>SuperSlide - 饭桶网团购详简切换</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:50px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.group_buying{ width:258px;  border: solid 1px #DDD; font-family:Arial; }
+	.group_buying h3 { background:url(images/index_bg.png) 0 -255px; height: 31px; line-height: 31px; border-bottom: solid 1px #ccc; padding-left: 10px; color: #333 }
+	.group_buying h3 em {  background:url(images/index_bg.png) 0 -586px; font-style:normal; padding-left: 18px; font-family: "微软雅黑"; color: #333; font-weight: bold; font-size: 14px }
+	.group_buying ul { margin: 0 10px 0; zoom:1; }
+	.group_buying ul li { border-bottom:1px dotted #ccc;  position: relative; height: 36px; line-height:36px }
+	.group_buying ul li img { width: 120px; height: 90px; vertical-align:middle; }
+	.group_buying .pic_r { position: absolute; left: 130px; top: 0; line-height: 24px }
+	.group_buying .pic_r em { color: #c00; display: block; font-style:normal; }
+	.group_buying .pic_r i { font-style: normal; display: block }
+	.group_buying ul li p { clear: both; height: 30px; overflow: hidden }
+	.group_buying .dis_pi { display: none }
+	.group_buying ul .last { border-bottom:0;  }
+
+	.group_buying .on { height: 125px; position: relative; width: 240px; line-height: 30px; margin-top: 10px }
+	.group_buying .on .dis_pi { display: block }
+</style>
+
+
+<div class="group_buying" style="margin:0 auto">
+        <h3><em>团购精品</em></h3>
+        <ul>
+                  <li>
+		            <div class="dis_pi"><a href="http://www.superslide2.com/" target="_blank"><img src="images/1.jpg"></a> <span class="pic_r"><em><strong>2.8</strong>折</em> <i>原价：<del>￥350.00</del> </i> 现价：￥99.00 </span> </div>
+		            <p><a href="http://www.superslide2.com/" target="_blank">【全国包邮】专供五星级酒店,冬季性价比最好的滋补品</a></p>
+		          </li>
+        	       <li>
+		            <div class="dis_pi"><a href="http://www.superslide2.com/" target="_blank"><img src="images/2.jpg"></a> <span class="pic_r"><em><strong>3.0</strong>折</em> <i>原价：<del>￥168.00</del> </i> 现价：￥49.80 </span> </div>
+		            <p><a href="http://www.superslide2.com/" target="_blank">【全国包邮】专供五星级酒店,冬季性价比最好的滋补品</a></p>
+		          </li>
+        	      <li>
+		            <div class="dis_pi"><a href="http://www.superslide2.com/" target="_blank"><img src="images/3.jpg"></a> <span class="pic_r"><em><strong>3.0</strong>折</em> <i>原价：<del>￥168.00</del> </i> 现价：￥49.80 </span> </div>
+		            <p><a href="http://www.superslide2.com/" target="_blank">专供五星级酒店 冬季性价比最好的滋补品 香港加港特</a></p>
+		          </li>
+        	      <li>
+		            <div class="dis_pi"><a href="http://www.superslide2.com/" target="_blank"><img src="images/4.jpg"></a> <span class="pic_r"><em><strong>6.8</strong>折</em> <i>原价：<del>￥19.00</del> </i> 现价：￥13.00 </span> </div>
+		            <p><a href="#">仅售13元/袋，享原价19元/袋陕西特产</a></p>
+		          </li>
+        	      <li class="last">
+		            <div class="dis_pi"><a href="http://www.superslide2.com/" target="_blank"><img src="images/5.jpg"></a> <span class="pic_r"><em><strong>4.0</strong>折</em> <i>原价：<del>￥98.00</del> </i> 现价：￥39.00 </span> </div>
+		            <p><a href="http://www.superslide2.com/" target="_blank">【2条起售】仅39元/条！抢购原价98元/条【大手</a></p>
+		          </li>
+        </ul>
+</div>
+
+	<script type="text/javascript">
+	jQuery(".group_buying").slide({ titCell:"li",triggerTime:0 });
+	</script>
+
+
+	<div class="js">
+		<p><span>效果参考网址：<a target="_blank" href="http://www.fantong.com/foshan/">http://www.fantong.com/foshan/</a></span>js调用：</p>
+		<textarea>
+jQuery(".group_buying").slide({ titCell:"li",triggerTime:0 });
+		</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+

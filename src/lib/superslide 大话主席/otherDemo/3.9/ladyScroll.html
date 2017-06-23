@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery-mm图片滚动">
+<meta name="Description" content="SuperSlide,jQuery-mm图片滚动">
+<title>SuperSlide - mm图片滚动</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+</head>
+<body>
+
+
+<style type="text/css">
+	/* css 重置 */
+	*{margin:0; padding:0; list-style:none; }
+	body{ background:#fff; font:normal 12px/22px 宋体;  }
+	img{ border:0;  }
+	a{ text-decoration:none; color:#333;  }
+	a:hover{ color:#1974A1;  }
+	.js{width:90%; margin:10px auto 0 auto; }
+	.js p{ padding:5px 0; font-weight:bold; overflow:hidden;  }
+	.js p span{ float:right; }
+	.js p span a{ color:#f00; text-decoration:underline;   }
+	.js textarea{ height:50px;  width:98%; padding:5px; border:1px solid #ccc; border-top:2px solid #aaa;  border-left:2px solid #aaa;  }
+
+	/* 本例子css */
+	.ladyScroll{width:680px;height:484px;margin:15px auto;border:#ddd 1px solid;position:relative;}
+	.ladyScroll .prev,.ladyScroll .next{width:51px;height:45px;position:absolute;top:210px;left:0;z-index:100; cursor:pointer; background:url(images/btns.png) no-repeat;}
+	.ladyScroll .next{ left:auto; right:0; background-position:0 -90px;}
+	.ladyScroll .prev:hover{ background-position:0 -45px; }
+	.ladyScroll .next:hover{ background-position:0 -135px; }
+
+	.ladyScroll .scrollWrap{width:616px;margin-left:31px;padding-top:15px;overflow:hidden;position:absolute;}
+	.ladyScroll dl{float:left;width:308px;text-align:center;position:relative;}
+	.ladyScroll  span{display:block;width:298px;height:53px;position:absolute;left:5px;bottom:0;background:#5f626b;filter:alpha(opacity=80);opacity:0.80;}
+	.ladyScroll  dt{margin:0 auto;width:298px;overflow:hidden;}
+	.ladyScroll  img{display:block;width:298px;height:450px;}
+	.ladyScroll  dd{width:298px;height:40px;line-height:28px;font-size:20px;color:#fff;text-align:center;overflow:hidden;position:absolute;left:5px;bottom:0;}
+	.ladyScroll  dd a{ color:#fff;  }
+	.ladyScroll  dd a:hover{ text-decoration:none;  }
+	.ladyScroll dl:hover span{ background:#B52153;  }
+
+
+</style>
+
+	<div class="ladyScroll">
+			<a class="prev" href="javascript:void(0)"></a>
+			<div class="scrollWrap">
+					<div class="dlList">
+							<dl>
+							  <dt><a href="http://www.SuperSlide2.com"><img src="images/1.jpg"></a><span></span></dt>
+							  <dd><a href="#">甜美展现得淋漓尽致</a></dd>
+							</dl>
+
+							<dl>
+							  <dt><a href="http://www.SuperSlide2.com"><img src="images/2.jpg"></a><span></span></dt>
+							  <dd><a href="#">回眸一笑让人着迷</a></dd>
+							</dl>
+
+							<dl>
+							  <dt><a href="http://www.SuperSlide2.com"><img src="images/3.jpg"></a><span></span></dt>
+							  <dd><a href="#">阔腿裤遮住小象腿</a></dd>
+							</dl>
+
+							<dl>
+							  <dt><a href="http://www.SuperSlide2.com"><img src="images/4.jpg"></a><span></span></dt>
+							  <dd><a href="#">小礼服可爱小女人</a></dd>
+							</dl>
+
+							<dl>
+							  <dt><a href="http://www.SuperSlide2.com"><img src="images/5.jpg"></a><span></span></dt>
+							  <dd><a href="#">帅气鞋和包很相搭</a></dd>
+							</dl>
+
+							<dl>
+							  <dt><a href="http://www.SuperSlide2.com"><img src="images/6.jpg"></a><span></span></dt>
+							  <dd><a href="#">超级经典短打装扮</a></dd>
+							</dl>
+
+							<dl>
+							  <dt><a href="http://www.SuperSlide2.com"><img src="images/7.jpg"></a><span></span></dt>
+							  <dd><a href="#">小西服配上工装裤</a></dd>
+							</dl>
+
+							<dl>
+							  <dt><a href="http://www.SuperSlide2.com"><img src="images/8.jpg"></a><span></span></dt>
+							  <dd><a href="#">甜蜜蜜的公主打扮</a></dd>
+							</dl>
+					</div>
+
+
+			</div>
+			<a class="next" href="javascript:void(0)"></a>
+	</div>
+	<script type="text/javascript">
+	jQuery(".ladyScroll").slide({ mainCell:".dlList", effect:"leftLoop",vis:2, autoPlay:true});
+	</script>
+
+
+	<div class="js">
+		<p><span></span>js调用：单个SuperSlide</p>
+		<textarea>
+jQuery(".ladyScroll").slide({ mainCell:".dlList", effect:"leftLoop",vis:2, autoPlay:true});
+		</textarea>
+	</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+

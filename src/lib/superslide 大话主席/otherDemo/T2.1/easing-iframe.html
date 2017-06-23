@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery缓动效果,jQuery缓动效果详细演示">
+<meta name="Description" content="SuperSlide,jQuery缓动效果,jQuery缓动效果详细演示">
+<title>SuperSlide - jQuery缓动效果 jQuery缓动效果详细演示</title>
+<script type="text/javascript" src="../../jquery1.42.min.js"></script><script type="text/javascript" src="../../jquery.SuperSlide.2.1.js"></script>
+
+<style type="text/css">
+
+/* css 重置 */
+*{margin:0; padding:0; list-style:none; }
+body{ font:normal 12px/22px 宋体; }
+img{ border:0;  }
+a{ text-decoration:none; color:#333;  }
+
+/* 本例子css */
+.slideBox{ width:450px; height:230px; overflow:hidden; position:relative; border:1px solid #ddd;  }
+.slideBox .hd{ height:15px; overflow:hidden; position:absolute; right:10px; bottom:10px; z-index:1; }
+.slideBox .hd ul{ overflow:hidden; zoom:1; float:left;  }
+.slideBox .hd ul li{ float:left; margin-right:2px;  width:15px; height:15px; line-height:14px; text-align:center; background:#fff; cursor:pointer; }
+.slideBox .hd ul li.on{ background:#f00; color:#fff; }
+.slideBox .bd{ position:relative; height:100%; z-index:0;   }
+.slideBox .bd img{ width:450px; height:230px; }
+
+.curSlide{ border:1px solid #ccc; margin:10px 0; padding-left:10px; background:#f6f6f6;  }
+.curSlide span{ color:#f00;  }
+</style>
+
+</head>
+<body>
+<!-- content S -->
+
+
+		<div id="slideBox" class="slideBox">
+			<div class="hd">
+				<ul><li>1</li><li>2</li><li>3</li></ul>
+			</div>
+			<div class="bd">
+				<ul>
+					<li><a href="http://www.superslide2.com/" target="_blank"><img src="images/pic1.jpg" /></a></li>
+					<li><a href="http://www.superslide2.com/" target="_blank"><img src="images/pic2.jpg" /></a></li>
+					<li><a href="http://www.superslide2.com/" target="_blank"><img src="images/pic3.jpg" /></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="curSlide">
+			$(".slideBox").slide({effect:"<span>left</span>",easing:"<span>curEasing</span>",delayTime:<span>delayTime</span>,autoPlay:true} );
+		</div>
+
+
+	<script type="text/javascript">
+			var effectSelect = location.href.split("&")[2];
+			var curEasing = location.href.split("?")[1].split("&")[0];
+			var speed = parseInt( location.href.split("&")[1] );
+
+			$(".slideBox").slide( { mainCell:".bd ul",effect:effectSelect,easing:curEasing,delayTime:speed,autoPlay:true} );
+			$(".curSlide span").eq(0).text( effectSelect );
+			$(".curSlide span").eq(1).text( curEasing );
+			$(".curSlide span").eq(2).text( speed );
+
+	</script>
+<!-- content E -->
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>
