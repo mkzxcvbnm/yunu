@@ -1,6 +1,6 @@
-# yunu 前端自动化工作流1.1.0
+# yunu 前端自动化工作流1.2.0
 
-yunu内部使用的前段自动化工具  
+yunu内部使用的前端自动化工具  
 [内部规范及说明文档](https://mkzxcvbnm.gitbooks.io/yunu/content/)  
 [项目地址](https://github.com/mkzxcvbnm/yunu)
 
@@ -33,7 +33,7 @@ yunu内部使用的前段自动化工具
     >**!注意：以下功能只对src/sourcen/css和src/sourcen/js目录下的文件生效**
     
    * 可以使用未来的css功能\(css4\) 具体支持详见[http://cssnext.io/](http://cssnext.io/)
-   * ~~允许使用类似sass插件的部分功能\(如变量，嵌套和混合\) 具体支持详见~~[~~https://github.com/~~](https://github.com/jonathantneal/precss)  //由于功能不足被其他工具取代
+   * ~~允许使用类似sass插件的部分功能\(如变量，嵌套和混合\) 具体支持详见~~[~~https://github.com/~~](https://github.com/jonathantneal/precss)  //现已支持scss完整功能
    * 使用autoprefixer插件 浏览器前缀自动补全
    * 在生产环境中使用cssnano对css进行压缩  具体支持详见[http://cssnano.co/](http://cssnano.co/)
    * 提供sourcemaps方便代码调试
