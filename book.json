@@ -1,5 +1,4 @@
 {
-    "root": "./book",
     "plugins": [
         "github",
         "anchors",
