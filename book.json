@@ -1,8 +1,13 @@
 {
-    "plugins": [ "github" ],
+    "plugins": [
+        "github",
+        "anchors",
+        "book-summary-scroll-position-saver",
+        "expandable-chapters"
+    ],
     "pluginsConfig": {
         "github": {
-            "url": "https://github.com/your/repo"
+            "url": "https://github.com/mkzxcvbnm/yunu"
         }
     }
 }

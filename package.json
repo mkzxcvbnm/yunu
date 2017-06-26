@@ -7,11 +7,15 @@
     "start": "gulp --env development",
     "build": "gulp --env production"
   },
-  "keywords": ["html","css","js"],
+  "keywords": [
+    "html",
+    "css",
+    "js"
+  ],
   "author": {
-    "name" : "mk",
-    "email" : "470668674@qq.com",
-    "url" : "https://github.com/mkzxcvbnm/yunu"
+    "name": "mk",
+    "email": "470668674@qq.com",
+    "url": "https://github.com/mkzxcvbnm/yunu"
   },
   "license": "ISC",
   "devDependencies": {
@@ -29,5 +33,6 @@
     "gulp-uglify": "^3.0.0",
     "postcss-cssnext": "^2.11.0",
     "precss": "^1.4.0"
-  }
+  },
+  "dependencies": {}
 }
