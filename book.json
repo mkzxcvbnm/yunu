@@ -11,7 +11,9 @@
         "expandable-chapters",
         "splitter",
         "anchor-navigation-ex",
-        "tbfed-pagefooter"
+        "tbfed-pagefooter",
+        "prism",
+        "-highlight"
     ],
     "theme-default": {
         "showLevel": true
@@ -24,6 +26,11 @@
             "copyright":"2017 mk",
             "modify_label": "该文件修订时间：",
             "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        "prism": {
+            "css": [
+                "prismjs/themes/prism-okaidia.css"
+            ]
         }
     }
 }

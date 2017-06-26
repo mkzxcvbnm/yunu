@@ -1,6 +1,6 @@
 # html
 1. 初始文档
-``` 
+```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -26,7 +26,7 @@
     * 闭合标签必须包含结束标签 例如`</div> </li>`
     * 自定义属性使用'data_'作为开头 例如 `<div data_toggle="modal"></div>`
     * HTML 属性应当按照以下给出的顺序依次排列，确保代码的易读性。
-    ```
+    ```html
         class
         id, name
         data_*
