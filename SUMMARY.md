@@ -1,7 +1,7 @@
 # Summary
 
 * [说明](README.md)
-* 规范
+* <font>规范</font>
   * [css](book/gui-fan/css.md)
   * [html](book/gui-fan/html.md)
   * [js](book/gui-fan/js.md)
