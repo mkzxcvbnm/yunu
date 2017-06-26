@@ -37,8 +37,77 @@
                     $(window).resize(fn);
             }
             return this;
-        }
+        },
+        rem(size = 750) {
+            let html = document.getElementsByTagName('html')[0];
+            let setSize = () => {
+                let _w = document.documentElement.clientWidth;
+                _w = _w > size ? size: _w;
+                html.style.fontSize = _w/size * 100 + 'px';
+            };
+            setSize();
+            window.onresize = setSize;
+            return this;
+        },
+        nav() {
+            let menu = $('#menu'),
+                nav = $('#nav'),
+                btn = $('#nav>ul>li>a').filter(function (index) {
+                    return $(this).css({'animation-delay': (index/10)+'s'})
+                    .next('ul').children().length;
+                });
+            menu.click(function () {
+                nav.hasClass('active')?nav.removeClass('active'):nav.addClass('active');
+            });
+            btn.each(function () {
+                $(this).prop('href', 'javascript:;').append('<i class="fa fa-angle-down"></i>');
+            })
+            .click(function (event) {
+                let t = $(this);
+                btn.next('ul').slideUp('fast');
+                if (t.hasClass('active')) {
+                    t.removeClass('active');
+                } else {
+                    t.addClass('active').next('ul').slideDown('fast');
+                }
+            });
+            return this;
+        },
+        gotop() {
+            let gotop = $("#gotop"),
+                timer = null,
+                px = 0,
+                body = $('html,body'),
+                win = $(window);
+
+            gotop.click(() => {
+                event.stopPropagation();
+                event.preventDefault();
+                body.animate({  
+                    scrollTop: 0
+                });  
+            });
+
+            yunu.throttle(() => {
+                win.scrollTop() > 50?gotop.fadeIn():gotop.fadeOut();
+            }, 300, 'scroll');
+            return this;
+        },
+        //获取缓存中的数据
+        getDbJson(key) {
+            return JSON.parse(localStorage.getItem(key));
+        },
+        //写入缓存数据
+        setDbJson(key, val) {
+            //记录数据存储的时间
+            //val.datatime = Math.round(new Date().getTime()/1000);
+            localStorage.setItem(key, JSON.stringify(val));
+        },
     };
+
+    $(() => {
+        yunu.rem().nav().gotop();
+    });
 
     $.fn.imgAuto = (co, fn) => {
         fn = fn || {};

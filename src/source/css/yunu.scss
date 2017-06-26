@@ -6,6 +6,8 @@
 @import "./components/grid";
 //@import "./components/case";//例子
 /****************************** style ******************************/
-
+html {
+    min-width: 1200px;
+}
 /****************************** media ******************************/
 @import "./components/media";

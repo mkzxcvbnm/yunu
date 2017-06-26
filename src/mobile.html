@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="css/yunu.m.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="js/html5shiv.min.js"></script>
+        <script type="text/javascript" src="js/css3-mediaqueries.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/yunu.m.js"></script>
+</head>
+<body>
+    <!-- 7.5rem == 100% -->
+    <div class="header">
+    </div>
+
+    <div class="banner" id="banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image: url(img/loading.gif);"></div>
+                <div class="swiper-slide"><img src="img/loading.gif"></div>
+                <div class="swiper-slide"><img src="img/loading.gif"></div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+        <link rel="stylesheet" type="text/css" href="lib/swiper3 手机幻灯片/dist/css/swiper.min.css">
+        <script src="lib/swiper3 手机幻灯片/dist/js/swiper.min.js"></script>
+        <script>
+            $(function () {
+                var swiper = new Swiper('#banner .swiper-container', {
+                    pagination: '#banner .swiper-pagination',
+                    paginationClickable: true,
+                    autoplay: 5000,
+                    loop: true
+                });
+            });
+        </script>
+    </div>
+    
+    <div class="main">
+        
+    </div>
+
+    <div class="footer">
+        
+    </div>
+    
+    <div class="nav" id="nav">
+        <a class="menu" id="menu" href="javascript:;"><span></span><span></span><span></span></a>
+        <ul>
+            <li><a href="javascript:;">网站首页</a></li>
+            <li><a href="javascript:;">一级菜单一级菜单一级菜单一级菜单</a>
+                <ul>
+                    <li><a href="javascript:;">二级菜单</a>
+                    <li><a href="javascript:;">二级菜单</a>
+                </ul>
+            </li>
+            <li><a href="javascript:;">一级菜单</a>
+                <ul>
+                </ul>
+            </li>
+            <li><a href="javascript:;">一级菜单</a>
+                <ul>
+                    <li><a href="javascript:;">二级菜单</a>
+                    <li><a href="javascript:;">二级菜单</a>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="bnav">
+        <a class="active" href="javascript:;"><i class="fa fa-home"></i><span>网站首页</span></a>
+        <a href="javascript:;"><i class="fa fa-suitcase"></i><span>服务项目</span></a>
+        <a href="javascript:;"><i class="fa fa-comment"></i><span>联系我们</span></a>
+        <a href="javascript:;"><i class="fa fa-users"></i><span>关于我们</span></a>
+    </div>
+    <a class="gotop" id="gotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+</body>
+</html>

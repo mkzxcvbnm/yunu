@@ -71,7 +71,7 @@ gulp.task('default', ['css', 'js'], () => {
         },
         //open: false,//启动browser-sync不打开新页面  地址:http://localhost:3000
         reloadOnRestart: true,//重启browser-sync刷新所有页面
-        //notify: false//不显示在浏览器中的任何通知。
+        notify: false//不显示在浏览器中的任何通知。
     });
     gulp.watch('src/source/css/**/*', ['css']);
     gulp.watch('src/source/js/**/*', ['js']);

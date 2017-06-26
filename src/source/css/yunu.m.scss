@@ -1,0 +1,204 @@
+/****************************** components ******************************/
+@import "./components/mixin";
+@import "./components/normalize";
+@import "./components/reset.m";
+@import "./components/default.m";
+@import "./components/grid";
+//@import "./components/case";//例子
+/****************************** style ******************************/
+$color: #000;
+$w: 7.5rem;
+body {
+    width: $w;
+    margin: 0 auto 1rem;
+    position: relative;
+    overflow-x: hidden;
+}
+@keyframes nav {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+.nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -$w/10*7;
+    width: $w/10*7;
+    height: 100%;
+    z-index: 1000;
+    transition: transform .3s;
+    background-color: rgba($color,.8);
+    &.active {
+        transform: translateX(-100%);
+        &>ul>li>a {
+            animation: nav both 0.5s;
+        }
+    }
+    &>ul {
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        li {
+            position: relative;
+            a {
+                display: block;
+                background-color: $color;
+                height: 1rem;
+                line-height: 1rem;
+                padding: 0 15%;
+                color: #fff;
+                font-size: .36rem;
+                text-align: center;
+                border-bottom: 1px solid #999;
+                @extend .ellipsis;
+            }
+            &>a {
+                &>i {
+                    position: absolute;
+                    right: .4rem;
+                    top: 0;
+                    line-height: 1rem;
+                    font-size: .5rem;
+                    transition: transform .3s;
+                }
+                &.active>i {
+                    transform: rotate(180deg);
+                }
+            }
+            ul {
+                display: none;
+                a {
+                    background-color: lighten($color, 10%);
+                    font-size: .32rem;
+                }
+            }
+        }
+    }
+}
+
+$menu_size: .8rem;
+$menu_hover: $menu_size/100*3;
+.menu {
+    position: absolute;
+    top: 0;
+    right: 100%;
+    padding: $menu_size/4;
+    cursor: pointer;
+    background-color: $color;
+    z-index: 998;
+    span {
+        position: relative;
+        display: block;
+        width: $menu_size;
+        height: $menu_size/10;
+        background-color: #fff;
+        border-radius: $menu_size/5;
+        transition: transform .3s, opacity .3s;
+        &:nth-of-type(2) {
+            margin: $menu_size/5 auto;
+        }
+    }
+    &:hover span:nth-of-type(1) {
+        transform: translateY($menu_hover) rotate(-4.5deg);
+    }
+    &:hover span:nth-of-type(2) {
+        opacity: .9;
+    }
+    &:hover span:nth-of-type(3) {
+        transform: translateY(-$menu_hover) rotate(4.5deg);
+    }
+    @at-root .nav.active .menu {
+        span {
+            &:nth-of-type(1) {
+                transform: translateY($menu_size/10*3) rotate(-45deg);
+            }
+            &:nth-of-type(2) {
+                opacity: 0;
+            }
+            &:nth-of-type(3) {
+                transform: translateY(-$menu_size/10*3) rotate(45deg);
+            }
+        }
+        &:hover span:nth-of-type(1) {
+            transform: translateY($menu_size/10*3-$menu_hover) rotate(-40.5deg);
+        }
+        &:hover span:nth-of-type(2) {
+            opacity: .1;
+        }
+        &:hover span:nth-of-type(3) {
+            transform: translateY(-($menu_size/10*3-$menu_hover)) rotate(40.5deg);
+        }
+    }
+}
+
+.bnav {
+    width: $w;
+    height: 1rem;
+    background: lighten($color, 10%);
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 499;
+    margin: auto;
+    a {
+        @extend .flex_center;
+        flex-direction: column;
+        float: left;
+        width: 25%;
+        height: 100%;
+        color: #fff;
+        &:hover,
+        &.active {
+            background: $color;
+        }
+        i {
+            display: block;
+            font-size: .4rem;
+            padding: .1rem 0 .05rem;
+        }
+    }
+}
+
+.banner {
+    width: 100%;
+    height: 2rem;
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-slide {
+        @extend .flex_center;
+        position: relative;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        img {
+            position: absolute;
+            left: 50%;
+            width: auto;
+            height: 100%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+.gotop {
+    position: fixed;
+    background-color: $color;
+    color: #fff;
+    @extend .flex_center;
+    width: 1rem;
+    height: 1rem;
+    right: .5rem;
+    bottom: 1.5rem;
+}
+/****************************** media ******************************/
+@import "./components/media";
