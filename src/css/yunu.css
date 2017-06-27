@@ -1829,23 +1829,10 @@ ul:after {
 }
 
 /****************************** style ******************************/
+html {
+  min-width: 1200px;
+}
+
 /****************************** media ******************************/
-@media screen and (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
 
 /*# sourceMappingURL=yunu.css.map */

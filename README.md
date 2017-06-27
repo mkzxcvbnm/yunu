@@ -1,6 +1,6 @@
-# yunu 前端自动化工作流1.1.0
+# yunu 前端自动化工作流1.2.0
 
-yunu内部使用的前段自动化工具  
+yunu内部使用的前端自动化工具  
 [内部规范及说明文档](https://mkzxcvbnm.gitbooks.io/yunu/content/)  
 [项目地址](https://github.com/mkzxcvbnm/yunu)
 
@@ -9,8 +9,8 @@ yunu内部使用的前段自动化工具
 1. 安装node.js  [地址](https://nodejs.org/en/)
 2. 使用npm安装工作环境
    * 方法一：运行cmd =&gt; 进入当前文件夹 =&gt; 输入以下命令 
-   ```
-   npn i 
+   ```powershell
+   npm i 
    ```
    * 方法二：双击文件夹内 安装.bat  
      >**!注意：npm服务器在国外 国内安装插件有可能很慢 建议使用cnpm\(淘宝npm镜像\)进行安装** [使用方法](https://cnpmjs.org/)  
@@ -18,7 +18,7 @@ yunu内部使用的前段自动化工具
      >**!注意：安装完毕之后gulp只是局部安装 无法使用gulp命令 还需要手动安装全局gulp**  
      
      安装方法：在cmd中输入 
-     ```
+     ```powershell
      npm i -g gulp
  
      ```
@@ -26,14 +26,14 @@ yunu内部使用的前段自动化工具
     npm安装完毕后点击 开发环境.bat 或者 生产环境.bat 启动程序  
     >**!注意：如果提示找不到'gulp-sass'模块 请使用npm 单独安装**
     
-    ```
+    ```powershell
     npm i -D gulp-sass
     ```
 4. 本工具现有主要功能  
     >**!注意：以下功能只对src/sourcen/css和src/sourcen/js目录下的文件生效**
     
    * 可以使用未来的css功能\(css4\) 具体支持详见[http://cssnext.io/](http://cssnext.io/)
-   * ~~允许使用类似sass插件的部分功能\(如变量，嵌套和混合\) 具体支持详见~~[~~https://github.com/~~](https://github.com/jonathantneal/precss)  //由于功能不足被其他工具取代
+   * ~~允许使用类似sass插件的部分功能\(如变量，嵌套和混合\) 具体支持详见~~[~~https://github.com/~~](https://github.com/jonathantneal/precss)   //现已支持scss完整功能
    * 使用autoprefixer插件 浏览器前缀自动补全
    * 在生产环境中使用cssnano对css进行压缩  具体支持详见[http://cssnano.co/](http://cssnano.co/)
    * 提供sourcemaps方便代码调试
@@ -44,7 +44,7 @@ yunu内部使用的前段自动化工具
 
 ## 目录结构
 
-```
+```powershell
 ┌── node_modules                # node模块(开发环境)
 │
 ├── package.json                # 项目配置

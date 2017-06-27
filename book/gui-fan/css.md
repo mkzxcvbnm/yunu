@@ -3,7 +3,7 @@
 2. 默认字体 微软雅黑("\5FAE\8F6F\96C5\9ED1") 字体大小14px 行高1.5 颜色#333
 3. 书写格式
     对于只包含一条声明的样式，为了易读性和便于快速编辑，建议将语句放在同一行。对于带有多条声明的样式，还是应当将声明分为多行。
-    ```
+    ```css
     .span1 { width: 60px; }
     /* Bad CSS */
     .selector, .selector_secondary, .selector[type=text] {
