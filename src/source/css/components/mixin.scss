@@ -1,8 +1,14 @@
+//透明度
+// 参数说明
+// $opacity  透明度  范围0~1
 @mixin opacity($opacity: .5) {
     filter: alpha(opacity=$opacity*100);
     opacity: $opacity;
 }
-
+//设置input和textarea占位文字placeholder的样式
+// 参数说明
+// $color    文字颜色
+// $font     字体大小
 @mixin placeholder ($color: #666, $font: 14px) {
     &::-webkit-input-placeholder {
         color: $color;
@@ -21,7 +27,11 @@
         font-size: $font;
     }
 }
-
+//滚动条
+// 参数说明
+// $width    滚动条宽度
+// $color    滚动条颜色
+// $bg    滚动条滑道颜色
 @mixin scrollbar ($width: 10px, $color: #009af3, $bg: #f1f1f1) {
     &::-webkit-scrollbar {
         width: $width;
@@ -43,7 +53,8 @@
         background-color: darken($color, 10%);
     }
 }
-
+//多行文字溢出显示...
+// 参数为最多显示行数
 @mixin ellipsis ($clamp: 3) {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -51,7 +62,7 @@
     -webkit-line-clamp: $clamp;
     -webkit-box-orient: vertical;
 }
-
+//内联元素
 @mixin inline-block () {
     display: -moz-inline-stack;
     display: inline-block;
@@ -60,7 +71,24 @@
     zoom: 1;
     *display: inline;
 }
-
+//hover文字颜色或者背景颜色变化
+// 使用说明
+// 参数
+// !注意$type类型为lighten或darken时$color参数必须为16进制或者rgb不能为简写
+// $color    颜色          必填                  文字原本的颜色
+// $attr     类型          可选 默认color        color或background-color
+// $type     颜色变化      可选 默认lighten      当参数为color时$amount为需要变化的具体颜色
+//                                               lighten变亮 darken变暗
+// $amount   颜色变化量    可选 默认10%          $type参数为color时
+//                                               此参数是具体颜色代码
+//                                               $type参数为lighten或darken时
+//                                               此参数是百分比0%~100%
+// @example
+// @include(#333); //文字颜色为#333 hover后变亮10%
+// @include(#333, background-color); //背景颜色为#333 hover后变亮10%
+// @include(#333, color, darken); //文字颜色为#333 hover后变暗10%
+// @include(#333, color, color, #999); //文字颜色为#333 hover后变成#999
+// @include(#333, background-color, color, #999); //背景颜色为#333 hover后变成#999
 @mixin hover ($color: $color, $attr: color, $type: lighten, $amount: 10%) {
     #{$attr}: $color;
     transition: $attr .2s;
@@ -75,4 +103,41 @@
             #{$attr}: darken($color, $amount);
         }
     }
+}
+//鼠标移上图片时图片放大
+// 参数说明
+// $scale    变化比例
+// $timer    过渡时间
+@mixin img_big ($scale: 1.2, $timer: .4s) {
+    overflow: hidden;
+    img {
+        transition: transform $timer;
+    }
+    &:hover {
+        img {
+            transform: scale($scale);
+        }
+    }
+}
+//多行浮动列表间距设置
+// 说明
+// 此样式加给ul外层div容器
+// $margin    子元素间距
+@mixin flist ($margin: 10px) {
+    overflow: hidden;
+    ul {
+        margin-left: -$margin;
+    }
+    li {
+        float: left;
+        margin-left: $margin;
+    }
+}
+//按钮文字左右上下居中
+// 参数说明
+// $height    高度
+@mixin btn_center ($height: 48px) {
+    height: $height;
+    line-height: $height;
+    text-align: center;
 }

@@ -6,8 +6,23 @@
 @import "./components/grid";
 //@import "./components/case";//例子
 /****************************** style ******************************/
+$color: #c21a29;//默认主题颜色
+$min_width: 1200px;//最小显示宽度
+body,
+button,
+input,
+select,
+textarea {
+    font: 14px/1.4 "\5FAE\8F6F\96C5\9ED1", "arial";
+    color: #5a5a5a;
+    font-size: 14px;
+}
 html {
-    min-width: 1200px;
+    min-width: $min_width;
+}
+.center {
+    width: $min_width;
+    margin: 0 auto;
 }
 /****************************** media ******************************/
 @import "./components/media";

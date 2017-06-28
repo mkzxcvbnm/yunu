@@ -1,3 +1,19 @@
+@for $i from 1 through 10 {
+    $location: (ml: margin-left, mt: margin-top, mr: margin-right, mb: margin-bottom, mg: margin, pl: padding-left, pt: padding-top, pr: padding-right, pb: padding-bottom, pd: padding);
+    @each $a,
+    $b in $location {
+        .#{$a}#{5 * $i} {
+            #{$b}: 5px * $i;
+        }
+    }
+}
+
+@for $i from 6 through 18 {
+    .f#{2 * $i} {
+        font-size: 2px * $i;
+    }
+}
+
 .fl {
     float: left;
 }
@@ -53,19 +69,48 @@ ul {
     }
 }
 
-@for $i from 1 through 10 {
-    $location: (ml: margin-left, mt: margin-top, mr: margin-right, mb: margin-bottom, mg: margin, pl: padding-left, pt: padding-top, pr: padding-right, pb: padding-bottom, pd: padding);
-    @each $a, $b in $location {
-        .#{$a}#{5 * $i} {
-            #{$b}: 5px * $i;
-        }
-    }
+.tal {
+    text-align: left;
 }
 
-@for $i from 6 through 18 {
-    .f#{2 * $i} {
-        font-size: 2px * $i;
-    }
+.tac {
+    text-align: center;
+}
+
+.tar {
+    text-align: right;
+}
+
+.vat {
+    vertical-align: top;
+}
+
+.vam {
+    vertical-align: middle;
+}
+
+.vab {
+    vertical-align: bottom;
+}
+
+.block {
+    display: block;
+}
+
+.iblock {
+    display: inline-block;
+}
+
+.posr {
+    position: relative;
+}
+
+.posa {
+    position: absolute;
+}
+
+.posf {
+    position: fixed;
 }
 
 .flex_center {

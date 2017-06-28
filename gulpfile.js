@@ -11,12 +11,13 @@ const babel = require('gulp-babel');//JavaScript编译器
 const uglify = require('gulp-uglify');//js压缩工具
 const browserSync = require('browser-sync').create();//浏览器调试工具
 
-const knownOptions = {
-    string: 'env',
-    default: { env: process.env.NODE_ENV || 'production' }
-};
-const minimist = require('minimist');
-const options = minimist(process.argv.slice(2), knownOptions);
+const options = require('minimist')(process.argv.slice(2), {
+    string: ['env', 'root'],
+    default: {
+        env: process.env.NODE_ENV || 'development',
+        root: 'src'
+    }
+});
 
 gulp.task('css', function () {
     let processors = [
@@ -30,7 +31,7 @@ gulp.task('css', function () {
     if (options.env === 'production') {
         processors.push(cssnano({autoprefixer: false}));//去掉重复功能
     }
-    return gulp.src('src/source/css/*.scss')
+    return gulp.src(options.root+'/source/css/*.scss')
         .pipe(sourcemaps.init())
         .pipe(plumber())
         .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
@@ -40,8 +41,8 @@ gulp.task('css', function () {
         //压缩输出方式 compressed
         .pipe(postcss(processors))
         .pipe(plumber.stop())
-        .pipe(sourcemaps.write('.', { sourceRoot: 'src/source/css' }))
-        .pipe(gulp.dest('src/css'))
+        .pipe(sourcemaps.write('.', { sourceRoot: options.root+'/source/css' }))
+        .pipe(gulp.dest(options.root+'/css'))
         .pipe(browserSync.stream({match: '**/*.css'}));
 });
 
@@ -52,28 +53,28 @@ gulp.task('js', function () {
             "stage-0"
         ]
     };
-    return gulp.src('src/source/js/*.js')
+    return gulp.src(options.root+'/source/js/*.js')
         .pipe(sourcemaps.init())
         .pipe(plumber())
         .pipe(babel(processors))
         .pipe(gulpif(options.env === 'production', uglify()))
         .pipe(plumber.stop())
-        .pipe(sourcemaps.write('.', { sourceRoot: 'src/source/js' }))
-        .pipe(gulp.dest('src/js'))
+        .pipe(sourcemaps.write('.', { sourceRoot: options.root+'/source/js' }))
+        .pipe(gulp.dest(options.root+'/js'))
         .pipe(browserSync.reload({stream:true}));
 });
 
 gulp.task('default', ['css', 'js'], () => {
     browserSync.init({
         server: {
-            baseDir: 'src',
+            baseDir: options.root,
             directory: true//显示目录
         },
         //open: false,//启动browser-sync不打开新页面  地址:http://localhost:3000
         reloadOnRestart: true,//重启browser-sync刷新所有页面
         notify: false//不显示在浏览器中的任何通知。
     });
-    gulp.watch('src/source/css/**/*', ['css']);
-    gulp.watch('src/source/js/**/*', ['js']);
-    gulp.watch(['src/*.html']).on('change', browserSync.reload);
+    gulp.watch(options.root+'/source/css/**/*', ['css']);
+    gulp.watch(options.root+'/source/js/**/*', ['js']);
+    gulp.watch([options.root+'/*.html']).on('change', browserSync.reload);
 });

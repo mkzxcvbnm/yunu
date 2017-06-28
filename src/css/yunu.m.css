@@ -541,56 +541,13 @@ small {
   font-size: 12px;
 }
 
-.fl {
-  float: left;
-}
-
-.fr {
-  float: right;
-}
-
-.clear {
-  clear: both;
-}
-
-.clearfix, .container:after,
-.row:after,
-.center,
-ul {
-  *zoom: 1;
-}
-
-.clearfix:after, .container:after,
-.row:after,
-.center:after,
-ul:after {
-  content: " ";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
-
-.ellipsis, .nav > ul li a {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.container {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.content img {
-  max-width: 100%;
-}
-
-.content_box,
-.content_box *,
-.content_box *:before,
-.content_box *:after {
-  box-sizing: content-box;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
 }
 
 .ml5 {
@@ -1043,6 +1000,102 @@ ul:after {
 
 .f36 {
   font-size: 36px;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.clearfix, .container:after,
+.row:after,
+.center,
+ul {
+  *zoom: 1;
+}
+
+.clearfix:after, .container:after,
+.row:after,
+.center:after,
+ul:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.ellipsis, .nav > ul li a {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.content_box,
+.content_box *,
+.content_box *:before,
+.content_box *:after {
+  box-sizing: content-box;
+}
+
+.tal {
+  text-align: left;
+}
+
+.tac {
+  text-align: center;
+}
+
+.tar {
+  text-align: right;
+}
+
+.vat {
+  vertical-align: top;
+}
+
+.vam {
+  vertical-align: middle;
+}
+
+.vab {
+  vertical-align: bottom;
+}
+
+.block {
+  display: block;
+}
+
+.iblock {
+  display: inline-block;
+}
+
+.posr {
+  position: relative;
+}
+
+.posa {
+  position: absolute;
+}
+
+.posf {
+  position: fixed;
 }
 
 .flex_center, .bnav a, .banner .swiper-slide, .gotop {
@@ -1841,6 +1894,16 @@ ul:after {
 }
 
 /****************************** style ******************************/
+body,
+button,
+input,
+select,
+textarea {
+  font: 14px/1.4 "\5FAE\8F6F\96C5\9ED1", "arial";
+  color: #5a5a5a;
+  font-size: 14px;
+}
+
 body {
   width: 7.5rem;
   margin: 0 auto 1rem;
