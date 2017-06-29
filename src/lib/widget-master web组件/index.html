@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<title>我的组件库</title>
+		<meta name="description" content="简单实用的jQuery插件库，包含轮播（幻灯片）、标签页、弹出框、滚动条、城市三级联动等组件，极大地方便了前端开发">
+		<meta name="keywords" content="jQuery插件,javascript,前端开发,轮播,组件">
+		<meta name="author" content="木木阳,mumuy,passerby" />
+		<link rel="shortcut icon" href="/public/image/favicon.png">
+		<link rel="stylesheet" type="text/css" href="/public/style/cssreset-min.css">
+		<link rel="stylesheet" type="text/css" href="/public/style/common.css">
+		<style type="text/css">
+			header{
+				margin-bottom: 100px;
+			}
+			.container{
+				padding-bottom: 120px;
+			}
+			.main{
+				width:960px;
+				margin:0 auto;
+			}
+			footer{
+				position: absolute;
+			    bottom: 0;
+			    width: 100%;
+			    height: 40px;
+			    line-height: 40px;
+			    z-index: 99;
+			}
+			.mod-head{
+				width: 960px;
+				padding-top: 120px;
+				margin: 0 auto 50px;
+				line-height: 1.2;
+				text-align: center;
+			}
+			.mod-head h1{
+				font-size: 48px;
+			}
+			.mod-head p{
+				font-size: 16px;
+			}
+			.mod-list{
+				width: 960px;
+				margin: 0 auto 20px;
+				text-align: center;
+			}
+			.mod-list li{
+				display: inline-block;
+				margin:0 5px;
+			}
+			.mod-list .btn{
+				display: block;
+				padding: 6px 12px;
+			    background-color: #fff;
+			    border: 1px solid #333;
+			    border-radius: 3px;
+			    color: #333;
+			    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+			}
+			.mod-list .btn:hover{
+				background-color: #333;
+				color:#fff;
+			}
+			.mod-botton{
+				width: 960px;
+				height: 32px;
+				margin: 0 auto 20px;
+				text-align: center;
+			}
+			.mod-content{
+				width:840px;
+				margin:0 10px 0 auto;
+			}
+			.mod-content ul{
+				overflow: hidden;
+			}
+			.mod-content li{
+				float: left;
+				width: 50%;
+				margin-bottom: 10px;
+				line-height: 20px;
+			}
+			.mod-content a.hot{
+				color: #cc0000;
+			}
+			.mod-content a:hover{
+				border-bottom: 1px dotted #666;
+			}
+			.mod-foot{
+				text-align: center;
+				padding:0 30px;
+				color:#999;
+			}
+			.mod-foot a{
+				color:#999;
+			}
+
+			::selection {
+			    color: white;
+			    background-color: #333;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<div class="mod-head">
+					<h1>我的Web组件库</h1>
+					<p>让前端开发快到飞起来～</p>
+				</div>
+				<div class="mod-list">
+					<ul>
+						<li><a class="btn" href="http://passer-by.com/" target="_blank">个人网站</a></li>
+						<li><a class="btn" href="https://github.com/mumuy/widget" target="_blank">查看GitHub</a></li>
+						<li><a class="btn" href="https://github.com/mumuy/widget/zipball/master" target="_blank">下载 .zip</a></li>
+					</ul>
+				</div>
+				<div class="mod-botton">
+					<a class="github-button" href="https://github.com/mumuy" data-style="mega" data-count-href="/mumuy/followers" data-count-api="/users/mumuy#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @mumuy on GitHub">Follow @mumuy</a>
+					<a class="github-button" href="https://github.com/mumuy/widget" data-style="mega" data-count-href="/mumuy/widget/stargazers" data-count-api="/repos/mumuy/widget#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star mumuy/widget on GitHub">Star</a>
+				</div>
+			</header>
+			<div class="container">
+				<div class="main">
+					<div class="mod-content">
+						<ul>
+							<li>
+								<p>
+									<a class="hot" href="/jquery-slider/" target="_blank">轮播</a>
+									<span>/</span>
+									<a href="/jquery-slider/subject.html" target="_blank">全屏轮播</a>
+								<p>
+								<p>$(selector).slider(options,callback(api));</p>
+							</li>
+							<li>
+								<p><a href="/jquery-tabs/" target="_blank">标签页</a></p>
+								<p>$(selector).tabs(options,callback(api));</p>
+							</li>
+							<li>
+								<p><a href="/jquery-scrollbar/" target="_blank">滚动条</a></p>
+								<p>$(selector).scrollbar(options,callback(api));</p>
+							</li>
+							<li>
+								<p><a href="/jquery-select/" target="_blank">下拉框</a></p>
+								<p>$(selector).select(options,callback(api));</p>
+							</li>
+							<li>
+								<p><a href="/jquery-range/" target="_blank">滑动条</a></p>
+								<p>$(selector).range(options,callback(api));</p>
+							</li>
+							<li>
+								<p><a href="/jquery-dialog/" target="_blank">对话框</a></p>
+								<p>$(selector).dialog(options,callback(api));</p>
+							</li>
+							<li>
+								<p><a href="/jquery-countdown/" target="_blank">倒计时</a></p>
+								<p>$(selector).countdown(options,callback(api));</p>
+							</li>
+							<li>
+								<p><a href="/jquery-imagezoom/" target="_blank">图片聚焦</a></p>
+								<p>$(selector).imagezoom(options);</p>
+							</li>
+							<li>
+								<p><a href="/jquery-headroom/" target="_blank">浮动菜单</a></p>
+								<p>$(selector).headroom(options);</p>
+							</li>
+							<li>
+								<p>
+									<a href="/jquery-calendar/" target="_blank">日历</a>
+									<span>/</span>
+									<a href="/jquery-calendar/slider.html" target="_blank">滑动日历(基于轮播)</a>
+								</p>
+								<p>$(selector).calendar(options,callback(api));</p>
+							</li>
+							<li>
+								<p><a href="/jquery-popup/" target="_blank">弹出层</a></p>
+								<p>$(selector).popup(options,callback(api));</p>
+							</li>
+							<li>
+								<p><a href="/jquery-suggestion/" target="_blank">搜索建议</a></p>
+								<p>$(selector).suggestion(options,callback(api));</p>
+							</li>
+							<li>
+								<p><a href="/jquery-citys/" target="_blank">城市三级联动</a></p>
+								<p>$(selector).citys(options,callback(api));</p>
+							</li>
+							<li>
+								<p><a href="/jquery-inputFormat/" target="_blank">格式化输入框</a></p>
+								<p>$(selector).inputFormat(options,callback(api));</p>
+							</li>
+							<li>
+								<p><a href="/jquery-accordion/" target="_blank">手风琴</a></p>
+								<p>$(selector).accordion(options,callback(api));</p>
+							</li>
+							<li>
+								<p><a href="/jquery-emoticons/" target="_blank">聊天表情</a></p>
+								<p>$.emoticons(options,callback(api));</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<footer>
+				<div class="mod-foot">
+					<p>Copyright &copy; <span>jquerywidget.com</span></p>
+				</div>
+			</footer>
+		</div>
+		<script async defer src="https://buttons.github.io/buttons.js"></script>
+		<div style="display: none;">
+			<script src="http://s11.cnzz.com/z_stat.php?id=1260218562&web_id=1260218562"></script>
+		</div>
+	</body>
+</html>
