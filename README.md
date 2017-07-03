@@ -1,4 +1,4 @@
-# yunu 前端自动化工作流1.2.0
+# yunu 前端自动化工作流1.2.1
 
 yunu内部使用的前端自动化工具  
 [内部规范及说明文档](https://mkzxcvbnm.gitbooks.io/yunu/content/)  
