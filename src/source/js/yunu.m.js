@@ -1,6 +1,6 @@
 ;(($, window, document, undefined) => {
     window.yunu = {
-        letter : function (fn) {
+        letter(fn) {
             if (typeof arguments[0] != 'function') return;
             fn();
             let times = typeof arguments[1] != 'number'?300:arguments[1],
@@ -105,8 +105,9 @@
         },
     };
 
+    yunu.rem();
     $(() => {
-        yunu.rem().nav().gotop();
+        yunu.nav().gotop();
     });
 
     $.fn.imgAuto = (co, fn) => {

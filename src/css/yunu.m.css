@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /****************************** components ******************************/
 /*! normalize.css v6.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -514,31 +515,31 @@ a:focus, a:active, a:hover {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: .36rem;
 }
 
 h2 {
-  font-size: 32px;
+  font-size: .32rem;
 }
 
 h3 {
-  font-size: 28px;
+  font-size: .28rem;
 }
 
 h4 {
-  font-size: 24px;
+  font-size: .24rem;
 }
 
 h5 {
-  font-size: 20px;
+  font-size: .20rem;
 }
 
 h6 {
-  font-size: 16px;
+  font-size: .16rem;
 }
 
 small {
-  font-size: 12px;
+  font-size: .12rem;
 }
 
 h1,
@@ -551,455 +552,455 @@ h6 {
 }
 
 .ml5 {
-  margin-left: 5px;
+  margin-left: 0.05rem;
 }
 
 .mt5 {
-  margin-top: 5px;
+  margin-top: 0.05rem;
 }
 
 .mr5 {
-  margin-right: 5px;
+  margin-right: 0.05rem;
 }
 
 .mb5 {
-  margin-bottom: 5px;
+  margin-bottom: 0.05rem;
 }
 
 .mg5 {
-  margin: 5px;
+  margin: 0.05rem;
 }
 
 .pl5 {
-  padding-left: 5px;
+  padding-left: 0.05rem;
 }
 
 .pt5 {
-  padding-top: 5px;
+  padding-top: 0.05rem;
 }
 
 .pr5 {
-  padding-right: 5px;
+  padding-right: 0.05rem;
 }
 
 .pb5 {
-  padding-bottom: 5px;
+  padding-bottom: 0.05rem;
 }
 
 .pd5 {
-  padding: 5px;
+  padding: 0.05rem;
 }
 
 .ml10 {
-  margin-left: 10px;
+  margin-left: 0.1rem;
 }
 
 .mt10 {
-  margin-top: 10px;
+  margin-top: 0.1rem;
 }
 
 .mr10 {
-  margin-right: 10px;
+  margin-right: 0.1rem;
 }
 
 .mb10 {
-  margin-bottom: 10px;
+  margin-bottom: 0.1rem;
 }
 
 .mg10 {
-  margin: 10px;
+  margin: 0.1rem;
 }
 
 .pl10 {
-  padding-left: 10px;
+  padding-left: 0.1rem;
 }
 
 .pt10 {
-  padding-top: 10px;
+  padding-top: 0.1rem;
 }
 
 .pr10 {
-  padding-right: 10px;
+  padding-right: 0.1rem;
 }
 
 .pb10 {
-  padding-bottom: 10px;
+  padding-bottom: 0.1rem;
 }
 
 .pd10 {
-  padding: 10px;
+  padding: 0.1rem;
 }
 
 .ml15 {
-  margin-left: 15px;
+  margin-left: 0.15rem;
 }
 
 .mt15 {
-  margin-top: 15px;
+  margin-top: 0.15rem;
 }
 
 .mr15 {
-  margin-right: 15px;
+  margin-right: 0.15rem;
 }
 
 .mb15 {
-  margin-bottom: 15px;
+  margin-bottom: 0.15rem;
 }
 
 .mg15 {
-  margin: 15px;
+  margin: 0.15rem;
 }
 
 .pl15 {
-  padding-left: 15px;
+  padding-left: 0.15rem;
 }
 
 .pt15 {
-  padding-top: 15px;
+  padding-top: 0.15rem;
 }
 
 .pr15 {
-  padding-right: 15px;
+  padding-right: 0.15rem;
 }
 
 .pb15 {
-  padding-bottom: 15px;
+  padding-bottom: 0.15rem;
 }
 
 .pd15 {
-  padding: 15px;
+  padding: 0.15rem;
 }
 
 .ml20 {
-  margin-left: 20px;
+  margin-left: 0.2rem;
 }
 
 .mt20 {
-  margin-top: 20px;
+  margin-top: 0.2rem;
 }
 
 .mr20 {
-  margin-right: 20px;
+  margin-right: 0.2rem;
 }
 
 .mb20 {
-  margin-bottom: 20px;
+  margin-bottom: 0.2rem;
 }
 
 .mg20 {
-  margin: 20px;
+  margin: 0.2rem;
 }
 
 .pl20 {
-  padding-left: 20px;
+  padding-left: 0.2rem;
 }
 
 .pt20 {
-  padding-top: 20px;
+  padding-top: 0.2rem;
 }
 
 .pr20 {
-  padding-right: 20px;
+  padding-right: 0.2rem;
 }
 
 .pb20 {
-  padding-bottom: 20px;
+  padding-bottom: 0.2rem;
 }
 
 .pd20 {
-  padding: 20px;
+  padding: 0.2rem;
 }
 
 .ml25 {
-  margin-left: 25px;
+  margin-left: 0.25rem;
 }
 
 .mt25 {
-  margin-top: 25px;
+  margin-top: 0.25rem;
 }
 
 .mr25 {
-  margin-right: 25px;
+  margin-right: 0.25rem;
 }
 
 .mb25 {
-  margin-bottom: 25px;
+  margin-bottom: 0.25rem;
 }
 
 .mg25 {
-  margin: 25px;
+  margin: 0.25rem;
 }
 
 .pl25 {
-  padding-left: 25px;
+  padding-left: 0.25rem;
 }
 
 .pt25 {
-  padding-top: 25px;
+  padding-top: 0.25rem;
 }
 
 .pr25 {
-  padding-right: 25px;
+  padding-right: 0.25rem;
 }
 
 .pb25 {
-  padding-bottom: 25px;
+  padding-bottom: 0.25rem;
 }
 
 .pd25 {
-  padding: 25px;
+  padding: 0.25rem;
 }
 
 .ml30 {
-  margin-left: 30px;
+  margin-left: 0.3rem;
 }
 
 .mt30 {
-  margin-top: 30px;
+  margin-top: 0.3rem;
 }
 
 .mr30 {
-  margin-right: 30px;
+  margin-right: 0.3rem;
 }
 
 .mb30 {
-  margin-bottom: 30px;
+  margin-bottom: 0.3rem;
 }
 
 .mg30 {
-  margin: 30px;
+  margin: 0.3rem;
 }
 
 .pl30 {
-  padding-left: 30px;
+  padding-left: 0.3rem;
 }
 
 .pt30 {
-  padding-top: 30px;
+  padding-top: 0.3rem;
 }
 
 .pr30 {
-  padding-right: 30px;
+  padding-right: 0.3rem;
 }
 
 .pb30 {
-  padding-bottom: 30px;
+  padding-bottom: 0.3rem;
 }
 
 .pd30 {
-  padding: 30px;
+  padding: 0.3rem;
 }
 
 .ml35 {
-  margin-left: 35px;
+  margin-left: 0.35rem;
 }
 
 .mt35 {
-  margin-top: 35px;
+  margin-top: 0.35rem;
 }
 
 .mr35 {
-  margin-right: 35px;
+  margin-right: 0.35rem;
 }
 
 .mb35 {
-  margin-bottom: 35px;
+  margin-bottom: 0.35rem;
 }
 
 .mg35 {
-  margin: 35px;
+  margin: 0.35rem;
 }
 
 .pl35 {
-  padding-left: 35px;
+  padding-left: 0.35rem;
 }
 
 .pt35 {
-  padding-top: 35px;
+  padding-top: 0.35rem;
 }
 
 .pr35 {
-  padding-right: 35px;
+  padding-right: 0.35rem;
 }
 
 .pb35 {
-  padding-bottom: 35px;
+  padding-bottom: 0.35rem;
 }
 
 .pd35 {
-  padding: 35px;
+  padding: 0.35rem;
 }
 
 .ml40 {
-  margin-left: 40px;
+  margin-left: 0.4rem;
 }
 
 .mt40 {
-  margin-top: 40px;
+  margin-top: 0.4rem;
 }
 
 .mr40 {
-  margin-right: 40px;
+  margin-right: 0.4rem;
 }
 
 .mb40 {
-  margin-bottom: 40px;
+  margin-bottom: 0.4rem;
 }
 
 .mg40 {
-  margin: 40px;
+  margin: 0.4rem;
 }
 
 .pl40 {
-  padding-left: 40px;
+  padding-left: 0.4rem;
 }
 
 .pt40 {
-  padding-top: 40px;
+  padding-top: 0.4rem;
 }
 
 .pr40 {
-  padding-right: 40px;
+  padding-right: 0.4rem;
 }
 
 .pb40 {
-  padding-bottom: 40px;
+  padding-bottom: 0.4rem;
 }
 
 .pd40 {
-  padding: 40px;
+  padding: 0.4rem;
 }
 
 .ml45 {
-  margin-left: 45px;
+  margin-left: 0.45rem;
 }
 
 .mt45 {
-  margin-top: 45px;
+  margin-top: 0.45rem;
 }
 
 .mr45 {
-  margin-right: 45px;
+  margin-right: 0.45rem;
 }
 
 .mb45 {
-  margin-bottom: 45px;
+  margin-bottom: 0.45rem;
 }
 
 .mg45 {
-  margin: 45px;
+  margin: 0.45rem;
 }
 
 .pl45 {
-  padding-left: 45px;
+  padding-left: 0.45rem;
 }
 
 .pt45 {
-  padding-top: 45px;
+  padding-top: 0.45rem;
 }
 
 .pr45 {
-  padding-right: 45px;
+  padding-right: 0.45rem;
 }
 
 .pb45 {
-  padding-bottom: 45px;
+  padding-bottom: 0.45rem;
 }
 
 .pd45 {
-  padding: 45px;
+  padding: 0.45rem;
 }
 
 .ml50 {
-  margin-left: 50px;
+  margin-left: 0.5rem;
 }
 
 .mt50 {
-  margin-top: 50px;
+  margin-top: 0.5rem;
 }
 
 .mr50 {
-  margin-right: 50px;
+  margin-right: 0.5rem;
 }
 
 .mb50 {
-  margin-bottom: 50px;
+  margin-bottom: 0.5rem;
 }
 
 .mg50 {
-  margin: 50px;
+  margin: 0.5rem;
 }
 
 .pl50 {
-  padding-left: 50px;
+  padding-left: 0.5rem;
 }
 
 .pt50 {
-  padding-top: 50px;
+  padding-top: 0.5rem;
 }
 
 .pr50 {
-  padding-right: 50px;
+  padding-right: 0.5rem;
 }
 
 .pb50 {
-  padding-bottom: 50px;
+  padding-bottom: 0.5rem;
 }
 
 .pd50 {
-  padding: 50px;
+  padding: 0.5rem;
 }
 
 .f12 {
-  font-size: 12px;
+  font-size: 0.12rem;
 }
 
 .f14 {
-  font-size: 14px;
+  font-size: 0.14rem;
 }
 
 .f16 {
-  font-size: 16px;
+  font-size: 0.16rem;
 }
 
 .f18 {
-  font-size: 18px;
+  font-size: 0.18rem;
 }
 
 .f20 {
-  font-size: 20px;
+  font-size: 0.2rem;
 }
 
 .f22 {
-  font-size: 22px;
+  font-size: 0.22rem;
 }
 
 .f24 {
-  font-size: 24px;
+  font-size: 0.24rem;
 }
 
 .f26 {
-  font-size: 26px;
+  font-size: 0.26rem;
 }
 
 .f28 {
-  font-size: 28px;
+  font-size: 0.28rem;
 }
 
 .f30 {
-  font-size: 30px;
+  font-size: 0.3rem;
 }
 
 .f32 {
-  font-size: 32px;
+  font-size: 0.32rem;
 }
 
 .f34 {
-  font-size: 34px;
+  font-size: 0.34rem;
 }
 
 .f36 {
-  font-size: 36px;
+  font-size: 0.36rem;
 }
 
 .fl {
@@ -1098,6 +1099,18 @@ ul:after {
   position: fixed;
 }
 
+.cover {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.contain {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
 .flex_center, .bnav a, .banner .swiper-slide, .gotop {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1110,6 +1123,36 @@ ul:after {
           align-items: center;
 }
 
+/* start-----新闻详情-----start */
+.introduction {
+  margin-bottom: .2rem;
+  border: 1px solid #e5e5e5;
+  padding: .05rem;
+  background-color: #f5f5f5;
+  color: #868686;
+  line-height: .22rem;
+}
+
+.news_title {
+  text-align: center;
+  margin-top: .3rem;
+}
+
+.news_title h1 {
+  font-size: .16rem;
+  color: #434343;
+  font-weight: bold;
+}
+
+.news_title p {
+  padding-top: .1rem;
+}
+
+.news_title p span {
+  padding: 0 .03rem;
+}
+
+/* end-----新闻详情-----end */
 .col-xs-1,
 .col-sm-1,
 .col-md-1,
@@ -1160,8 +1203,6 @@ ul:after {
 .col-lg-12 {
   position: relative;
   min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
 }
 
 .col-xs-1,

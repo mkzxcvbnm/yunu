@@ -110,8 +110,9 @@
         }
     };
 
+    yunu.rem();
     $(function () {
-        yunu.rem().nav().gotop();
+        yunu.nav().gotop();
     });
 
     $.fn.imgAuto = function (co, fn) {

@@ -69,7 +69,7 @@ yunu内部使用的前端自动化工具
     │   │
     │   ├── css                 # css源代码
     │   │   │
-    │   │   └── components      # css模块
+    │   │   └── components      # css组件
     │   │
     │   └── js                  # js源代码
     │
