@@ -36,8 +36,8 @@ gulp.task('css', function () {
         .pipe(plumber())
         .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
         //嵌套输出方式 nested
-        //展开输出方式 expanded 
-        //紧凑输出方式 compact 
+        //展开输出方式 expanded
+        //紧凑输出方式 compact
         //压缩输出方式 compressed
         .pipe(postcss(processors))
         .pipe(plumber.stop())

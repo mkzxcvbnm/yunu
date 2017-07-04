@@ -44,8 +44,8 @@
         rem: function rem() {
             var size = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 750;
 
-            var html = document.getElementsByTagName('html')[0];
-            var setSize = function setSize() {
+            var html = document.getElementsByTagName('html')[0],
+                setSize = function setSize() {
                 var _w = document.documentElement.clientWidth;
                 _w = _w > size ? size : _w;
                 html.style.fontSize = _w / size * 100 + 'px';
@@ -81,7 +81,7 @@
                 timer = null,
                 px = 0,
                 body = $('html,body'),
-                win = $(window);
+                $window = $(window);
 
             gotop.click(function () {
                 event.stopPropagation();
@@ -92,7 +92,7 @@
             });
 
             yunu.throttle(function () {
-                win.scrollTop() > 50 ? gotop.fadeIn() : gotop.fadeOut();
+                $window.scrollTop() > 50 ? gotop.fadeIn() : gotop.fadeOut();
             }, 300, 'scroll');
             return this;
         },

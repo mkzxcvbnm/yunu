@@ -3,7 +3,7 @@
 2. 独立的方法尽可能使用IIFE（即时执行方法）
 
 ```js
-;(function ($, window, document, undefined) {  
+;(function ($, window, document, undefined) {
     
 })(jQuery, window, document);
 ```
@@ -25,7 +25,7 @@
 ```
 
 10. 函数的return后面如果有值必须同行
-11. js标识符不能是关键字、保留字、true、false、null。命名可以采用小驼峰式命名法,即第一个字母小写，后面每个有意义的首字母大写。 
+11. js标识符不能是关键字、保留字、true、false、null。命名可以采用小驼峰式命名法,即第一个字母小写，后面每个有意义的首字母大写。
 12. var同时定义多个变量可以合并 但注意对齐 例如
 
 ```js
@@ -36,7 +36,7 @@
         };
 ```
 
-12. 变量除了上面的要求 命名时最好带上所属类型 
+12. 变量除了上面的要求 命名时最好带上所属类型
     >比如
     o代表object
     b代表boolean
@@ -64,9 +64,8 @@
         */
         setTitle();
         ```
-        
+
     * 函数的注释
-    
 ```js
     /**
     * 合并Grid的行
@@ -74,7 +73,7 @@
     * @param cols {Array} 需要合并列的Index(序号)数组；从0开始计数，序号也包含。
     * @param isAllSome {Boolean} ：是否2个tr的cols必须完成一样才能进行合并。true：完成一样；false(默认)：不完全一样
     * @return void
-    * @author polk6 2015/07/21 
+    * @author polk6 2015/07/21
     * @example
     * _________________                             _________________
     * |  年龄 |  姓名 |                             |  年龄 |  姓名 |

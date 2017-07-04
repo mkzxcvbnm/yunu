@@ -39,8 +39,8 @@
             return this;
         },
         rem(size = 750) {
-            let html = document.getElementsByTagName('html')[0];
-            let setSize = () => {
+            let html = document.getElementsByTagName('html')[0],
+                setSize = () => {
                 let _w = document.documentElement.clientWidth;
                 _w = _w > size ? size: _w;
                 html.style.fontSize = _w/size * 100 + 'px';
@@ -78,18 +78,18 @@
                 timer = null,
                 px = 0,
                 body = $('html,body'),
-                win = $(window);
+                $window = $(window);
 
             gotop.click(() => {
                 event.stopPropagation();
                 event.preventDefault();
-                body.animate({  
+                body.animate({
                     scrollTop: 0
-                });  
+                });
             });
 
             yunu.throttle(() => {
-                win.scrollTop() > 50?gotop.fadeIn():gotop.fadeOut();
+                $window.scrollTop() > 50?gotop.fadeIn():gotop.fadeOut();
             }, 300, 'scroll');
             return this;
         },

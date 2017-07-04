@@ -43,7 +43,7 @@
     * 边框与背景：border,background
     * 段落与文本：line-height,text-indent,font,color,text-decoration,...
     * 其他属性：overflow,cursor,visibility,...
-4. css 需要显示所有值的情况下，应当尽量限制使用简写形式的属性声明。例如padding border 
+4. css 需要显示所有值的情况下，应当尽量限制使用简写形式的属性声明。例如padding border
     >大部分情况下，我们不需要为简写形式的属性声明指定所有值。例如，HTML 的 heading 元素只需要设置上、下边距（margin）的值，因此，在必要的时候，只需覆盖这两个值就可以。过度使用简写形式的属性声明会导致代码混乱，并且会对属性值带来不必要的覆盖从而引起意外的副作用。
 5. css命名在不冲突的前提下尽可能简洁 并且意义明确 基于最近的父 class 或基本（base） class 作为新 class 的前缀。 多人合作的项目在样式名前面加上自己的命名空间
 6. css命名统一小写 多个单词之间用"_"进行连接（"_"符号不可以在首位）
@@ -73,7 +73,7 @@ main_l 页面主体左 main_r 页面主体左
 
 i_box1 i_box2 (首页内容容器)
 
-active 当前选中/激活元素   
+active 当前选中/激活元素
 
 banner 幻灯片 page_banner 内页幻灯片
 
@@ -81,7 +81,7 @@ hover 悬停    selected 挑选   disabled 禁用   focus 得到焦点   blur �
 
 content 内容   title(tit) 标题   item 项目（条）  cell 单元   img 图片   text 文字  block 块  container 容器(最外层) row 行   col 列    box 容器盒子(内层)
 
-nav 导航   crumbs 面包屑导航  menu 菜单 
+nav 导航   crumbs 面包屑导航  menu 菜单
 
 search 搜索 search_bar 搜索条  search_text 搜索框   search_btn 搜索按钮    search_word 搜索词
 
@@ -91,9 +91,9 @@ hot 热点    download 下载
 
 content 内容    title 标题    description(des) 摘要    time 时间
 
-tags 标签   scroll 滚动 
+tags 标签   scroll 滚动
 
-sidebar 侧边栏   column 栏目  msg 提示信息  status 状态  tips 小技巧    
+sidebar 侧边栏   column 栏目  msg 提示信息  status 状态  tips 小技巧
 
 popup 弹出层
 
