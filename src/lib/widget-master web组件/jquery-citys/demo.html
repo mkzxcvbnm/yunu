@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>省市区三级联动</title>
+</head>
+<body>
+    <script type="text/javascript" src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+    <script type="text/javascript" src="../public/script/jquery.min.js"></script>
+    <script type="text/javascript" src="../code/jquery.citys.js"></script>
+    <div id="citys" class="citys">
+        <select name="province"></select>
+        <select name="city"></select>
+        <select name="area"></select>
+    </div>
+    <script type="text/javascript">
+        $('#citys').citys({
+            required: false,
+            nodata: 'disabled',
+            valueType: 'name',
+            province: remote_ip_info.province,
+            city: remote_ip_info.city,
+            area: remote_ip_info.district,
+        });
+    </script>
+</body>
+</html>

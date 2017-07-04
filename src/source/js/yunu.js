@@ -1,16 +1,16 @@
 ;(($, window, document, undefined) => {
     window.yunu = {
-        letter : function (fn) {
+        letter(fn) {
             if (typeof arguments[0] != 'function') return;
             fn();
             let times = typeof arguments[1] != 'number'?300:arguments[1],
                 timer = null,
                 st = new Date().getTime();
-            return function () {
+            return function() {
                 let et = new Date().getTime();
                 if (et - st < times) {
                     clearTimeout(timer);
-                    timer = setTimeout(function () {
+                    timer = setTimeout(function() {
                         //return fn.apply(this,arguments);
                         fn();
                     }, times);
@@ -40,12 +40,12 @@
         }
     };
 
-    $.fn.imgAuto = (co, fn) => {
+    $.fn.imgAuto = function(co, fn) {
         fn = fn || {};
         let fncall = (name, arg) => {
             if (typeof fn[name] === 'function') fn[name](arg);
         };
-        $(this).each(() => {
+        $(this).each(function() {
             let t = $(this),
                 img = new Image(),
                 cover = t.attr('img-Auto') == 'cover'||co?true:false,
@@ -66,14 +66,14 @@
             box = t.parent();
             box.css('overflow', 'hidden');
             if (boxScale) {
-                box.each(() => {
+                box.each(function() {
                     let t = $(this);
-                    yunu.throttle(() => {
+                    yunu.throttle(function() {
                         t.height(t.width()/boxScale);
                     });
                 });
             };
-            let move = () => {
+            let move = function() {
                 if (img.width>0 || img.height>0) {
                     fncall('imgAutoStart', img);
                     let i_w = img.width,//原图宽

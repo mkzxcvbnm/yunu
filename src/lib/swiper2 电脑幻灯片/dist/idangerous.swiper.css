@@ -16,6 +16,8 @@
 Basic Swiper Styles 
 ================================================================*/
 .swiper-container {
+	width: 100%;
+	height: 100%;
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -70,6 +72,7 @@ Basic Swiper Styles
 	margin: 0 auto;
 }
 .swiper-slide {
+	position: relative;
 	float: left;
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
@@ -112,12 +115,20 @@ sizes, pagination, etc.
 Pagination Styles
 ================================================================*/
 .swiper-pagination-switch {
-	/* Stylize pagination button: */	
-
+	/* Stylize pagination button: */
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 16px;
+    background: #555;
+    margin: 0 5px;
+    opacity: 0.8;
+    border: 2px solid #fff;
+    cursor: pointer;
 }
 .swiper-active-switch {
 	/* Specific active button style: */	
-	
+    background: #fff;
 }
 .swiper-visible-switch {
 	/* Specific visible button style: */	

@@ -48,8 +48,8 @@
         var fncall = function fncall(name, arg) {
             if (typeof fn[name] === 'function') fn[name](arg);
         };
-        $(undefined).each(function () {
-            var t = $(undefined),
+        $(this).each(function () {
+            var t = $(this),
                 img = new Image(),
                 cover = t.attr('img-Auto') == 'cover' || co ? true : false,
                 _w = t.attr('width'),
@@ -70,7 +70,7 @@
             box.css('overflow', 'hidden');
             if (boxScale) {
                 box.each(function () {
-                    var t = $(undefined);
+                    var t = $(this);
                     yunu.throttle(function () {
                         t.height(t.width() / boxScale);
                     });
@@ -99,7 +99,7 @@
             yunu.throttle(move);
             t.fadeTo('fast', 1);
         });
-        return undefined;
+        return this;
     };
 })(jQuery, window, document);
 //# sourceMappingURL=yunu.js.map
