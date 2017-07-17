@@ -52,8 +52,15 @@
 .container:after,
 .row:after,
 .center,
+.fl_box,
 ul {
     @extend .clearfix;
+}
+
+.fl_box {
+    > * {
+        float: left;
+    }
 }
 
 .content img {

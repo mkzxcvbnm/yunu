@@ -20,6 +20,12 @@ textarea {
 html {
     min-width: $min_width;
 }
+a {
+    transition: color .2s;
+    &:hover {
+        color: $color;
+    }
+}
 .center {
     width: $min_width;
     margin: 0 auto;
