@@ -1018,6 +1018,7 @@ h6 {
 .clearfix, .container:after,
 .row:after,
 .center,
+.fl_box,
 ul {
   *zoom: 1;
 }
@@ -1025,6 +1026,7 @@ ul {
 .clearfix:after, .container:after,
 .row:after,
 .center:after,
+.fl_box:after,
 ul:after {
   content: " ";
   display: block;
@@ -1042,6 +1044,10 @@ ul:after {
 .container {
   margin-right: auto;
   margin-left: auto;
+}
+
+.fl_box > * {
+  float: left;
 }
 
 .content img {

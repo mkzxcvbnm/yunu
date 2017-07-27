@@ -10,6 +10,7 @@ const sourcemaps = require('gulp-sourcemaps');//源地图
 const babel = require('gulp-babel');//JavaScript编译器
 const uglify = require('gulp-uglify');//js压缩工具
 const browserSync = require('browser-sync').create();//浏览器调试工具
+const fileinclude = require('gulp-file-include');//公共html include插件
 
 const options = require('minimist')(process.argv.slice(2), {
     string: ['env', 'root'],
@@ -64,7 +65,18 @@ gulp.task('js', function () {
         .pipe(browserSync.reload({stream:true}));
 });
 
-gulp.task('default', ['css', 'js'], () => {
+gulp.task('fileinclude', function() {
+    gulp.src([options.root+'/source/*.html','!'+options.root+'/source/public_*.html'])
+    .pipe(plumber())
+    .pipe(fileinclude({
+        prefix: '@@',
+        basepath: '@file'
+    }))
+    .pipe(plumber.stop())
+    .pipe(gulp.dest(options.root));
+});
+
+gulp.task('default', ['fileinclude', 'css', 'js'], () => {
     browserSync.init({
         server: {
             baseDir: options.root,
@@ -76,5 +88,6 @@ gulp.task('default', ['css', 'js'], () => {
     });
     gulp.watch(options.root+'/source/css/**/*', ['css']);
     gulp.watch(options.root+'/source/js/**/*', ['js']);
+    gulp.watch(options.root+'/source/*.html', ['fileinclude']);
     gulp.watch([options.root+'/*.html']).on('change', browserSync.reload);
 });
