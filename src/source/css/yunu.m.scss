@@ -1,13 +1,22 @@
+/****************************** colors ******************************/
+$color: #000;//默认主题颜色
+.color {color: $color}
+.c_f {color: #fff}
+.c_0 {color: #000}
+.c_red {color: #f00}
+.bg {background: $color;}
+.bg_f {background: #fff;}
 /****************************** components ******************************/
 @import "./components/mixin";
 @import "./components/normalize";
 @import "./components/reset.m";
 @import "./components/default.m";
 @import "./components/grid";
+@import "./components/tooltip";
+@import "./components/input";
 //@import "./components/case";//例子
 /****************************** style ******************************/
-$color: #000;//默认主题颜色
-$w: 7.5rem;//最大宽度
+$min_width: 7.5rem;//最大宽度
 body,
 button,
 input,
@@ -18,7 +27,7 @@ textarea {
     font-size: .28rem;
 }
 body {
-    width: $w;
+    width: $min_width;
     margin: 0 auto 1rem;//bottom值应该等于底部导航的高度
     position: relative;
     overflow-x: hidden;
@@ -38,8 +47,8 @@ body {
     position: fixed;
     top: 0;
     bottom: 0;
-    right: -$w/10*7;
-    width: $w/10*7;
+    right: -$min_width/10*7;
+    width: $min_width/10*7;
     height: 100%;
     z-index: 1000;
     transition: transform .3s;
@@ -148,7 +157,7 @@ $menu_hover: $menu_size/100*3;
 }
 //底部导航
 .bnav {
-    width: $w;
+    width: $min_width;
     height: 1rem;
     background: lighten($color, 10%);
     position: fixed;

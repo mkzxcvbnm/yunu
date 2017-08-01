@@ -3,7 +3,7 @@
     @each $a,
     $b in $location {
         .#{$a}#{5 * $i} {
-            #{$b}: .05rem * $i;
+            #{$b}: .05rem * $i!important;
         }
     }
 }
@@ -11,6 +11,12 @@
 @for $i from 6 through 18 {
     .f#{2 * $i} {
         font-size: .02rem * $i;
+    }
+}
+
+@for $i from 10 through 20 {
+    .lh#{2 * $i} {
+        line-height: .02rem * $i;
     }
 }
 

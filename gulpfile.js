@@ -66,7 +66,7 @@ gulp.task('js', function () {
 });
 
 gulp.task('fileinclude', function() {
-    gulp.src([options.root+'/source/*.html','!'+options.root+'/source/public_*.html'])
+    gulp.src([options.root+'/source/*.html','!'+options.root+'/source/public_*.html','!'+options.root+'/source/*副本.html'])
     .pipe(plumber())
     .pipe(fileinclude({
         prefix: '@@',
