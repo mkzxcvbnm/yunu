@@ -136,8 +136,9 @@
 //按钮文字左右上下居中
 // 参数说明
 // $height    高度
-@mixin btn_center ($height: 48px) {
+// $border    在box-sizing: border-box盒模型下需要抵消的边框宽度
+@mixin btn_center ($height: 48px, $border: 0) {
     height: $height;
-    line-height: $height;
+    line-height: $height - $border*2;
     text-align: center;
 }

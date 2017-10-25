@@ -3,7 +3,7 @@
     @each $a,
     $b in $location {
         .#{$a}#{5 * $i} {
-            #{$b}: 5px * $i;
+            #{$b}: 5px * $i!important;
         }
     }
 }
@@ -11,6 +11,12 @@
 @for $i from 6 through 18 {
     .f#{2 * $i} {
         font-size: 2px * $i;
+    }
+}
+
+@for $i from 10 through 20 {
+    .lh#{2 * $i} {
+        line-height: 2px * $i;
     }
 }
 
@@ -52,8 +58,15 @@
 .container:after,
 .row:after,
 .center,
+.fl_box,
 ul {
     @extend .clearfix;
+}
+
+.fl_box {
+    > * {
+        float: left;
+    }
 }
 
 .content img {
@@ -98,7 +111,7 @@ ul {
 }
 
 .iblock {
-    display: inline-block;
+    @include inline-block;
 }
 
 .posr {

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="css/yunu.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="js/html5shiv.min.js"></script>
+        <script type="text/javascript" src="js/css3-mediaqueries.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/yunu.js"></script>
+</head>
+<body>
+@@include('./public_header.html')
+
+    <div class="main">
+        <ul class="pd50 lh24">
+            <li><label class="checked_label"><input class="radio" type="radio" name="radio"><i class="custom_checked" checked></i><span>购买产品</span></label></li>
+            <li><label class="checked_label"><input class="radio" type="radio" name="radio"><i class="custom_checked"></i><span>购买产品</span></label></li>
+
+            <li><label class="checked_label"><input class="checkbox" type="checkbox" name="checked" checked><i class="custom_checked"></i><span>购买产品</span></label></li>
+            <li><label class="checked_label"><input class="checkbox" type="checkbox" name="checked"><i class="custom_checked"></i><span>购买产品</span></label></li>
+
+            <li><label class="checked_label"><input class="switch" type="checkbox" name="checked"><i class="custom_checked"></i></label></li>
+        </ul>
+    </div>
+
+@@include('./public_footer.html')
+</body>
+</html>

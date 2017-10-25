@@ -1,12 +1,21 @@
+/****************************** colors ******************************/
+$color: #4381e6;//默认主题颜色
+.color {color: $color}
+.c_f {color: #fff}
+.c_0 {color: #000}
+.c_red {color: #f00}
+.bg {background: $color;}
+.bg_f {background: #fff;}
 /****************************** components ******************************/
 @import "./components/mixin";
 @import "./components/normalize";
 @import "./components/reset";
 @import "./components/default";
 @import "./components/grid";
+@import "./components/tooltip";
+@import "./components/input";
 //@import "./components/case";//例子
 /****************************** style ******************************/
-$color: #c21a29;//默认主题颜色
 $min_width: 1200px;//最小显示宽度
 body,
 button,
@@ -19,6 +28,12 @@ textarea {
 }
 html {
     min-width: $min_width;
+}
+a {
+    transition: color .2s;
+    &:hover {
+        color: $color;
+    }
 }
 .center {
     width: $min_width;

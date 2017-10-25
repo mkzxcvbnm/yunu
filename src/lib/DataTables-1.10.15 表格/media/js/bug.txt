@@ -1,0 +1,3 @@
+未缓存Local Storage下首次排序 报错
+在68行 e.length=0,e.push([b,f[0]]前面添加
+a.aaSorting=e=[],
