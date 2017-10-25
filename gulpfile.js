@@ -30,7 +30,10 @@ gulp.task('css', function () {
         //precss()
     ];
     if (options.env === 'production') {
-        processors.push(cssnano({autoprefixer: false}));//去掉重复功能
+        processors.push(cssnano({
+            autoprefixer: false, // 去掉重复功能
+            zindex: false // 关闭z-index计算
+        }));
     }
     return gulp.src(options.root+'/source/css/*.scss')
         .pipe(sourcemaps.init())

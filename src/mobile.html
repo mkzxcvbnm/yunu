@@ -9,6 +9,7 @@
     <meta name="description" content="">
     <title>首页</title>
     <link rel="stylesheet" type="text/css" href="css/yunu.m.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="js/yunu.m.js"></script>
@@ -16,7 +17,7 @@
 <body>
     <!-- 7.5rem == 100% -->
     <div class="header">
-        
+
     </div>
 
     <div class="banner" id="banner">
@@ -44,12 +45,63 @@
     </div>
 
     <div class="main">
-        
+
+        <!-- 分页加载 -->
+        <div class="mb40" id="list">
+            <ul>
+
+            </ul>
+        </div>
+        <div class="load_more">
+            <button class="load_more_btn" id="load_more_btn">加载更多</button>
+        </div>
+        <script type="text/javascript">
+            yunu.loadMore({
+                url: 'http://www.yunucms.cn/index.php/api/list',
+                btn: $('#load_more_btn'),
+                box: $('#list>ul'),
+                load_icon_class: 'la-2x',
+                data: {
+                    cid: 21,
+                    limit: 10
+                },
+                template: function (index, el){
+                    // 模板
+                    return  '<li>'+
+                            '    <a href="'+el.url+'">'+
+                            '        <img src="http://www.yunucms.cn'+ el.pic +'" height="50">'+
+                            '    </a>'+
+                            '    <p>'+el.title+'</p>'+
+                            '</li>';
+                },
+                beforeSend: function(XMLHttpRequest) {
+                    //console.log('请求发送');
+                },
+                done: function (res, textStatus, XMLHttpRequest){
+                    //console.log('请求成功');
+                    var template = this.template;
+                    var context = this.box;
+                    $.each(res.data, function(index, el) {
+                        var items = $(template(index, el));
+                        setTimeout(function(){
+                            context.append(items.addClass('fadeInDown animated'));
+                        },200*(index+1))
+                    });
+                },
+                fail: function(XMLHttpRequest, textStatus, errorThrown) {
+                    //console.log('请求失败');
+                },
+                always: function(XMLHttpRequest, textStatus, errorThrown) {
+                    //console.log('请求完成');
+                }
+            });
+        </script>
+
     </div>
 
 
     <div class="footer">
-        
+
     </div>
 
     <div class="nav" id="nav">
