@@ -124,7 +124,6 @@
                 load_more_none: $('<p class="load_more_none tac c_red mt20">没有了</p>') // 没有内容时显示的元素
             }, config);
             var load = function(){
-                alert(config.data.pages);
                 $.ajax({
                     url: config.url,
                     type: config.type,
@@ -137,7 +136,7 @@
                 })
                 .done(function(res, textStatus, XMLHttpRequest) {
                     config.done(res, textStatus, XMLHttpRequest);
-                    if (!res.data.length) {
+                    if (!res.data.length || !config.data.limit || res.data.length < config.data.limit) {
                         config.btn.replaceWith(config.load_more_none);
                     }
                 })
@@ -168,7 +167,7 @@
         yunu.nav().gotop();
     });
 
-    $.fn.imgAuto = (co, fn) => {
+    $.fn.imgAuto = function(co, fn) {
         fn = fn || {};
         let fncall = (name, arg) => {
             if (typeof fn[name] === 'function') fn[name](arg);

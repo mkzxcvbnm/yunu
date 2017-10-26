@@ -52,7 +52,7 @@
 
             </ul>
         </div>
-        <div class="load_more">
+        <div class="load_more mg20">
             <button class="load_more_btn" id="load_more_btn">加载更多</button>
         </div>
         <script type="text/javascript">
@@ -69,7 +69,7 @@
                     // 模板
                     return  '<li>'+
                             '    <a href="'+el.url+'">'+
-                            '        <img src="http://www.yunucms.cn'+ el.pic +'" height="50">'+
+                            '        <img src="http://www.yunucms.cn'+ el.pic +'" width="100" height="50">'+
                             '    </a>'+
                             '    <p>'+el.title+'</p>'+
                             '</li>';
@@ -85,6 +85,7 @@
                         var items = $(template(index, el));
                         setTimeout(function(){
                             context.append(items.addClass('fadeInDown animated'));
+                            items.find('img').imgAuto();
                         },200*(index+1))
                     });
                 },
